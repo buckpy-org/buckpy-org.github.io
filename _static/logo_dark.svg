@@ -1,0 +1,14 @@
+<svg width="180" height="64" viewBox="0 0 120 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circle background -->
+  <circle cx="5" cy="32" r="22" fill="#FFD43B"/>
+  
+  <!-- Text inside circle -->
+  <text x="5" y="42" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#383838" font-weight="bold" text-anchor="middle">
+    B
+  </text>
+
+  <!-- BuckPy text next to circle -->
+  <text x="34" y="42" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#ffffff" font-weight="bold">
+    BuckPy
+  </text>
+</svg>
