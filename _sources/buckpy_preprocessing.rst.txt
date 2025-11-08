@@ -1,0 +1,7 @@
+4. Pre-Processing Module
+========================
+
+.. automodule:: buckpy_preprocessing
+   :members:
+   :undoc-members:
+   :show-inheritance:

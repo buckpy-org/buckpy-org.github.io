@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Reference &#8212; BuckPy 0.0.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Main Module" href="buckpy.html" />
+    <link rel="prev" title="Technical References" href="technical_references.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.1 documentation - Home"/>
+    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="BuckPy 0.0.1 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="getting_started.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="technical_references.html">
+                        Technical References
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="updates.html">
+                        Updates
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="getting_started.html">
+                        Getting Started
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="technical_references.html">
+                        Technical References
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="updates.html">
+                        Updates
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">API Reference</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="buckpy.html">1. Main Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy.html#buckpy.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_gui.html">2. GUI Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_gui.html#buckpy_gui.GUI"><code class="docutils literal notranslate"><span class="pre">GUI</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy_gui.GUI.close_app"><code class="docutils literal notranslate"><span class="pre">GUI.close_app()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy_gui.GUI.create_widgets"><code class="docutils literal notranslate"><span class="pre">GUI.create_widgets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy_gui.GUI.open_file"><code class="docutils literal notranslate"><span class="pre">GUI.open_file()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_gui.html#buckpy_gui.GUI.setup_treeview"><code class="docutils literal notranslate"><span class="pre">GUI.setup_treeview()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_variables.html">3. Variables Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_preprocessing.html">4. Pre-Processing Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.LBDistributions"><code class="docutils literal notranslate"><span class="pre">LBDistributions</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.LBDistributions.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LBDistributions.friction_distribution()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_element_array"><code class="docutils literal notranslate"><span class="pre">calc_element_array()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_expand_kp"><code class="docutils literal notranslate"><span class="pre">calc_expand_kp()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_kp_interpolation"><code class="docutils literal notranslate"><span class="pre">calc_kp_interpolation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_lognorm_hoos"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_hoos()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_lognorm_soil"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_soil()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_monte_carlo_data"><code class="docutils literal notranslate"><span class="pre">calc_monte_carlo_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_oper_data"><code class="docutils literal notranslate"><span class="pre">calc_oper_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_operating_profiles"><code class="docutils literal notranslate"><span class="pre">calc_operating_profiles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_pipe_data"><code class="docutils literal notranslate"><span class="pre">calc_pipe_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_pp_data"><code class="docutils literal notranslate"><span class="pre">calc_pp_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_route_data"><code class="docutils literal notranslate"><span class="pre">calc_route_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_scenario_data"><code class="docutils literal notranslate"><span class="pre">calc_scenario_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.calc_soil_data"><code class="docutils literal notranslate"><span class="pre">calc_soil_data()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_preprocessing.html#buckpy_preprocessing.import_scenario"><code class="docutils literal notranslate"><span class="pre">import_scenario()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_solver.html">5. Solver Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.calc_fric_forces"><code class="docutils literal notranslate"><span class="pre">calc_fric_forces()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.calc_friction_force_from_buckle"><code class="docutils literal notranslate"><span class="pre">calc_friction_force_from_buckle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.exec_buckpy"><code class="docutils literal notranslate"><span class="pre">exec_buckpy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.exec_worker_stack"><code class="docutils literal notranslate"><span class="pre">exec_worker_stack()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.preprocess_case"><code class="docutils literal notranslate"><span class="pre">preprocess_case()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.run_monte_carlo"><code class="docutils literal notranslate"><span class="pre">run_monte_carlo()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.sample_randomness_case"><code class="docutils literal notranslate"><span class="pre">sample_randomness_case()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_solver.html#buckpy_solver.solve_case"><code class="docutils literal notranslate"><span class="pre">solve_case()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_postprocessing.html">6. Post-Processing Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_buckpy"><code class="docutils literal notranslate"><span class="pre">pp_buckpy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_char_fric"><code class="docutils literal notranslate"><span class="pre">pp_char_fric()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_char_vas"><code class="docutils literal notranslate"><span class="pre">pp_char_vas()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_buckles_per_section"><code class="docutils literal notranslate"><span class="pre">pp_comb_buckles_per_section()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_buckles_per_set"><code class="docutils literal notranslate"><span class="pre">pp_comb_buckles_per_set()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_prob"><code class="docutils literal notranslate"><span class="pre">pp_comb_prob()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_eaf"><code class="docutils literal notranslate"><span class="pre">pp_eaf()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_elem"><code class="docutils literal notranslate"><span class="pre">pp_elem()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_no_buckles"><code class="docutils literal notranslate"><span class="pre">pp_no_buckles()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_outputs"><code class="docutils literal notranslate"><span class="pre">pp_outputs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_plots"><code class="docutils literal notranslate"><span class="pre">pp_plots()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_raw"><code class="docutils literal notranslate"><span class="pre">pp_raw()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_rename_columns"><code class="docutils literal notranslate"><span class="pre">pp_rename_columns()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_save"><code class="docutils literal notranslate"><span class="pre">pp_save()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_postprocessing.html#buckpy_postprocessing.pp_sets"><code class="docutils literal notranslate"><span class="pre">pp_sets()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="buckpy_visualisation.html">7. Visualisation Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.assembly_dataframe_bend_sleeper_ilt"><code class="docutils literal notranslate"><span class="pre">assembly_dataframe_bend_sleeper_ilt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.assembly_dataframe_plot"><code class="docutils literal notranslate"><span class="pre">assembly_dataframe_plot()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.assembly_double_rows"><code class="docutils literal notranslate"><span class="pre">assembly_double_rows()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.plot_bend_sleeper_ilt"><code class="docutils literal notranslate"><span class="pre">plot_bend_sleeper_ilt()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.plot_buckpy"><code class="docutils literal notranslate"><span class="pre">plot_buckpy()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.plot_results"><code class="docutils literal notranslate"><span class="pre">plot_results()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.read_input"><code class="docutils literal notranslate"><span class="pre">read_input()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="buckpy_visualisation.html#buckpy_visualisation.read_output"><code class="docutils literal notranslate"><span class="pre">read_output()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="technical_references.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Technical References</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="buckpy.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">1. Main Module</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="_sources/modules.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ismael Ripoll, Carlos Sicilia &amp; Emilien Bonnet.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

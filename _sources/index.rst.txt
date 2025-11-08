@@ -1,0 +1,92 @@
+.. BuckPy documentation master file
+
+#################################################
+BuckPy (Probabilistic Lateral Buckling Algorithm)
+#################################################
+
+******************
+Project Philosophy
+******************
+ `Xodus Group <https://www.xodusgroup.com/>`_ (hereafter referred to as Xodus) and
+ `TotalEnergies OneTech <https://totalenergies.com/>`_ (hereafter referred to as TTE OneTech)
+ have co-written **BuckPy**.
+ 
+ **BuckPy** is an open-source algorithm that has been developed to facilitate the implementation
+ of the probabilistic lateral buckling methodology presented in the paper published by Ismael Ripoll,
+ Carlos Sicilia and Emilien Bonnet at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).
+ :download:`SPT 2023: Lateral Buckling Design using the Friction Distributions at the Expected Buckles <doc/SPT 2023 - Paper - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
+ 
+ Xodus and TTE OneTech have decided jointly to make `BuckPy <https://github.com/Xodus-Group/plba>`_ available
+ with the intend of allowing the pipeline community to review, expand and use it under a
+ `GNU General Public License v3.0 <https://github.com/Xodus-Group/plba/blob/main/LICENSE>`_.
+
+********************
+Project Team Members
+********************
+ Team members responsible for the management of this open-source project are:
+
+ * `Ismael Ripoll <https://github.com/ismaelripoll-xodus>`_, Xodus
+ * Carlos Sicilia Gaillard, TTE OneTech
+ * Emilien Bonnet, TTE OneTech
+
+********************************
+How to Contribute to the Project
+********************************
+ Interested in contributing to the project? If you have a contribution in mind, please add in
+ `Discussions <https://github.com/Xodus-Group/plba/discussions>`_. If you have identified an issue
+ with the code, please add in `Issues <https://github.com/Xodus-Group/plba/issues>`_.
+
+******************************
+BuckPy Python Library Versions
+******************************
+ THE REQUIREMENTS.txt file contains the libraries for which the script has been developed and shown to run:
+
+  - python 3.11
+  - tkinter 8.6
+  - matplotlib 3.8.3
+  - multiprocess 0.70.16
+  - numba 0.59.0
+  - numpy 1.26.4
+  - openpyxl 3.1.5
+  - pandas 2.2.1
+  - scipy 1.12.0
+  - xlrd 2.0.1
+  - XlsxWriter 3.2.0
+  - sphinx 8.2.3
+  - pydata-sphinx-theme
+
+ Before running BuckPy for first time, follow these steps to activate a virtual environment from the REQUIREMENTS.TXT file:
+
+  1. Open a Command Prompt or PowerShell and navigate to the folder where BuckPy is cloned.
+
+  2. To create the virtual environment, run:
+
+     `$ python -m venv env`
+
+  3. To activate the virtual environement, run: [This command works in the VSCode's PowerShell. Command may vary in other shells]
+
+     `$ env/Scripts/Activate.ps1`
+
+  4. To install the necessary libraries, run:
+
+     `$ pip install -r ./REQUIREMENTS.txt`
+
+ Afterwards, the virtual environement must be activated before running BuckPy by using the command in Step 3.
+
+########
+Contents
+########
+.. toctree::
+   :maxdepth: 2
+
+   getting_started
+   technical_references
+   modules
+   updates
+
+##################
+Indices and Tables
+##################
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

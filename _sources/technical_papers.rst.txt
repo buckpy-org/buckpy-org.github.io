@@ -1,0 +1,22 @@
+####################
+Technical References
+####################
+
+****************
+Technical Papers
+****************
+
+SPT 2023 - Lateral Buckling Design using the Friction Distributions at the Expected Buckles
+===========================================================================================
+
+ Operation at temperature and pressure of exposed subsea pipelines results in effective axial forces which may cause lateral buckling. To perform the lateral buckling design, the subsea pipeline industry typically uses a combination of Monte-Carlo simulations and finite element analysis. The Monte-Carlo simulations are used to determine the longest VAS that can be reliably exceeded (characteristic VAS), and FEA is used to determine the longest VAS with acceptable mechanical conditions (tolerable VAS). The lateral buckling configuration then needs to ensure that the characteristic VAS is less than the tolerable VAS along the whole pipeline.
+ This paper presents a methodology that can be implemented through the introduction of minimal changes to the recommendations of DNV-RP-F110. The methodology is based on a Monte-Carlo algorithm which determines the soil friction distributions of the expected buckles, and then an approach in which the tolerable VAS is in turn determined using these soil friction distributions of the buckles. The paper presents the application of the proposed approach to a case study to illustrate the significant impact this can have on the overall lateral buckling design. The Monte-Carlo algorithm used in this paper has been released under an open-source license to facilitate the implementation of this methodology by the industry.
+ 
+ :download:`SPT 2023: Lateral Buckling Design using the Friction Distributions at the Expected Buckles <doc/SPT 2023 - Paper - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
+
+ISOPE 2024 - Retrospective Analysis of the Lateral OOS and Buckling Response of Operational Deep-Water Pipelines
+================================================================================================================
+ 
+ This paper examines the lateral buckling response of the pipelines in a deep-water field. This includes retrospective probabilistic analyses as per DNV-RP-F110, a review of the available survey data and a comparison of the predictions of the analyses with the actual observed responses. From the reviews of the data and the results of the comparisons, aspects of the design code that could be improved are identified and recommendations are made. The paper also reviews the published pipeline out-of-straightness data and makes recommendations on how to improve it for use in probabilistic lateral buckling assessments.
+ 
+ :download:`ISOPE 2024: Retrospective Analysis of the Lateral OOS and Buckling Response of Operational Deep-Water Pipelines <doc/ISOPE 2024 - 2024-TPC-0677 - Retrospective Analysis of the Lateral OOS and Buckling Response of Operational Deep-Water Pipelines.pdf>`

@@ -1,0 +1,56 @@
+#######
+Updates
+#######
+
+************
+January 2025
+************
+ #. The residual buckling force is capped by the minimum critical buckling force (CBF). Check the
+    `calc_friction_force_from_buckle()` function in the ``buckpy_solver.py`` for more details.
+ #. Create ``Updates`` Section in the Buckpy Manual.
+ #. Fix the characteristic friction bug for sleepers.
+ #. Fix the probability of buckling rounding number issue.
+ #. Add BuckPy and Saipem Pro-Buck Benchmark section in the BuckPy Manual.
+ #. Add the description of direct inputs of Critical Buckling Force Distributions 
+    at engineered buckle locations in the BuckPy Manual.
+ #. The soil axial friction distribution has two options: Normal or Lognormal.
+ #. Add two more examples: ``inputDataTemplateB.xlsx`` for simple sleepers 
+    and ``inputDataTemplateC.xlsx`` for RCM route type.
+
+*************
+December 2024
+*************
+ #. When plotting the BuckPy characteristic lateral breakout friction with buckles, replace the
+    friction with zero if the probability of buckling is less than 5% in the element set. Check the
+    ``buckfast_output_file_compiler.py`` in the folder '`docs/_static/buckfast file writers`'.
+ #. Update the ``Getting Started`` section in the BuckPy Manual based on changes in the
+    input files and output results.
+
+*************
+November 2024
+*************
+ #. Output the combination of buckling set results based on the post-processing set and 
+    route section set. Plot only the most frequent combination of buckling set.
+    Check the `pp_comb_buckles_per_set()`, `pp_comb_buckles_per_set()`, `plot_comb_per_set()` and 
+    `plot_comb_per_section()` functions in the ``buckpy_post_processing.py`` for more details.
+ #. The combination of buckling set results are in the ``Comb Buckles per Set`` and
+    ``Comb Buckles per Section`` tabs of the output file.
+ #. Create an option to output and plot the combination of buckling set results using
+    `OUTPUT_COMBINATION` in the ``buckpy.py`` and `PLOT_COMBINATION` in the
+    ``buckfast_output_file_compiler.py``.
+ #. Create a summary table Excel file for Buckfast results and plots to compare Buckfast 
+    and BuckPy results. Check the ``buckfast_output_file_compiler.py``
+    in the folder '`docs/_static/buckfast file writers`'.
+ #. Calculate the parameters of a lognormal distribution for CBF. Check the `calc_cbf_mean_std()`
+    function in the ``buckfast_input_file_writer.py`` in the folder '`docs/_static/buckfast file writers`'.
+ #. Create functions to plot a second figue of the BuckPy results. Check the `plot_buckpy()` function in the 
+    ``buckpy_visualisation.py`` for more details.
+
+*************
+October 2024
+*************
+ #. Create functions to read the raw operating profiles and interpolate RLT, pressure and 
+    temperature along the KP. Check the `calc_operating_profiles()` function in the 
+    ``buckpy_preprocessing.py`` for more details.
+ #. Output and plot the geotechnical lateral friction. Check the `pp_sets()` function in the
+    ``buckpy_post_processing.py`` for more details.
