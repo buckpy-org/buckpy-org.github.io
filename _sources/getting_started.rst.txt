@@ -25,7 +25,7 @@ Running BuckPy as a User
 
 #. The BuckPy graphical user interface (GUI) will open.
    From here, you can select the input Excel file and configure the simulation parameters.
-   For details about the *Data to be Modified in the `GUI` of ``buckpy.py``*.
+   For additional details, visit the section: Data to be Modified in the GUI of BuckPy.
 
 ******************************************
 How to Clone BuckPy to become a Maintainer
@@ -81,8 +81,8 @@ How to Clone BuckPy to become a Maintainer
 How to Modify the Design Data?
 ******************************
 
-Data to be Modified in the `GUI` of ``buckpy.py``
-=================================================
+Data to be Modified in the GUI of BuckPy
+========================================
  The following variables have to be updated in ``buckpy.py``:
 
  #. **Select Excel input file**: A dialog will open to select the Excel input file.
