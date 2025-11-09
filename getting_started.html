@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; BuckPy 0.1.2 documentation</title>
+    <title>Getting Started &#8212; BuckPy 0.1.3 documentation</title>
   
   
   
@@ -38,7 +38,7 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=92734c54"></script>
+    <script src="_static/documentation_options.js?v=360bc84d"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started';</script>
@@ -114,8 +114,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.2 documentation - Home"/>
-    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.2 documentation - Home"/>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.3 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.3 documentation - Home"/>
   
   
 </a></div>
@@ -542,7 +542,7 @@ by pipelines and pipe sets (multiple pipe sets can be defined per pipeline).</p>
 </li>
 <li><p><strong>Soils</strong>: The LE(P95), BE(P50), and HE(P5) of the axial residual and lateral breakout friction factors are defined in this tab.
 Different lateral breakout friction factors can be specified for hydrotest and operating conditions.
-For each friction factor, the bounds used to determine the lognormal fit are defined (LE-BE, BE-HE or LE-BE-HE).
+For each friction factor, the bounds used to determine the lognormal fit are defined (LE_BE, BE_HE or LE_BE_HE).
 Using any of the three bound combinations, BuckPy calculates the mean and standard deviation (STD) of the lognormal fit that minimises the root-mean-square error (RMSE).
 Friction factors can be grouped also by pipeline and friction set.</p>
 <blockquote>
@@ -552,15 +552,15 @@ Friction factors can be grouped also by pipeline and friction set.</p>
 <li><p><cite>Axial LE</cite>: LE of the axial friction factor, assumed to have a 95% probability of exceedance (P95).</p></li>
 <li><p><cite>Axial BE</cite>: BE of the axial friction factor, assumed to have a 50% probability of exceedance (P50).</p></li>
 <li><p><cite>Axial HE</cite>: HE of the axial friction factor, assumed to have a 5% probability of exceedance (P5).</p></li>
-<li><p><cite>Axial Fit Bounds</cite>: The bounds used to determine the lognormal fit for the axial friction factor (LE-BE, BE-HE or LE-BE-HE).</p></li>
+<li><p><cite>Axial Fit Bounds</cite>: The bounds used to determine the lognormal fit for the axial friction factor (LE_BE, BE_HE or LE_BE_HE).</p></li>
 <li><p><cite>Lateral Hydrotest LE</cite>: LE of the lateral hydrotest friction factor (P95).</p></li>
 <li><p><cite>Lateral Hydrotest BE</cite>: BE of the lateral hydrotest friction factor (P50).</p></li>
 <li><p><cite>Lateral Hydrotest HE</cite>: HE of the lateral hydrotest friction factor (P5).</p></li>
-<li><p><cite>Lateral Hydrotest Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral hydrotest friction factor (LE-BE, BE-HE or LE-BE-HE).</p></li>
+<li><p><cite>Lateral Hydrotest Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral hydrotest friction factor (LE_BE, BE_HE or LE_BE_HE).</p></li>
 <li><p><cite>Lateral Operation LE</cite>: LE of the lateral operation friction factor (P95).</p></li>
 <li><p><cite>Lateral Operation BE</cite>: BE of the lateral operation friction factor (P50).</p></li>
 <li><p><cite>Lateral Operation HE</cite>: HE of the lateral operation friction factor (P5).</p></li>
-<li><p><cite>Lateral Operation Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE-BE, BE-HE or LE-BE-HE).</p></li>
+<li><p><cite>Lateral Operation Fit Bounds</cite>: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE_BE, BE_HE or LE_BE_HE).</p></li>
 <li><p><cite>Soil Description</cite>: The description of the soil friction properties.</p></li>
 </ul>
 <div class="line-block">

@@ -4,8 +4,11 @@ and autorun the Buckfast for all the pipelines and scenarios.
 Note: need to run the script in the folder where buckfast132.exe and input csv files exist.
 '''
 
+import sys
 import pandas as pd
 import numpy as np
+sys.path.append(r'C:\Github_repos\BuckPy\source')
+from buckpy_preprocessing import LBDistributions
 
 def calc_inner_diameter(od, wt):
 
@@ -663,6 +666,29 @@ def open_file():
     df_soil = all_sheets_dict['Soils']
     df_soil = df_soil.loc[(df_soil['Pipeline'] == PIPELINE_ID) &
                           (df_soil['Friction Set'].isin(df_route['Friction Set']))]
+
+    # Calculate the mean and std of soil friction
+    # Axial
+    df_soil['Axial Mean'], df_soil['Axial STD'] = LBDistributions(
+        friction_factor_le=[df_soil['Axial LE']],
+        friction_factor_be=[df_soil['Axial BE']],
+        friction_factor_he=[df_soil['Axial HE']],
+        friction_factor_fit_type=[df_soil['Axial Fit Bounds']]
+    ).friction_distribution()[:2]
+    # Lateral Hydrotest
+    df_soil['Lateral Hydrotest Mean'], df_soil['Lateral Hydrotest STD'] = LBDistributions(
+        friction_factor_le=[df_soil['Lateral Hydrotest LE']],
+        friction_factor_be=[df_soil['Lateral Hydrotest BE']],
+        friction_factor_he=[df_soil['Lateral Hydrotest HE']],
+        friction_factor_fit_type=[df_soil['Lateral Hydrotest Fit Bounds']]
+    ).friction_distribution()[:2]
+    # Lateral Operation
+    df_soil['Lateral Operation Mean'], df_soil['Lateral Operation STD'] = LBDistributions(
+        friction_factor_le=[df_soil['Lateral Operation LE']],
+        friction_factor_be=[df_soil['Lateral Operation BE']],
+        friction_factor_he=[df_soil['Lateral Operation HE']],
+        friction_factor_fit_type=[df_soil['Lateral Operation Fit Bounds']]
+    ).friction_distribution()[:2]
 
     # Read 'Operating' tab and filter the operating profile for the current scenario
     df_oper = all_sheets_dict['Operating']

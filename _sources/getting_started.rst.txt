@@ -195,7 +195,7 @@ Data to be Modified in ``inputFileTemplate.xlsx``
 
  #. **Soils**: The LE(P95), BE(P50), and HE(P5) of the axial residual and lateral breakout friction factors are defined in this tab.
     Different lateral breakout friction factors can be specified for hydrotest and operating conditions.
-    For each friction factor, the bounds used to determine the lognormal fit are defined (LE-BE, BE-HE or LE-BE-HE).
+    For each friction factor, the bounds used to determine the lognormal fit are defined (LE_BE, BE_HE or LE_BE_HE).
     Using any of the three bound combinations, BuckPy calculates the mean and standard deviation (STD) of the lognormal fit that minimises the root-mean-square error (RMSE).
     Friction factors can be grouped also by pipeline and friction set.
 
@@ -204,15 +204,15 @@ Data to be Modified in ``inputFileTemplate.xlsx``
      - `Axial LE`: LE of the axial friction factor, assumed to have a 95% probability of exceedance (P95).
      - `Axial BE`: BE of the axial friction factor, assumed to have a 50% probability of exceedance (P50).
      - `Axial HE`: HE of the axial friction factor, assumed to have a 5% probability of exceedance (P5).
-     - `Axial Fit Bounds`: The bounds used to determine the lognormal fit for the axial friction factor (LE-BE, BE-HE or LE-BE-HE).
+     - `Axial Fit Bounds`: The bounds used to determine the lognormal fit for the axial friction factor (LE_BE, BE_HE or LE_BE_HE).
      - `Lateral Hydrotest LE`: LE of the lateral hydrotest friction factor (P95).
      - `Lateral Hydrotest BE`: BE of the lateral hydrotest friction factor (P50).
      - `Lateral Hydrotest HE`: HE of the lateral hydrotest friction factor (P5).
-     - `Lateral Hydrotest Fit Bounds`: The bounds used to determine the lognormal fit for the lateral hydrotest friction factor (LE-BE, BE-HE or LE-BE-HE).
+     - `Lateral Hydrotest Fit Bounds`: The bounds used to determine the lognormal fit for the lateral hydrotest friction factor (LE_BE, BE_HE or LE_BE_HE).
      - `Lateral Operation LE`: LE of the lateral operation friction factor (P95).
      - `Lateral Operation BE`: BE of the lateral operation friction factor (P50).
      - `Lateral Operation HE`: HE of the lateral operation friction factor (P5).
-     - `Lateral Operation Fit Bounds`: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE-BE, BE-HE or LE-BE-HE).
+     - `Lateral Operation Fit Bounds`: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE_BE, BE_HE or LE_BE_HE).
      - `Soil Description`: The description of the soil friction properties. 
 
      |
