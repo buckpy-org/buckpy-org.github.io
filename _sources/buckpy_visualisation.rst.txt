@@ -1,7 +1,7 @@
 7. Visualisation Module
 =======================
 
-.. automodule:: buckpy_visualisation
+.. automodule:: buckpy.buckpy_visualisation
    :members:
    :undoc-members:
    :show-inheritance:

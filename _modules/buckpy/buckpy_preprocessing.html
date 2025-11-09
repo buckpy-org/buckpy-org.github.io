@@ -1,0 +1,1577 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>buckpy.buckpy_preprocessing &#8212; BuckPy 0.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/buckpy/buckpy_preprocessing';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.1 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">buckpy.buckpy_preprocessing</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for buckpy.buckpy_preprocessing</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains the pre-processing functions of BuckPy.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">lognorm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.buckpy_variables</span><span class="w"> </span><span class="kn">import</span> <span class="n">KP_TO</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">This module provides classes and functions for lateral buckling calculations and friction factor</span>
+<span class="sd">distribution fitting for subsea pipelines.</span>
+
+<span class="sd">**Features:**</span>
+
+<span class="sd">- The `LBDistributions` class implements lognormal distribution fitting for geotechnical friction</span>
+<span class="sd">  factors, supporting low, best, and high estimates (LE, BE, HE) and multiple fit types.</span>
+<span class="sd">- Designed for use in pipeline lateral buckling reliability analysis and geotechnical parameter</span>
+<span class="sd">  estimation.</span>
+<span class="sd">- All calculations are vectorized using NumPy and leverage SciPy for statistical fitting.</span>
+
+<span class="sd">.. raw:: html</span>
+
+<span class="sd">   &lt;hr style=&quot;height:6px; background-color:#888; border:none; margin:1.5em 0;&quot; /&gt;</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">lognorm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+
+<div class="viewcode-block" id="LBDistributions">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">LBDistributions</span><span class="p">:</span> <span class="c1"># pylint: disable=too-many-instance-attributes, too-many-arguments</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for lateral buckling calculations, including friction factor distribution fitting.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    friction_factor_le : float, optional</span>
+<span class="sd">        Low estimate (LE) friction factor, representing the 5th percentile.</span>
+<span class="sd">    friction_factor_be : float, optional</span>
+<span class="sd">        Best estimate (BE) friction factor, representing the 50th percentile.</span>
+<span class="sd">    friction_factor_he : float, optional</span>
+<span class="sd">        High estimate (HE) friction factor, representing the 95th percentile.</span>
+<span class="sd">    friction_factor_fit_type : str, optional</span>
+<span class="sd">        Type of fit to perform: &#39;LE_BE_HE&#39;, &#39;LE_BE&#39;, or &#39;BE_HE&#39;.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">,</span>
+            <span class="n">friction_factor_le</span><span class="p">,</span>
+            <span class="n">friction_factor_be</span><span class="p">,</span>
+            <span class="n">friction_factor_he</span><span class="p">,</span>
+            <span class="n">friction_factor_fit_type</span>
+        <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize with geotechnical friction factor estimates and fit type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_fit_type</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)</span>
+
+<div class="viewcode-block" id="LBDistributions.friction_distribution">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions.friction_distribution">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">friction_distribution</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the parameters of the lognormal friction factor distribution (axial or lateral)</span>
+<span class="sd">        by minimizing the root mean square error (RMSE) between geotechnical estimates and</span>
+<span class="sd">        back-calculated friction factors from the lognormal distribution.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        mean_friction : np.ndarray</span>
+<span class="sd">            Array of mean values of the lognormal friction factor distribution.</span>
+<span class="sd">        std_friction : np.ndarray</span>
+<span class="sd">            Array of standard deviation values of the lognormal friction factor distribution.</span>
+<span class="sd">        location_param : np.ndarray</span>
+<span class="sd">            Array of location parameters of the lognormal friction factor distribution.</span>
+<span class="sd">        scale_param : np.ndarray</span>
+<span class="sd">            Array of scale parameters of the lognormal friction factor distribution.</span>
+<span class="sd">        le_fit : np.ndarray</span>
+<span class="sd">            Array of fitted LE values.</span>
+<span class="sd">        be_fit : np.ndarray</span>
+<span class="sd">            Array of fitted BE values.</span>
+<span class="sd">        he_fit : np.ndarray</span>
+<span class="sd">            Array of fitted HE values.</span>
+<span class="sd">        rmse : np.ndarray</span>
+<span class="sd">            Array of RMSE values for the best fit type.</span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        The function calculates the parameters of the lognormal friction factor distribution</span>
+<span class="sd">        based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; lb = LBDistributions(</span>
+<span class="sd">        ...     friction_factor_le=[0.5],</span>
+<span class="sd">        ...     friction_factor_be=[1.0],</span>
+<span class="sd">        ...     friction_factor_he=[1.5],</span>
+<span class="sd">        ...     friction_factor_fit_type=[&#39;LE_BE_HE&#39;]</span>
+<span class="sd">        ... )</span>
+<span class="sd">        &gt;&gt;&gt; lb.friction_distribution()</span>
+<span class="sd">        (array([0.9684083]), array([0.30043236]), array([-0.07804666]), array([0.3031342]), array([0.56177265]), array([0.92492127]), array([1.52282131]), array([0.05765844]))</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize lists to store results</span>
+        <span class="n">mean_friction_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">std_friction_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">location_param_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">scale_param_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">le_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">be_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">he_fit_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">rmse_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="c1"># Define the objective function</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">objective</span><span class="p">(</span>
+                <span class="n">params</span><span class="p">,</span>
+                <span class="n">friction_factor_le</span><span class="p">,</span>
+                <span class="n">friction_factor_be</span><span class="p">,</span>
+                <span class="n">friction_factor_he</span><span class="p">,</span>
+                <span class="n">friction_factor_fit_type</span>
+            <span class="p">):</span>
+            <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">params</span>
+
+            <span class="k">if</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+                     <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
+                <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+                <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+            <span class="k">return</span> <span class="n">error</span>
+
+        <span class="c1"># Loop through the friction factor arrays</span>
+        <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="p">(</span>
+            <span class="n">friction_factor_le</span><span class="p">,</span>
+            <span class="n">friction_factor_be</span><span class="p">,</span>
+            <span class="n">friction_factor_he</span><span class="p">,</span>
+            <span class="n">friction_factor_fit_type</span>
+        <span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+            <span class="nb">zip</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span>
+            <span class="p">)</span>
+        <span class="p">):</span>
+            <span class="n">initial_location</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)]</span>
+            <span class="p">)</span>
+            <span class="n">initial_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">),</span>
+                 <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">)],</span>
+                <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="n">initial_guess</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_location</span><span class="p">,</span> <span class="n">initial_scale</span><span class="p">]</span>
+
+            <span class="c1"># Use minimize to find the parameters that minimize RMSE</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span>
+                <span class="n">objective</span><span class="p">,</span>
+                <span class="n">initial_guess</span><span class="p">,</span>
+                <span class="n">args</span><span class="o">=</span><span class="p">(</span>
+                    <span class="n">friction_factor_le</span><span class="p">,</span>
+                    <span class="n">friction_factor_be</span><span class="p">,</span>
+                    <span class="n">friction_factor_he</span><span class="p">,</span>
+                    <span class="n">friction_factor_fit_type</span>
+                <span class="p">),</span>
+                <span class="n">method</span><span class="o">=</span><span class="s1">&#39;Nelder-Mead&#39;</span>
+            <span class="p">)</span>
+            <span class="n">location_param</span><span class="p">,</span> <span class="n">scale_param</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+
+            <span class="c1"># Calculate lognormal parameters based on the optimized lognormal distribution</span>
+            <span class="n">mean_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="n">std_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> \
+                                   <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">location_param</span> <span class="o">+</span> <span class="n">scale_param</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+            <span class="c1"># Calculate the fitted values</span>
+            <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+            <span class="n">be_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.50</span><span class="p">)</span>
+            <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+
+            <span class="c1"># Calculate RMSE</span>
+            <span class="k">if</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>\
+                                <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">3.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_BE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+            <span class="c1"># Append results for this iteration</span>
+            <span class="n">mean_friction_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mean_friction</span><span class="p">)</span>
+            <span class="n">std_friction_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">std_friction</span><span class="p">)</span>
+            <span class="n">location_param_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">location_param</span><span class="p">)</span>
+            <span class="n">scale_param_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">scale_param</span><span class="p">)</span>
+            <span class="n">le_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">le_fit</span><span class="p">)</span>
+            <span class="n">be_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">be_fit</span><span class="p">)</span>
+            <span class="n">he_fit_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">he_fit</span><span class="p">)</span>
+            <span class="n">rmse_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+
+        <span class="c1"># Convert lists to NumPy arrays</span>
+        <span class="n">mean_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mean_friction_list</span><span class="p">)</span>
+        <span class="n">std_friction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">std_friction_list</span><span class="p">)</span>
+        <span class="n">location_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">location_param_list</span><span class="p">)</span>
+        <span class="n">scale_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scale_param_list</span><span class="p">)</span>
+        <span class="n">le_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">le_fit_list</span><span class="p">)</span>
+        <span class="n">be_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">be_fit_list</span><span class="p">)</span>
+        <span class="n">he_fit</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">he_fit_list</span><span class="p">)</span>
+        <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rmse_list</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">mean_friction</span><span class="p">,</span>
+            <span class="n">std_friction</span><span class="p">,</span>
+            <span class="n">location_param</span><span class="p">,</span>
+            <span class="n">scale_param</span><span class="p">,</span>
+            <span class="n">le_fit</span><span class="p">,</span>
+            <span class="n">be_fit</span><span class="p">,</span>
+            <span class="n">he_fit</span><span class="p">,</span>
+            <span class="n">rmse</span>
+        <span class="p">)</span></div>
+</div>
+
+
+<div class="viewcode-block" id="calc_expand_kp">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_expand_kp">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_expand_kp</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">kp_col</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to expand the KP array with 1000 intervals from 1000 to nearest maximum KP.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the original KP values.</span>
+<span class="sd">    kp_col : string</span>
+<span class="sd">        The column name of the KP values to expand.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the expanded KP values.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># Rename kp_col to &#39;KP From&#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="n">kp_col</span><span class="p">:</span> <span class="s1">&#39;KP From&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Expand the KP array with 1000 intervals from 1000 to nearest maximum KP</span>
+    <span class="n">max_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1000.0</span>
+    <span class="n">kp_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">max_kp</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+    <span class="c1"># Create a dataframe for the expanded kp</span>
+    <span class="n">df_expand</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Point ID From&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">kp_array</span><span class="p">),</span> <span class="s1">&#39;KP From&#39;</span><span class="p">:</span> <span class="n">kp_array</span><span class="p">})</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">df_expand</span><span class="p">],</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;KP From&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="s1">&#39;KP From&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">ffill</span><span class="p">()</span>
+
+    <span class="c1"># Calculate relative length between KP and KP To</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Calculate element number and element size</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Elem No.&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Elem Size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Elem No.&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_element_array">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_element_array">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_element_array</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to create element array based on KP, KP TO and element number.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the expanded KP values.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the elements between each KP value.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># Create the elements between each KP points</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem_array</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Elem No.&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)))),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Convert the element dataframe to np array and flatten</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">elem_array</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+    <span class="c1"># Remove duplicated values at 1000*n and np.nan</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">elem_array</span><span class="p">)</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">elem_array</span><span class="p">[</span><span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">elem_array</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">elem_array</span></div>
+
+
+<div class="viewcode-block" id="calc_kp_interpolation">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_kp_interpolation">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_kp_interpolation</span><span class="p">(</span><span class="n">elem_array</span><span class="p">,</span> <span class="n">df_oper</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Function to interpolate the RLT, pressure and temperature using KP and operating profile.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    elem_array : np Array</span>
+<span class="sd">        Array containing the kp value of the elements.</span>
+<span class="sd">    df_oper : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the original operating profiles data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas Dataframe</span>
+<span class="sd">        Dataframe containing the interpolated operating profiles data.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="c1"># Interpolate operating profile based on KP</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;KP&#39;</span><span class="p">:</span> <span class="n">elem_array</span><span class="p">})</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Installation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Pressure Installation&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Hydrotest&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Pressure Hydrotest&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Operation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Pressure Operation&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Installation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Temperature Installation&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Hydrotest&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Temperature Hydrotest&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Operation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;Temperature Operation&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RLT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_oper</span><span class="p">[</span><span class="s1">&#39;RLT&#39;</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_operating_profiles">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_operating_profiles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_operating_profiles</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_route</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">,</span> <span class="n">loadcase_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate operating profiles data and process it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the operating profiles data.</span>
+<span class="sd">    df_route : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing route data and calculated route data.</span>
+<span class="sd">    pipeline_set : str</span>
+<span class="sd">        Identifier of the pipeline set.</span>
+<span class="sd">    loadcase_set : str</span>
+<span class="sd">        Identifier of the loadcase set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the operating profiles data and calculated operating data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Filter df DataFrame based on pipeline_set and loadcase_set</span>
+    <span class="n">df_profile</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Loadcase Set&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loadcase_set</span><span class="p">)]</span>
+
+    <span class="c1"># Select the &#39;Point ID From&#39; and &#39;KP To&#39; columns</span>
+    <span class="n">df_route</span> <span class="o">=</span> <span class="n">df_route</span><span class="p">[[</span><span class="s1">&#39;Point ID From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Add the end row of route and the start KP</span>
+    <span class="n">end_row</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Point ID From&#39;</span><span class="p">:</span> <span class="s1">&#39;End&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">},</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="mi">99999</span><span class="p">])</span>
+    <span class="n">df_route</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_route</span><span class="p">,</span> <span class="n">end_row</span><span class="p">],</span> <span class="n">ignore_index</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Shift KP column 1 downwards and assign 0.0 to the first KP</span>
+    <span class="n">df_route</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_route</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">()</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="c1"># Expand the KP array with 1000 intervals from 1000 to nearest maximum KP</span>
+    <span class="n">df_route</span> <span class="o">=</span> <span class="n">calc_expand_kp</span><span class="p">(</span><span class="n">df_route</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Create the elements between each KP points</span>
+    <span class="n">elem_array</span> <span class="o">=</span> <span class="n">calc_element_array</span><span class="p">(</span><span class="n">df_route</span><span class="p">)</span>
+
+    <span class="c1"># Interpolate the RLT, pressure and temperature using KP and operating profile</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">calc_kp_interpolation</span><span class="p">(</span><span class="n">elem_array</span><span class="p">,</span> <span class="n">df_profile</span><span class="p">)</span>
+
+    <span class="c1"># Insert pipeline_set and loadcase_set columns as the first and second columns</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">pipeline_set</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Loadcase Set&#39;</span><span class="p">,</span> <span class="p">[</span><span class="n">loadcase_set</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_route_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_route_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_route_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">layout_set</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Extract and process route data for calculations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing route data.</span>
+<span class="sd">    layout_set : str</span>
+<span class="sd">        Identifier of the layout set.</span>
+<span class="sd">    pipeline_set : str</span>
+<span class="sd">        Identifier of the pipeline set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing route data and calculated route data.</span>
+<span class="sd">    df_ends : pandas.DataFrame </span>
+<span class="sd">        DataFrame containing end boundary conditions.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function extracts route ends and route data based on pipeline_set and layout_set. It</span>
+<span class="sd">    selects specific columns for route ends data. Route Type is converted from string to</span>
+<span class="sd">    float for numerical representation. Route ends data is converted to a NumPy array for</span>
+<span class="sd">    efficient processing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Extract route ends and route data based on pipeline_set and layout_set</span>
+    <span class="n">df_ends</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">)</span> <span class="o">&amp;</span>
+                             <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Layout Set&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">layout_set</span><span class="p">)]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">)</span> <span class="o">&amp;</span>
+                        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Layout Set&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">layout_set</span><span class="p">)]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># Select specific columns for route ends data</span>
+    <span class="n">df_ends</span> <span class="o">=</span> <span class="n">df_ends</span><span class="p">[[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">,</span> <span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">,</span> <span class="s1">&#39;Reaction Installation&#39;</span><span class="p">,</span>
+                                   <span class="s1">&#39;Reaction Hydrotest&#39;</span><span class="p">,</span> <span class="s1">&#39;Reaction Operation&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># Convert &#39;Route Type&#39; from string to float for numerical representation</span>
+    <span class="n">df_ends</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_ends</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Spool&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">df_ends</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_ends</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Fixed&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">df_ends</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_ends</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="c1"># Convert KP From and KP to to float</span>
+    <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">df_ends</span></div>
+
+
+<div class="viewcode-block" id="calc_pipe_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_pipe_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_pipe_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate properties of pipes for a specific pipeline set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the pipe data.</span>
+<span class="sd">    pipeline_set : str</span>
+<span class="sd">        Identifier of the pipeline set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the pipe data and calculated pipe properties.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function filters the df DataFrame based on the pipeline_set. It computes the</span>
+<span class="sd">    inner diameter (ID), cross-sectional area (As), inner area (Ai), moment of inertia (I),</span>
+<span class="sd">    hydrotest characteristic buckling force (SChar HT), and operation characteristic buckling</span>
+<span class="sd">    force (SChar OP) of the pipe.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Compute the inner diameter (ID) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;OD&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mf">2.0</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;WT&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Compute the cross-sectional area (As) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;OD&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Compute the inner area (Ai) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ai&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="c1"># Compute the moment of inertia (I) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mf">64.0</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;OD&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ID&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="c1"># Compute the hydrotest characteristic buckling force (SChar HT) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;SChar HT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.26</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span>
+         <span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sw Hydrotest&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+    <span class="c1"># Compute the operation characteristic buckling force (SChar OP) of the pipe</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;SChar OP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.26</span> <span class="o">*</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="p">(</span>
+        <span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">])</span> <span class="o">**</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sw Operation&#39;</span><span class="p">]</span> <span class="o">**</span> <span class="mf">0.5</span>
+
+    <span class="c1"># Filter df DataFrame based on pipeline_set</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">)]</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_oper_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_oper_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_oper_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_route_ends</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">,</span> <span class="n">loadcase_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate operating data and process it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the operating data.</span>
+<span class="sd">    df_route_ends : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the end boundary conditions.</span>
+<span class="sd">    pipeline_set : str</span>
+<span class="sd">        Identifier of the pipeline set.</span>
+<span class="sd">    loadcase_set : str</span>
+<span class="sd">        Identifier of the loadcase set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the operating data and calculated operating data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function filters df DataFrame based on pipeline_set, loadcase_set, and &#39;KP To&#39;.</span>
+<span class="sd">    It calculates rolling mean and difference, assigns the &#39;Length&#39; column, resets the index, and</span>
+<span class="sd">    drops rows with NaN values before returning the preprocessed DataFrame.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Filter df DataFrame based on pipeline_set, loadcase_set and &#39;KP To&#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">)</span> <span class="o">&amp;</span>
+                <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Loadcase Set&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">loadcase_set</span><span class="p">)</span> <span class="o">&amp;</span>
+                <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">df_route_ends</span><span class="p">[</span><span class="s1">&#39;KP To&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])]</span>
+
+    <span class="c1"># Calculate the rolling mean of df grouped by Pipeline and Loadcase Set</span>
+    <span class="n">df_rolling_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Loadcase Set&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="c1"># Calculate the rolling difference of df grouped by Pipeline and Loadcase Set</span>
+    <span class="n">df_rolling_difference</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Loadcase Set&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Loadcase Set&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+
+    <span class="c1"># Assign the &#39;Length&#39; column in df_rolling_mean</span>
+    <span class="n">df_rolling_mean</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_rolling_difference</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Reset the index of df_rolling_mean and drop the &#39;level_2&#39; index level</span>
+    <span class="n">df_rolling_mean</span> <span class="o">=</span> <span class="n">df_rolling_mean</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;level_2&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Drop rows with NaN values</span>
+    <span class="n">df_rolling_mean</span> <span class="o">=</span> <span class="n">df_rolling_mean</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">df_rolling_mean</span></div>
+
+
+<div class="viewcode-block" id="calc_soil_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_soil_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_soil_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate soil data and axial and lateral friction factor distributions and assign them to</span>
+<span class="sd">    DataFrame columns.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing soil data.</span>
+<span class="sd">    pipeline_set : str</span>
+<span class="sd">        Identifier of the pipeline set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing soil data and calculated friction factor distributions.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function filters df DataFrame based on pipeline_set value. It computes lognormal</span>
+<span class="sd">    distributions for axial and lateral friction factors and assigns them to DataFrame columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Compute lognormal or normal distributions for axial friction and assign arrays to DataFrame columns</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;muax Array&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;muax CDF Array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">calc_lognorm_soil</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Axial Mean&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Axial STD&#39;</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Compute lognormal distributions for lateral hydrotest friction and assign arrays to DataFrame columns</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mul HT Array&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mul HT CDF Array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">calc_lognorm_soil</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest Mean&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest STD&#39;</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Compute lognormal distributions for lateral operation friction and assign arrays to DataFrame columns</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mul OP Array&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;mul OP CDF Array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">calc_lognorm_soil</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Lateral Operation Mean&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Lateral Operation STD&#39;</span><span class="p">]),</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Filter soil data based on pipeline set</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_set</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_scenario_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_scenario_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_scenario_data</span><span class="p">(</span><span class="n">df_route</span><span class="p">,</span> <span class="n">df_pipe</span><span class="p">,</span> <span class="n">df_oper</span><span class="p">,</span> <span class="n">df_soil</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate scenario data based on route, pipe, operating, and soil data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_route : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing route data.</span>
+<span class="sd">    df_pipe : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing pipe data.</span>
+<span class="sd">    df_oper : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing operating data.</span>
+<span class="sd">    df_soil : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing soil data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df: pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the calculated scenario data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function merges route, pipe, operating, and soil data to compute various scenario</span>
+<span class="sd">    parameters. It calculates various attributes such as lognormal distributions, buckling forces,</span>
+<span class="sd">    and section counts. The resulting DataFrame includes a subset of calculated columns and is</span>
+<span class="sd">    filled with 0 for missing values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Merge operating data with route data based on &#39;KP&#39;</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_asof</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">df_oper</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">df_route</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;KP From&#39;</span><span class="p">,</span>
+                             <span class="n">direction</span><span class="o">=</span><span class="s1">&#39;backward&#39;</span><span class="p">,</span> <span class="n">left_by</span><span class="o">=</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="n">right_by</span><span class="o">=</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Merge resulting DataFrame with pipe data</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">df_pipe</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Pipe Set&#39;</span><span class="p">],</span>
+                       <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Pipe Set&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Merge resulting DataFrame with soil data</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">df_soil</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Friction Set&#39;</span><span class="p">],</span>
+                       <span class="n">right_on</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">,</span> <span class="s1">&#39;Friction Set&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Compute lognormal distributions for soil properties and assign to DataFrame columns</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HOOS X Array&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HOOS CDF Array&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">df</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">calc_lognorm_hoos</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Length&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;HOOS Mean&#39;</span><span class="p">],</span>
+                                     <span class="n">x</span><span class="p">[</span><span class="s1">&#39;HOOS STD&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;HOOS Reference Length&#39;</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;RCM Buckling Force&#39;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                                     <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">))</span>
+
+    <span class="c1"># Compute various buckling forces based on calculated parameters</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FRF HT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RLT&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alpha&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Hydrotest&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Installation&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span>
+                                <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Poisson&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span>
+                                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Hydrotest&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Installation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ai&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FRF OP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RLT&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alpha&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span>
+                <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Operation&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Installation&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span>
+                                 <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Poisson&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span>
+                                 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Operation&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Installation&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ai&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FRF OP Pressure&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;RLT&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span>
+                         <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Poisson&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pressure Operation&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Ai&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;FRF OP Temperature&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;As&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Alpha&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span>
+                            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Operation&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Temperature Installation&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sv HT&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sw Hydrotest&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sleeper Height&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sv OP&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;sw Operation&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Sleeper Height&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Calculate section-related parameters</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP Section&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">]</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Reference Section&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP Section&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;HOOS Reference Length&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">())</span> <span class="o">|</span>
+        <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Reference Section&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Reference Section&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">()),</span> <span class="s1">&#39;Section Count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Count&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="c1"># Select relevant columns and rename them for clarity</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;Length&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">,</span> <span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID From&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID To&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Bend Radius&#39;</span><span class="p">,</span> <span class="s1">&#39;muax Array&#39;</span><span class="p">,</span> <span class="s1">&#39;muax CDF Array&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;mul HT Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul HT CDF Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul OP Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul OP CDF Array&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;HOOS X Array&#39;</span><span class="p">,</span> <span class="s1">&#39;HOOS CDF Array&#39;</span><span class="p">,</span> <span class="s1">&#39;sw Installation&#39;</span><span class="p">,</span> <span class="s1">&#39;sw Hydrotest&#39;</span><span class="p">,</span> <span class="s1">&#39;sw Operation&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;SChar HT&#39;</span><span class="p">,</span> <span class="s1">&#39;SChar OP&#39;</span><span class="p">,</span> <span class="s1">&#39;Sv HT&#39;</span><span class="p">,</span> <span class="s1">&#39;Sv OP&#39;</span><span class="p">,</span> <span class="s1">&#39;RCM Buckling Force&#39;</span><span class="p">,</span> <span class="s1">&#39;RLT&#39;</span><span class="p">,</span> <span class="s1">&#39;FRF HT&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;FRF OP Pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;FRF OP Temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;FRF OP&#39;</span><span class="p">,</span> <span class="s1">&#39;Residual Buckle Length Hydrotest&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Residual Buckle Force Hydrotest&#39;</span><span class="p">,</span> <span class="s1">&#39;Residual Buckle Length Operation&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Residual Buckle Force Operation&#39;</span><span class="p">,</span> <span class="s1">&#39;Section Count&#39;</span><span class="p">,</span> <span class="s1">&#39;KP Section&#39;</span><span class="p">,</span> <span class="s1">&#39;Reference Section&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;Axial Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Lateral Hydrotest Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Lateral Operation Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;HOOS Mean&#39;</span><span class="p">]]</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;sw Installation&#39;</span><span class="p">:</span> <span class="s1">&#39;sw IN&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;sw Hydrotest&#39;</span><span class="p">:</span> <span class="s1">&#39;sw HT&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;sw Operation&#39;</span><span class="p">:</span> <span class="s1">&#39;sw OP&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Residual Buckle Length Hydrotest&#39;</span><span class="p">:</span> <span class="s1">&#39;buckleLength HT&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Residual Buckle Force Hydrotest&#39;</span><span class="p">:</span> <span class="s1">&#39;buckleEAF HT&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Residual Buckle Length Operation&#39;</span><span class="p">:</span> <span class="s1">&#39;buckleLength OP&#39;</span><span class="p">,</span>
+                            <span class="s1">&#39;Residual Buckle Force Operation&#39;</span><span class="p">:</span> <span class="s1">&#39;buckleEAF OP&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Convert route type strings to numerical representation</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Straight&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Bend&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Sleeper&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;RCM&#39;</span><span class="p">,</span> <span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+    <span class="c1"># Fill missing values with 0</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="calc_monte_carlo_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_monte_carlo_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_monte_carlo_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">df_ends</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert the scenario data and pipeline end boundary conditions data to NumPy arrays for</span>
+<span class="sd">    Monte Carlo simulations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the scenario data.</span>
+<span class="sd">    df_ends : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing the pipeline end boundary conditions data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    np_distr : numpy.ndarray</span>
+<span class="sd">        2D array with probabilistic distributions (rows) along the route mesh (columns).</span>
+<span class="sd">    np_scen : numpy.ndarray</span>
+<span class="sd">        2D array with scenario properties (rows) along the route mesh (columns).</span>
+<span class="sd">    np_ends : numpy.ndarray</span>
+<span class="sd">        2D array with end properties (rows) for the pipeline ends.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    The arrays have the following row layout (index : meaning):</span>
+
+<span class="sd">    np_distr:</span>
+<span class="sd">      - 0 : MUAX_ARRAY</span>
+<span class="sd">      - 1 : MUAX_CDF_ARRAY</span>
+<span class="sd">      - 2 : MULAT_ARRAY_HT</span>
+<span class="sd">      - 3 : MULAT_CDF_ARRAY_HT</span>
+<span class="sd">      - 4 : MULAT_ARRAY_OP</span>
+<span class="sd">      - 5 : MULAT_CDF_ARRAY_OP</span>
+<span class="sd">      - 6 : HOOS_ARRAY</span>
+<span class="sd">      - 7 : HOOS_CDF_ARRAY</span>
+
+<span class="sd">    np_scen:</span>
+<span class="sd">      - 0  : KP</span>
+<span class="sd">      - 1  : LENGTH</span>
+<span class="sd">      - 2  : ROUTE_TYPE</span>
+<span class="sd">      - 3  : BEND_RADIUS</span>
+<span class="sd">      - 4  : SW_INST</span>
+<span class="sd">      - 5  : SW_HT</span>
+<span class="sd">      - 6  : SW_OP</span>
+<span class="sd">      - 7  : SCHAR_HT</span>
+<span class="sd">      - 8  : SCHAR_OP</span>
+<span class="sd">      - 9  : SV_HT</span>
+<span class="sd">      - 10 : SV_OP</span>
+<span class="sd">      - 11 : CBF_RCM</span>
+<span class="sd">      - 12 : RLT</span>
+<span class="sd">      - 13 : FRF_HT</span>
+<span class="sd">      - 14 : FRF_P_OP</span>
+<span class="sd">      - 15 : FRF_T_OP</span>
+<span class="sd">      - 16 : FRF_OP</span>
+<span class="sd">      - 17 : L_BUCKLE_HT</span>
+<span class="sd">      - 18 : EAF_BUCKLE_HT</span>
+<span class="sd">      - 19 : L_BUCKLE_OP</span>
+<span class="sd">      - 20 : EAF_BUCKLE_OP</span>
+<span class="sd">      - 21 : SECTION_ID</span>
+<span class="sd">      - 22 : SECTION_KP</span>
+<span class="sd">      - 23 : SECTION_REF</span>
+<span class="sd">      - 24 : MUAX_MEAN</span>
+<span class="sd">      - 25 : MULAT_HT_MEAN</span>
+<span class="sd">      - 26 : MULAT_OP_MEAN</span>
+<span class="sd">      - 27 : HOOS_MEAN</span>
+
+<span class="sd">    np_ends:</span>
+<span class="sd">      - 0 : ROUTE_TYPE</span>
+<span class="sd">      - 1 : KP_FROM</span>
+<span class="sd">      - 2 : KP_TO</span>
+<span class="sd">      - 3 : REAC_INST</span>
+<span class="sd">      - 4 : REAC_HT</span>
+<span class="sd">      - 5 : REAC_OP</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Convert probabilistic distributions to numpy array</span>
+    <span class="n">list_temp1</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">prob_label_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;muax Array&#39;</span><span class="p">,</span> <span class="s1">&#39;muax CDF Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul HT Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul HT CDF Array&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;mul OP Array&#39;</span><span class="p">,</span> <span class="s1">&#39;mul OP CDF Array&#39;</span><span class="p">,</span> <span class="s1">&#39;HOOS X Array&#39;</span><span class="p">,</span> <span class="s1">&#39;HOOS CDF Array&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">array_label</span> <span class="ow">in</span> <span class="n">prob_label_list</span><span class="p">:</span>
+        <span class="n">list_temp2</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">array_label</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="n">list_temp2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">array_label</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">list_temp1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_temp2</span><span class="p">)</span>
+    <span class="n">np_distr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">list_temp1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Add extra columns to remove</span>
+    <span class="n">columns_drop</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID From&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID To&#39;</span><span class="p">]</span>
+    <span class="n">columns_drop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">columns_drop</span><span class="p">,</span> <span class="n">prob_label_list</span><span class="p">)</span>
+
+    <span class="c1"># Convert scenario properties to numpy array</span>
+    <span class="n">np_scen</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns_drop</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+    <span class="c1"># Convert end properties to numpy array</span>
+    <span class="n">np_ends</span> <span class="o">=</span> <span class="n">df_ends</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">np_distr</span><span class="p">,</span> <span class="n">np_scen</span><span class="p">,</span> <span class="n">np_ends</span></div>
+
+
+<div class="viewcode-block" id="calc_pp_data">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_pp_data">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_pp_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">np_array</span><span class="p">,</span> <span class="n">pipeline_id</span><span class="p">,</span> <span class="n">layout_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate post-processing data set for a given layout set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing post-processing data.</span>
+<span class="sd">    np_array : numpy.ndarray</span>
+<span class="sd">        NumPy array containing pipeline end boundary conditions.</span>
+<span class="sd">    pipeline_id : str</span>
+<span class="sd">        Identifier of the pipeline.</span>
+<span class="sd">    layout_set : str</span>
+<span class="sd">        Identifier of the layout set.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas.DataFrame</span>
+<span class="sd">        DataFrame containing calculated post-processing data.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function filters the DataFrame based on the layout set. It resets the index, renames</span>
+<span class="sd">    columns, and selects relevant columns. Adjusts the last &#39;KP_to&#39; value if it is smaller</span>
+<span class="sd">    than the maximum value in np_array. Converts data types of columns to appropriate numeric</span>
+<span class="sd">    types.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Filter DataFrame based on layout_set</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Layout Set&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">layout_set</span><span class="p">)]</span>
+
+    <span class="c1"># Reset index, rename columns, and select relevant columns</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Post-Processing Set&#39;</span><span class="p">:</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span>
+                                                    <span class="s1">&#39;KP From&#39;</span><span class="p">:</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">,</span>
+                                                    <span class="s1">&#39;KP To&#39;</span><span class="p">:</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">,</span>
+                                                    <span class="s1">&#39;Post-Processing Description&#39;</span><span class="p">:</span> <span class="s1">&#39;description&#39;</span><span class="p">})</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># Adjust last &#39;KP_to&#39; value if necessary</span>
+    <span class="n">kp_max</span> <span class="o">=</span> <span class="n">np_array</span><span class="p">[</span><span class="n">KP_TO</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">kp_max</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP_to&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kp_max</span>
+
+    <span class="c1"># Convert columns to appropriate numeric types</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP_to&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;KP_to&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="import_scenario">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.import_scenario">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">import_scenario</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">file_name</span><span class="p">,</span> <span class="n">pipeline_id</span><span class="p">,</span> <span class="n">scenario_no</span><span class="p">,</span> <span class="n">bl_verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Import scenario data from an Excel file and preprocess it.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    work_dir : str</span>
+<span class="sd">        Directory where the Excel file is located.</span>
+<span class="sd">    file_name : str</span>
+<span class="sd">        Name of the Excel file.</span>
+<span class="sd">    pipeline_id : str</span>
+<span class="sd">        Identifier of the pipeline.</span>
+<span class="sd">    scenario_no : int</span>
+<span class="sd">        Identifier of the scenario.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_scen : pandas.DataFrame</span>
+<span class="sd">        Dataframe containing the scenario data</span>
+<span class="sd">    np_distr : numpy.ndarray</span>
+<span class="sd">        Array containing the friction factor distributions</span>
+<span class="sd">    np_scen : numpy.ndarray</span>
+<span class="sd">        Array containing the scenario data</span>
+<span class="sd">    np_ends : numpy.ndarray</span>
+<span class="sd">        Array containing the end boundary conditions</span>
+<span class="sd">    df_pp : pandas.DataFrame</span>
+<span class="sd">        Array containing the post-processing data</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of simulations</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function reads scenario data from an Excel file and preprocesses it. It extracts layout,</span>
+<span class="sd">    pipeline, and loadcase sets, and the number of simulations from the Excel file. Postprocesses</span>
+<span class="sd">    route, pipe, operating, soil, and scenario data. Processes post-processing sets and defines</span>
+<span class="sd">    the NumPy arrays for Monte Carlo Simulations.</span>
+
+<span class="sd">    Other Parameters</span>
+<span class="sd">    ----------------</span>
+<span class="sd">    bl_verbose : boolean, optional</span>
+<span class="sd">        True if intermediate printouts are required (False by default).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Starting time of the pre-processing module</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c1"># Print out in the terminal that the assembly of the main dataframe has started</span>
+    <span class="k">if</span> <span class="n">bl_verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Assembly of the main dataframe&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Read scenario data from the input Excel file</span>
+    <span class="n">df_sens</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Scenario&#39;</span><span class="p">)</span>
+    <span class="n">scenario_no</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">scenario_no</span><span class="p">)</span>
+
+    <span class="c1"># Define layout, pipeline and loadcase sets and number of simulations</span>
+    <span class="n">layout_set</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                             <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Layout Set&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">pipeline_set</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                               <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">loadcase_set</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                               <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Loadcase Set&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">friction_sampling</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                                    <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Friction Sampling&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">prob_charac_friction</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                                      <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Char. Friction Prob.&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">n_sim</span> <span class="o">=</span> <span class="n">df_sens</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Pipeline&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">pipeline_id</span><span class="p">)</span> <span class="o">&amp;</span>
+                        <span class="p">(</span><span class="n">df_sens</span><span class="p">[</span><span class="s1">&#39;Scenario&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">scenario_no</span><span class="p">),</span> <span class="s1">&#39;Simulations&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Read route data from the input Excel file and postprocess it</span>
+    <span class="n">df_route</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Route&#39;</span><span class="p">)</span>
+    <span class="n">df_route</span><span class="p">,</span> <span class="n">df_route_ends</span> <span class="o">=</span> <span class="n">calc_route_data</span><span class="p">(</span><span class="n">df_route</span><span class="p">,</span> <span class="n">layout_set</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">)</span>
+
+    <span class="c1"># Read pipe data from the input Excel file and postprocess it</span>
+    <span class="n">df_pipe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Pipe&#39;</span><span class="p">)</span>
+    <span class="n">df_pipe</span> <span class="o">=</span> <span class="n">calc_pipe_data</span><span class="p">(</span><span class="n">df_pipe</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">)</span>
+
+    <span class="c1"># Read operating data from the input Excel file and interpolate it</span>
+    <span class="n">df_oper</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Operating&#39;</span><span class="p">)</span>
+    <span class="n">df_oper</span> <span class="o">=</span> <span class="n">calc_operating_profiles</span><span class="p">(</span><span class="n">df_oper</span><span class="p">,</span> <span class="n">df_route</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">,</span> <span class="n">loadcase_set</span><span class="p">)</span>
+    <span class="n">df_oper</span> <span class="o">=</span> <span class="n">calc_oper_data</span><span class="p">(</span><span class="n">df_oper</span><span class="p">,</span> <span class="n">df_route_ends</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">,</span> <span class="n">loadcase_set</span><span class="p">)</span>
+
+    <span class="c1"># Read soil data from the input Excel file and postprocess it</span>
+    <span class="n">df_soil</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Soils&#39;</span><span class="p">)</span>
+    <span class="c1"># Axial</span>
+    <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial Mean&#39;</span><span class="p">],</span> <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial STD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LBDistributions</span><span class="p">(</span>
+        <span class="n">friction_factor_le</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial LE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_be</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial BE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_he</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial HE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_fit_type</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Axial Fit Bounds&#39;</span><span class="p">]]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">friction_distribution</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1"># Lateral Hydrotest</span>
+    <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest Mean&#39;</span><span class="p">],</span> <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest STD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LBDistributions</span><span class="p">(</span>
+        <span class="n">friction_factor_le</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest LE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_be</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest BE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_he</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest HE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_fit_type</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Hydrotest Fit Bounds&#39;</span><span class="p">]]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">friction_distribution</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="c1"># Lateral Operation</span>
+    <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation Mean&#39;</span><span class="p">],</span> <span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation STD&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LBDistributions</span><span class="p">(</span>
+        <span class="n">friction_factor_le</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation LE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_be</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation BE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_he</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation HE&#39;</span><span class="p">]],</span>
+        <span class="n">friction_factor_fit_type</span><span class="o">=</span><span class="p">[</span><span class="n">df_soil</span><span class="p">[</span><span class="s1">&#39;Lateral Operation Fit Bounds&#39;</span><span class="p">]]</span>
+    <span class="p">)</span><span class="o">.</span><span class="n">friction_distribution</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">df_soil</span> <span class="o">=</span> <span class="n">calc_soil_data</span><span class="p">(</span><span class="n">df_soil</span><span class="p">,</span> <span class="n">pipeline_set</span><span class="p">)</span>
+
+    <span class="c1"># Postprocess scenario data</span>
+    <span class="n">df_scen</span>  <span class="o">=</span> <span class="n">calc_scenario_data</span><span class="p">(</span><span class="n">df_route</span><span class="p">,</span> <span class="n">df_pipe</span><span class="p">,</span> <span class="n">df_oper</span><span class="p">,</span> <span class="n">df_soil</span><span class="p">)</span>
+
+    <span class="c1"># Define the NumPy arrays used in the Monte Carlo Simulations</span>
+    <span class="n">np_distr</span><span class="p">,</span> <span class="n">np_scen</span><span class="p">,</span> <span class="n">np_ends</span> <span class="o">=</span> <span class="n">calc_monte_carlo_data</span><span class="p">(</span><span class="n">df_scen</span><span class="p">,</span> <span class="n">df_route_ends</span><span class="p">)</span>
+
+    <span class="c1"># Read post-processing sets from the input Excel file and postprocess them</span>
+    <span class="n">df_pp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="sa">rf</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Post-Processing&#39;</span><span class="p">)</span>
+    <span class="n">df_pp</span> <span class="o">=</span> <span class="n">calc_pp_data</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">np_ends</span><span class="p">,</span> <span class="n">pipeline_id</span><span class="p">,</span> <span class="n">layout_set</span><span class="p">)</span>
+
+    <span class="c1"># Print out in the terminal time taken to create main dataframe</span>
+    <span class="k">if</span> <span class="n">bl_verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;   Time taken to create main dataframe: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">np_distr</span><span class="p">,</span> <span class="n">np_scen</span><span class="p">,</span> <span class="n">np_ends</span><span class="p">,</span> <span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">friction_sampling</span><span class="p">,</span> <span class="n">prob_charac_friction</span></div>
+
+
+<div class="viewcode-block" id="calc_lognorm_soil">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_lognorm_soil">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_lognorm_soil</span><span class="p">(</span><span class="n">mu_mean</span><span class="p">,</span> <span class="n">mu_std</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the parameters of a lognormal distribution for friction factors (axial or lateral).</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mu_mean : float</span>
+<span class="sd">        The mean of the friction factor distribution.</span>
+<span class="sd">    mu_std : float</span>
+<span class="sd">        The standard deviation of the friction factor distribution.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    mu_range : numpy.ndarray</span>
+<span class="sd">        An array of values representing the range of the friction factor distribution</span>
+<span class="sd">        between probabilities of exceedance between 0.01% and 99.99%.</span>
+<span class="sd">    cdf_range : numpy.ndarray</span>
+<span class="sd">        An array of cumulative density function (CDF) values corresponding to `mu_range`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">        The function calculates the shape and scale parameters of a friction factor lognormal</span>
+<span class="sd">        distribution based on the provided mean (`mu_mean`) and standard deviation (`mu_std`).</span>
+<span class="sd">        It then computes the cumulative density function (CDF) for the generated range of values.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Calculate shape and scale parameters of the lognormal distribution</span>
+    <span class="n">mu_shape</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">mu_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">mu_mean</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">mu_scale</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mu_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mu_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">mu_std</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="c1"># Calculate the lower and upper bounds of the distribution</span>
+    <span class="n">mu_lower</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">mu_shape</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">mu_scale</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+    <span class="n">mu_upper</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">mu_shape</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">mu_scale</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.9999</span><span class="p">)</span>
+
+    <span class="c1"># Generate a range of values within the distribution</span>
+    <span class="n">mu_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">mu_lower</span><span class="p">,</span> <span class="n">mu_upper</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+    <span class="c1"># Compute the cumulative density function (CDF) for the generated range</span>
+    <span class="n">cdf_range</span> <span class="o">=</span> <span class="n">lognorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">mu_range</span><span class="p">,</span> <span class="n">mu_shape</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">mu_scale</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">mu_range</span><span class="p">,</span> <span class="n">cdf_range</span></div>
+
+
+<div class="viewcode-block" id="calc_lognorm_hoos">
+<a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_lognorm_hoos">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">calc_lognorm_hoos</span><span class="p">(</span><span class="n">type_elt</span><span class="p">,</span> <span class="n">length_elt</span><span class="p">,</span> <span class="n">hoos_mean</span><span class="p">,</span> <span class="n">hoos_std</span><span class="p">,</span> <span class="n">length_ref</span><span class="p">,</span> <span class="n">rcm_charac</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute the parameters of the horizontal out-of-straightness (HOOS) lognormal distribution</span>
+<span class="sd">    for different types of elements (e.g., Straight, Bend, Sleeper, RCM). This function takes into</span>
+<span class="sd">    account the scaling factor of the HOOS distribution. For RCM, the HOOS factor is not a factor</span>
+<span class="sd">    but the critical buckling force.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    type_elt : str</span>
+<span class="sd">        Type of the element.</span>
+<span class="sd">    length_elt : float</span>
+<span class="sd">        Length of the element.</span>
+<span class="sd">    hoos_mean : float</span>
+<span class="sd">        Mean of the HOOS distribution.</span>
+<span class="sd">    hoos_std : float</span>
+<span class="sd">        Standard deviation of the HOOS distribution.</span>
+<span class="sd">    length_ref : float</span>
+<span class="sd">        Reference length.</span>
+<span class="sd">    rcm_charac : float</span>
+<span class="sd">        Characteristic buckling force for the Residual Curvature Method (RCM).</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    x_range : numpy.ndarray</span>
+<span class="sd">        An array of values representing the range of the friction factor distribution</span>
+<span class="sd">        between probabilities of exceedance between 0.01% and 99.99%.</span>
+<span class="sd">    cdf_range : numpy.ndarray</span>
+<span class="sd">        An array of cumulative density function (CDF) values corresponding to `x_range`.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This function computes the parameters of a lognormal distribution for different types of</span>
+<span class="sd">    elements such as Straight, Bend, Sleeper, and RCM (Residual Curvature Method). It</span>
+<span class="sd">    calculates the cumulative density function (CDF) for the generated range of values</span>
+<span class="sd">    based on the HOOS distribution parameters.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Extract the type of element (e.g., Straight, Bend, Sleeper, RCM)</span>
+    <span class="n">type_elt_split</span> <span class="o">=</span> <span class="n">type_elt</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Compute the ratio of the reference length to the element length</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">length_ref</span> <span class="o">/</span> <span class="n">length_elt</span>
+
+    <span class="k">if</span> <span class="n">type_elt_split</span> <span class="o">==</span> <span class="s1">&#39;Straight&#39;</span> <span class="ow">or</span> <span class="n">type_elt_split</span> <span class="o">==</span> <span class="s1">&#39;Bend&#39;</span><span class="p">:</span>
+        <span class="c1"># Calculate parameters for straight or bend elements</span>
+        <span class="n">shape_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">scale_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+
+        <span class="c1"># Define the range of the HOOS distribution</span>
+        <span class="n">hoos_lower</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">hoos_upper</span> <span class="o">=</span> <span class="mf">20.0</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">hoos_lower</span><span class="p">,</span> <span class="n">hoos_upper</span><span class="p">,</span> <span class="mi">200000</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the cumulative density function (CDF) considering the scaling factor</span>
+        <span class="n">cdf</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">lognorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">)))</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+
+        <span class="c1"># Generate a range of CDF values</span>
+        <span class="n">cdf_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0001</span><span class="p">)</span>
+
+        <span class="c1"># Interpolate to get the corresponding values of the distribution</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">cdf_range</span><span class="p">,</span> <span class="n">cdf</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="k">elif</span> <span class="n">type_elt_split</span> <span class="o">==</span> <span class="s1">&#39;Sleeper&#39;</span><span class="p">:</span>
+        <span class="c1"># Calculate parameters for sleeper elements</span>
+        <span class="n">shape_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">scale_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+
+        <span class="c1"># Calculate the lower and upper bounds of the distribution for sleeper elements</span>
+        <span class="n">hoos_lower</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+        <span class="n">hoos_upper</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.9999</span><span class="p">)</span>
+
+        <span class="c1"># Generate a range of values within the distribution</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">hoos_lower</span><span class="p">,</span> <span class="n">hoos_upper</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+        <span class="c1"># Compute the cumulative density function (CDF) for the generated range</span>
+        <span class="n">cdf_range</span> <span class="o">=</span> <span class="n">lognorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span>
+
+    <span class="k">elif</span> <span class="n">type_elt_split</span> <span class="o">==</span> <span class="s1">&#39;RCM&#39;</span><span class="p">:</span>
+        <span class="c1"># Calculate parameters for RCM elements</span>
+        <span class="n">shape_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">scale_hoos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">hoos_mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">hoos_std</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+        <span class="n">scale_hoos</span> <span class="o">=</span> <span class="n">scale_hoos</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">rcm_charac</span><span class="p">)</span>
+
+        <span class="c1"># Calculate the lower and upper bounds of the distribution for RCM elements</span>
+        <span class="n">hoos_lower</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
+        <span class="n">hoos_upper</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.9999</span><span class="p">)</span>
+
+        <span class="c1"># Generate a range of values within the distribution</span>
+        <span class="n">x_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">hoos_lower</span><span class="p">,</span> <span class="n">hoos_upper</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+        <span class="c1"># Compute the cumulative density function (CDF) for the generated range</span>
+        <span class="n">cdf_range</span> <span class="o">=</span> <span class="n">lognorm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">x_range</span><span class="p">,</span> <span class="n">shape_hoos</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">scale_hoos</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">x_range</span><span class="p">,</span> <span class="n">cdf_range</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ismael Ripoll, Carlos Sicilia &amp; Emilien Bonnet.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

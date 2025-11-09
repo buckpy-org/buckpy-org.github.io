@@ -1,7 +1,7 @@
 6. Post-Processing Module
 =========================
 
-.. automodule:: buckpy_postprocessing
+.. automodule:: buckpy.buckpy_postprocessing
    :members:
    :undoc-members:
    :show-inheritance:

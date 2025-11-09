@@ -8,35 +8,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Pre-Processing Module &#8212; BuckPy 0.0.1 documentation</title>
+    <title>4. Pre-Processing Module &#8212; BuckPy 0.1.1 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'buckpy_preprocessing';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -45,6 +48,7 @@
     <link rel="prev" title="3. Variables Module" href="buckpy_variables.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -52,31 +56,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -84,7 +73,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -92,20 +80,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -119,8 +114,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.1 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="BuckPy 0.0.1 documentation - Home"/>`);</script>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.1 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -132,36 +127,36 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="getting_started.html">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -173,29 +168,21 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
     </div>
     
@@ -204,22 +191,18 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
@@ -231,7 +214,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -240,39 +224,42 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
-<nav class="navbar-nav">
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="getting_started.html">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -282,15 +269,11 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
       </div>
     
@@ -298,29 +281,32 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
@@ -331,7 +317,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="modules.html" class="nav-link">API Reference</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">4....</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">4. Pre-Processing Module</span></li>
   </ul>
 </nav>
 </div>
@@ -348,12 +334,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="module-buckpy_preprocessing">
-<span id="pre-processing-module"></span><h1>4. Pre-Processing Module<a class="headerlink" href="#module-buckpy_preprocessing" title="Link to this heading">#</a></h1>
+  <section id="module-buckpy.buckpy_preprocessing">
+<span id="pre-processing-module"></span><h1>4. Pre-Processing Module<a class="headerlink" href="#module-buckpy.buckpy_preprocessing" title="Link to this heading">#</a></h1>
 <p>This module contains the pre-processing functions of BuckPy.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="buckpy_preprocessing.LBDistributions">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">LBDistributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_le</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_be</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_he</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_fit_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#LBDistributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.LBDistributions" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.LBDistributions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">LBDistributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_le</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_be</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_he</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">friction_factor_fit_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#LBDistributions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.LBDistributions" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class for lateral buckling calculations, including friction factor distribution fitting.</p>
 <dl class="field-list simple">
@@ -367,8 +353,8 @@ document.write(`
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="buckpy_preprocessing.LBDistributions.friction_distribution">
-<span class="sig-name descname"><span class="pre">friction_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#LBDistributions.friction_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.LBDistributions.friction_distribution" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.LBDistributions.friction_distribution">
+<span class="sig-name descname"><span class="pre">friction_distribution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#LBDistributions.friction_distribution"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.LBDistributions.friction_distribution" title="Link to this definition">#</a></dt>
 <dd><p>Compute the parameters of the lognormal friction factor distribution (axial or lateral)
 by minimizing the root mean square error (RMSE) between geotechnical estimates and
 back-calculated friction factors from the lognormal distribution.</p>
@@ -406,8 +392,8 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_element_array">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_element_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_element_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_element_array" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_element_array">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_element_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_element_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_element_array" title="Link to this definition">#</a></dt>
 <dd><p>Function to create element array based on KP, KP TO and element number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -423,8 +409,8 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_expand_kp">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_expand_kp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_expand_kp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_expand_kp" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_expand_kp">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_expand_kp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kp_col</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_expand_kp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_expand_kp" title="Link to this definition">#</a></dt>
 <dd><p>Function to expand the KP array with 1000 intervals from 1000 to nearest maximum KP.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -443,8 +429,8 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_kp_interpolation">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_kp_interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_oper</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_kp_interpolation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_kp_interpolation" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_kp_interpolation">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_kp_interpolation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elem_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_oper</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_kp_interpolation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_kp_interpolation" title="Link to this definition">#</a></dt>
 <dd><p>Function to interpolate the RLT, pressure and temperature using KP and operating profile.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -463,8 +449,8 @@ based on LE at 5th percentile, BE at 50th percentile, and HE at 95th percentile<
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_lognorm_hoos">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_lognorm_hoos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_elt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_elt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoos_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoos_std</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcm_charac</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_lognorm_hoos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_lognorm_hoos" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_lognorm_hoos">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_lognorm_hoos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type_elt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_elt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoos_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hoos_std</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_ref</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcm_charac</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_lognorm_hoos"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_lognorm_hoos" title="Link to this definition">#</a></dt>
 <dd><p>Compute the parameters of the horizontal out-of-straightness (HOOS) lognormal distribution
 for different types of elements (e.g., Straight, Bend, Sleeper, RCM). This function takes into
 account the scaling factor of the HOOS distribution. For RCM, the HOOS factor is not a factor
@@ -497,8 +483,8 @@ based on the HOOS distribution parameters.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_lognorm_soil">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_lognorm_soil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu_std</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_lognorm_soil"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_lognorm_soil" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_lognorm_soil">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_lognorm_soil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu_mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu_std</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_lognorm_soil"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_lognorm_soil" title="Link to this definition">#</a></dt>
 <dd><p>Compute the parameters of a lognormal distribution for friction factors (axial or lateral).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -523,8 +509,8 @@ It then computes the cumulative density function (CDF) for the generated range o
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_monte_carlo_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_monte_carlo_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_ends</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_monte_carlo_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_monte_carlo_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_monte_carlo_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_monte_carlo_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_ends</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_monte_carlo_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_monte_carlo_data" title="Link to this definition">#</a></dt>
 <dd><p>Convert the scenario data and pipeline end boundary conditions data to NumPy arrays for
 Monte Carlo simulations.</p>
 <dl class="field-list simple">
@@ -536,79 +522,73 @@ Monte Carlo simulations.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><strong>np_distr</strong> (<em>numpy.ndarray</em>) – Array representing probabilistic distributions along the pipeline route.</p></li>
-<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – Array representing scenario properties along the pipeline route.</p></li>
-<li><p><strong>np_ends</strong> (<em>numpy.ndarray</em>) – Array representing end properties along the pipeline route.</p></li>
+<li><p><strong>np_distr</strong> (<em>numpy.ndarray</em>) – 2D array with probabilistic distributions (rows) along the route mesh (columns).</p></li>
+<li><p><strong>np_scen</strong> (<em>numpy.ndarray</em>) – 2D array with scenario properties (rows) along the route mesh (columns).</p></li>
+<li><p><strong>np_ends</strong> (<em>numpy.ndarray</em>) – 2D array with end properties (rows) for the pipeline ends.</p></li>
 </ul>
 </p>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>np_distr is a numpy array that contains the properties listed below (rows) along the
-mesh of the pipeline route (columns):</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">MUAX_ARRAY = 0</div>
-<div class="line">MUAX_CDF_ARRAY = 1</div>
-<div class="line">MULAT_ARRAY_HT = 2</div>
-<div class="line">MULAT_CDF_ARRAY_HT = 3</div>
-<div class="line">MULAT_ARRAY_OP = 4</div>
-<div class="line">MULAT_CDF_ARRAY_OP = 5</div>
-<div class="line">HOOS_ARRAY = 6</div>
-<div class="line">HOOS_CDF_ARRAY = 7</div>
-</div>
-</div></blockquote>
-<p>np_scen is a numpy array that contains the properties listed below (rows) along the
-mesh of the pipeline route (columns):</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">KP = 0</div>
-<div class="line">LENGTH = 1</div>
-<div class="line">ROUTE_TYPE = 2</div>
-<div class="line">BEND_RADIUS = 3</div>
-<div class="line">SW_INST = 4</div>
-<div class="line">SW_HT = 5</div>
-<div class="line">SW_OP = 6</div>
-<div class="line">SCHAR_HT = 7</div>
-<div class="line">SCHAR_OP = 8</div>
-<div class="line">SV_HT = 9</div>
-<div class="line">SV_OP = 10</div>
-<div class="line">CBF_RCM = 11</div>
-<div class="line">RLT = 12</div>
-<div class="line">FRF_HT = 13</div>
-<div class="line">FRF_P_OP = 14</div>
-<div class="line">FRF_T_OP = 15</div>
-<div class="line">FRF_OP = 16</div>
-<div class="line">L_BUCKLE_HT = 17</div>
-<div class="line">EAF_BUCKLE_HT = 18</div>
-<div class="line">L_BUCKLE_OP = 19</div>
-<div class="line">EAF_BUCKLE_OP = 20</div>
-<div class="line">SECTION_ID = 21</div>
-<div class="line">SECTION_KP = 22</div>
-<div class="line">SECTION_REF = 23</div>
-<div class="line">MUAX_MEAN = 24</div>
-<div class="line">MULAT_HT_MEAN = 25</div>
-<div class="line">MULAT_OP_MEAN = 26</div>
-<div class="line">HOOS_MEAN = 27</div>
-</div>
-</div></blockquote>
-<p>np_ends is a numpy array that contains the properties listed below (rows) along the
-mesh of the pipeline route (columns):</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">ROUTE_TYPE = 0</div>
-<div class="line">KP_FROM = 1</div>
-<div class="line">KP_TO = 2</div>
-<div class="line">REAC_INST = 3</div>
-<div class="line">REAC_HT = 4</div>
-<div class="line">REAC_OP = 5</div>
-</div>
-</div></blockquote>
+<p>The arrays have the following row layout (index : meaning):</p>
+<dl class="simple">
+<dt>np_distr:</dt><dd><ul class="simple">
+<li><p>0 : MUAX_ARRAY</p></li>
+<li><p>1 : MUAX_CDF_ARRAY</p></li>
+<li><p>2 : MULAT_ARRAY_HT</p></li>
+<li><p>3 : MULAT_CDF_ARRAY_HT</p></li>
+<li><p>4 : MULAT_ARRAY_OP</p></li>
+<li><p>5 : MULAT_CDF_ARRAY_OP</p></li>
+<li><p>6 : HOOS_ARRAY</p></li>
+<li><p>7 : HOOS_CDF_ARRAY</p></li>
+</ul>
+</dd>
+<dt>np_scen:</dt><dd><ul class="simple">
+<li><p>0  : KP</p></li>
+<li><p>1  : LENGTH</p></li>
+<li><p>2  : ROUTE_TYPE</p></li>
+<li><p>3  : BEND_RADIUS</p></li>
+<li><p>4  : SW_INST</p></li>
+<li><p>5  : SW_HT</p></li>
+<li><p>6  : SW_OP</p></li>
+<li><p>7  : SCHAR_HT</p></li>
+<li><p>8  : SCHAR_OP</p></li>
+<li><p>9  : SV_HT</p></li>
+<li><p>10 : SV_OP</p></li>
+<li><p>11 : CBF_RCM</p></li>
+<li><p>12 : RLT</p></li>
+<li><p>13 : FRF_HT</p></li>
+<li><p>14 : FRF_P_OP</p></li>
+<li><p>15 : FRF_T_OP</p></li>
+<li><p>16 : FRF_OP</p></li>
+<li><p>17 : L_BUCKLE_HT</p></li>
+<li><p>18 : EAF_BUCKLE_HT</p></li>
+<li><p>19 : L_BUCKLE_OP</p></li>
+<li><p>20 : EAF_BUCKLE_OP</p></li>
+<li><p>21 : SECTION_ID</p></li>
+<li><p>22 : SECTION_KP</p></li>
+<li><p>23 : SECTION_REF</p></li>
+<li><p>24 : MUAX_MEAN</p></li>
+<li><p>25 : MULAT_HT_MEAN</p></li>
+<li><p>26 : MULAT_OP_MEAN</p></li>
+<li><p>27 : HOOS_MEAN</p></li>
+</ul>
+</dd>
+<dt>np_ends:</dt><dd><ul class="simple">
+<li><p>0 : ROUTE_TYPE</p></li>
+<li><p>1 : KP_FROM</p></li>
+<li><p>2 : KP_TO</p></li>
+<li><p>3 : REAC_INST</p></li>
+<li><p>4 : REAC_HT</p></li>
+<li><p>5 : REAC_OP</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_oper_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_oper_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_route_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loadcase_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_oper_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_oper_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_oper_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_oper_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_route_ends</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loadcase_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_oper_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_oper_data" title="Link to this definition">#</a></dt>
 <dd><p>Calculate operating data and process it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -633,8 +613,8 @@ drops rows with NaN values before returning the preprocessed DataFrame.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_operating_profiles">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_operating_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loadcase_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_operating_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_operating_profiles" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_operating_profiles">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_operating_profiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loadcase_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_operating_profiles"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_operating_profiles" title="Link to this definition">#</a></dt>
 <dd><p>Calculate operating profiles data and process it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -655,8 +635,8 @@ drops rows with NaN values before returning the preprocessed DataFrame.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_pipe_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_pipe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_pipe_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_pipe_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_pipe_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_pipe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_pipe_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_pipe_data" title="Link to this definition">#</a></dt>
 <dd><p>Calculate properties of pipes for a specific pipeline set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -680,8 +660,8 @@ force (SChar OP) of the pipe.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_pp_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_pp_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_pp_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_pp_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_pp_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_pp_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">np_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_pp_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_pp_data" title="Link to this definition">#</a></dt>
 <dd><p>Calculate post-processing data set for a given layout set.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -707,8 +687,8 @@ types.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_route_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_route_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_route_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_route_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_route_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layout_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_route_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_route_data" title="Link to this definition">#</a></dt>
 <dd><p>Extract and process route data for calculations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -734,8 +714,8 @@ efficient processing.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_scenario_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_scenario_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_pipe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_oper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_soil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_scenario_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_scenario_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_scenario_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_scenario_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df_route</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_pipe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_oper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_soil</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_scenario_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_scenario_data" title="Link to this definition">#</a></dt>
 <dd><p>Calculate scenario data based on route, pipe, operating, and soil data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -761,8 +741,8 @@ filled with 0 for missing values.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.calc_soil_data">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_soil_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#calc_soil_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.calc_soil_data" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.calc_soil_data">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">calc_soil_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_set</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#calc_soil_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.calc_soil_data" title="Link to this definition">#</a></dt>
 <dd><p>Calculate soil data and axial and lateral friction factor distributions and assign them to
 DataFrame columns.</p>
 <dl class="field-list simple">
@@ -785,8 +765,8 @@ distributions for axial and lateral friction factors and assigns them to DataFra
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="buckpy_preprocessing.import_scenario">
-<span class="sig-prename descclassname"><span class="pre">buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">import_scenario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scenario_no</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy_preprocessing.html#import_scenario"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy_preprocessing.import_scenario" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="buckpy.buckpy_preprocessing.import_scenario">
+<span class="sig-prename descclassname"><span class="pre">buckpy.buckpy_preprocessing.</span></span><span class="sig-name descname"><span class="pre">import_scenario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">work_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scenario_no</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bl_verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/buckpy/buckpy_preprocessing.html#import_scenario"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#buckpy.buckpy_preprocessing.import_scenario" title="Link to this definition">#</a></dt>
 <dd><p>Import scenario data from an Excel file and preprocess it.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -830,7 +810,7 @@ the NumPy arrays for Monte Carlo Simulations.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -858,7 +838,8 @@ the NumPy arrays for Monte Carlo Simulations.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -869,35 +850,35 @@ the NumPy arrays for Monte Carlo Simulations.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.LBDistributions"><code class="docutils literal notranslate"><span class="pre">LBDistributions</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.LBDistributions.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LBDistributions.friction_distribution()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.LBDistributions"><code class="docutils literal notranslate"><span class="pre">LBDistributions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.LBDistributions.friction_distribution"><code class="docutils literal notranslate"><span class="pre">LBDistributions.friction_distribution()</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_element_array"><code class="docutils literal notranslate"><span class="pre">calc_element_array()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_expand_kp"><code class="docutils literal notranslate"><span class="pre">calc_expand_kp()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_kp_interpolation"><code class="docutils literal notranslate"><span class="pre">calc_kp_interpolation()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_lognorm_hoos"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_hoos()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_lognorm_soil"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_soil()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_monte_carlo_data"><code class="docutils literal notranslate"><span class="pre">calc_monte_carlo_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_oper_data"><code class="docutils literal notranslate"><span class="pre">calc_oper_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_operating_profiles"><code class="docutils literal notranslate"><span class="pre">calc_operating_profiles()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_pipe_data"><code class="docutils literal notranslate"><span class="pre">calc_pipe_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_pp_data"><code class="docutils literal notranslate"><span class="pre">calc_pp_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_route_data"><code class="docutils literal notranslate"><span class="pre">calc_route_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_scenario_data"><code class="docutils literal notranslate"><span class="pre">calc_scenario_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.calc_soil_data"><code class="docutils literal notranslate"><span class="pre">calc_soil_data()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy_preprocessing.import_scenario"><code class="docutils literal notranslate"><span class="pre">import_scenario()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_element_array"><code class="docutils literal notranslate"><span class="pre">calc_element_array()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_expand_kp"><code class="docutils literal notranslate"><span class="pre">calc_expand_kp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_kp_interpolation"><code class="docutils literal notranslate"><span class="pre">calc_kp_interpolation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_lognorm_hoos"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_hoos()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_lognorm_soil"><code class="docutils literal notranslate"><span class="pre">calc_lognorm_soil()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_monte_carlo_data"><code class="docutils literal notranslate"><span class="pre">calc_monte_carlo_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_oper_data"><code class="docutils literal notranslate"><span class="pre">calc_oper_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_operating_profiles"><code class="docutils literal notranslate"><span class="pre">calc_operating_profiles()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_pipe_data"><code class="docutils literal notranslate"><span class="pre">calc_pipe_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_pp_data"><code class="docutils literal notranslate"><span class="pre">calc_pp_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_route_data"><code class="docutils literal notranslate"><span class="pre">calc_route_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_scenario_data"><code class="docutils literal notranslate"><span class="pre">calc_scenario_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.calc_soil_data"><code class="docutils literal notranslate"><span class="pre">calc_soil_data()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckpy.buckpy_preprocessing.import_scenario"><code class="docutils literal notranslate"><span class="pre">import_scenario()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="_sources/buckpy_preprocessing.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/buckpy_preprocessing.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -912,8 +893,8 @@ the NumPy arrays for Monte Carlo Simulations.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -933,7 +914,7 @@ the NumPy arrays for Monte Carlo Simulations.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>
@@ -946,7 +927,8 @@ the NumPy arrays for Monte Carlo Simulations.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

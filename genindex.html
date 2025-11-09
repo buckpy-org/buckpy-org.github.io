@@ -7,41 +7,45 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; BuckPy 0.0.1 documentation</title>
+    <title>Index &#8212; BuckPy 0.1.1 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -49,31 +53,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -81,7 +70,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -89,20 +77,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -116,8 +111,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.1 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="BuckPy 0.0.1 documentation - Home"/>`);</script>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.1 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -129,36 +124,36 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="getting_started.html">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -170,29 +165,21 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
     </div>
     
@@ -201,15 +188,11 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
@@ -226,7 +209,8 @@ document.write(`
       
         
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -235,39 +219,42 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
-<nav class="navbar-nav">
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="getting_started.html">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -277,15 +264,11 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
       </div>
     
@@ -293,20 +276,25 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article"></div>
+              <div class="bd-header-article d-print-none"></div>
               
               
               
@@ -336,13 +324,13 @@ document.write(`
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.assembly_dataframe_bend_sleeper_ilt">assembly_dataframe_bend_sleeper_ilt() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.assembly_dataframe_bend_sleeper_ilt">assembly_dataframe_bend_sleeper_ilt() (in module buckpy.buckpy_visualisation)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.assembly_dataframe_plot">assembly_dataframe_plot() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.assembly_dataframe_plot">assembly_dataframe_plot() (in module buckpy.buckpy_visualisation)</a>
 </li>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.assembly_double_rows">assembly_double_rows() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.assembly_double_rows">assembly_double_rows() (in module buckpy.buckpy_visualisation)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -351,54 +339,54 @@ document.write(`
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    buckpy
+    buckpy.buckpy
 
       <ul>
-        <li><a href="buckpy.html#module-buckpy">module</a>
+        <li><a href="buckpy.html#module-buckpy.buckpy">module</a>
 </li>
       </ul></li>
       <li>
-    buckpy_gui
+    buckpy.buckpy_gui
 
       <ul>
-        <li><a href="buckpy_gui.html#module-buckpy_gui">module</a>
+        <li><a href="buckpy_gui.html#module-buckpy.buckpy_gui">module</a>
 </li>
       </ul></li>
       <li>
-    buckpy_postprocessing
+    buckpy.buckpy_postprocessing
 
       <ul>
-        <li><a href="buckpy_postprocessing.html#module-buckpy_postprocessing">module</a>
+        <li><a href="buckpy_postprocessing.html#module-buckpy.buckpy_postprocessing">module</a>
 </li>
       </ul></li>
       <li>
-    buckpy_preprocessing
+    buckpy.buckpy_preprocessing
 
       <ul>
-        <li><a href="buckpy_preprocessing.html#module-buckpy_preprocessing">module</a>
+        <li><a href="buckpy_preprocessing.html#module-buckpy.buckpy_preprocessing">module</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li>
-    buckpy_solver
+    buckpy.buckpy_solver
 
       <ul>
-        <li><a href="buckpy_solver.html#module-buckpy_solver">module</a>
+        <li><a href="buckpy_solver.html#module-buckpy.buckpy_solver">module</a>
 </li>
       </ul></li>
       <li>
-    buckpy_variables
+    buckpy.buckpy_variables
 
       <ul>
-        <li><a href="buckpy_variables.html#module-buckpy_variables">module</a>
+        <li><a href="buckpy_variables.html#module-buckpy.buckpy_variables">module</a>
 </li>
       </ul></li>
       <li>
-    buckpy_visualisation
+    buckpy.buckpy_visualisation
 
       <ul>
-        <li><a href="buckpy_visualisation.html#module-buckpy_visualisation">module</a>
+        <li><a href="buckpy_visualisation.html#module-buckpy.buckpy_visualisation">module</a>
 </li>
       </ul></li>
   </ul></td>
@@ -407,41 +395,41 @@ document.write(`
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_element_array">calc_element_array() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_element_array">calc_element_array() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_expand_kp">calc_expand_kp() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_expand_kp">calc_expand_kp() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_solver.html#buckpy_solver.calc_fric_forces">calc_fric_forces() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.calc_fric_forces">calc_fric_forces() (in module buckpy.buckpy_solver)</a>
 </li>
-      <li><a href="buckpy_solver.html#buckpy_solver.calc_friction_force_from_buckle">calc_friction_force_from_buckle() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.calc_friction_force_from_buckle">calc_friction_force_from_buckle() (in module buckpy.buckpy_solver)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_kp_interpolation">calc_kp_interpolation() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_kp_interpolation">calc_kp_interpolation() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_lognorm_hoos">calc_lognorm_hoos() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_lognorm_hoos">calc_lognorm_hoos() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_lognorm_soil">calc_lognorm_soil() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_lognorm_soil">calc_lognorm_soil() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_monte_carlo_data">calc_monte_carlo_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_monte_carlo_data">calc_monte_carlo_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_oper_data">calc_oper_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_oper_data">calc_oper_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_operating_profiles">calc_operating_profiles() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_operating_profiles">calc_operating_profiles() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_pipe_data">calc_pipe_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_pipe_data">calc_pipe_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_pp_data">calc_pp_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_pp_data">calc_pp_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_route_data">calc_route_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_route_data">calc_route_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_scenario_data">calc_scenario_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_scenario_data">calc_scenario_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.calc_soil_data">calc_soil_data() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.calc_soil_data">calc_soil_data() (in module buckpy.buckpy_preprocessing)</a>
 </li>
-      <li><a href="buckpy_gui.html#buckpy_gui.GUI.close_app">close_app() (buckpy_gui.GUI method)</a>
+      <li><a href="buckpy_gui.html#buckpy.buckpy_gui.GUI.close_app">close_app() (buckpy.buckpy_gui.GUI method)</a>
 </li>
-      <li><a href="buckpy_gui.html#buckpy_gui.GUI.create_widgets">create_widgets() (buckpy_gui.GUI method)</a>
+      <li><a href="buckpy_gui.html#buckpy.buckpy_gui.GUI.create_widgets">create_widgets() (buckpy.buckpy_gui.GUI method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -449,11 +437,11 @@ document.write(`
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_solver.html#buckpy_solver.exec_buckpy">exec_buckpy() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.exec_buckpy">exec_buckpy() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_solver.html#buckpy_solver.exec_worker_stack">exec_worker_stack() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.exec_worker_stack">exec_worker_stack() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -461,7 +449,7 @@ document.write(`
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.LBDistributions.friction_distribution">friction_distribution() (buckpy_preprocessing.LBDistributions method)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions.friction_distribution">friction_distribution() (buckpy.buckpy_preprocessing.LBDistributions method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -469,7 +457,7 @@ document.write(`
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_gui.html#buckpy_gui.GUI">GUI (class in buckpy_gui)</a>
+      <li><a href="buckpy_gui.html#buckpy.buckpy_gui.GUI">GUI (class in buckpy.buckpy_gui)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -477,7 +465,7 @@ document.write(`
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.import_scenario">import_scenario() (in module buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.import_scenario">import_scenario() (in module buckpy.buckpy_preprocessing)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -485,7 +473,7 @@ document.write(`
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_preprocessing.html#buckpy_preprocessing.LBDistributions">LBDistributions (class in buckpy_preprocessing)</a>
+      <li><a href="buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions">LBDistributions (class in buckpy.buckpy_preprocessing)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -493,25 +481,25 @@ document.write(`
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy.html#buckpy.main">main() (in module buckpy)</a>
+      <li><a href="buckpy.html#buckpy.buckpy.main">main() (in module buckpy.buckpy)</a>
 </li>
       <li>
     module
 
       <ul>
-        <li><a href="buckpy.html#module-buckpy">buckpy</a>
+        <li><a href="buckpy.html#module-buckpy.buckpy">buckpy.buckpy</a>
 </li>
-        <li><a href="buckpy_gui.html#module-buckpy_gui">buckpy_gui</a>
+        <li><a href="buckpy_gui.html#module-buckpy.buckpy_gui">buckpy.buckpy_gui</a>
 </li>
-        <li><a href="buckpy_postprocessing.html#module-buckpy_postprocessing">buckpy_postprocessing</a>
+        <li><a href="buckpy_postprocessing.html#module-buckpy.buckpy_postprocessing">buckpy.buckpy_postprocessing</a>
 </li>
-        <li><a href="buckpy_preprocessing.html#module-buckpy_preprocessing">buckpy_preprocessing</a>
+        <li><a href="buckpy_preprocessing.html#module-buckpy.buckpy_preprocessing">buckpy.buckpy_preprocessing</a>
 </li>
-        <li><a href="buckpy_solver.html#module-buckpy_solver">buckpy_solver</a>
+        <li><a href="buckpy_solver.html#module-buckpy.buckpy_solver">buckpy.buckpy_solver</a>
 </li>
-        <li><a href="buckpy_variables.html#module-buckpy_variables">buckpy_variables</a>
+        <li><a href="buckpy_variables.html#module-buckpy.buckpy_variables">buckpy.buckpy_variables</a>
 </li>
-        <li><a href="buckpy_visualisation.html#module-buckpy_visualisation">buckpy_visualisation</a>
+        <li><a href="buckpy_visualisation.html#module-buckpy.buckpy_visualisation">buckpy.buckpy_visualisation</a>
 </li>
       </ul></li>
   </ul></td>
@@ -520,7 +508,7 @@ document.write(`
 <h2 id="O">O</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_gui.html#buckpy_gui.GUI.open_file">open_file() (buckpy_gui.GUI method)</a>
+      <li><a href="buckpy_gui.html#buckpy.buckpy_gui.GUI.open_file">open_file() (buckpy.buckpy_gui.GUI method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -528,45 +516,45 @@ document.write(`
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.plot_bend_sleeper_ilt">plot_bend_sleeper_ilt() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.plot_bend_sleeper_ilt">plot_bend_sleeper_ilt() (in module buckpy.buckpy_visualisation)</a>
 </li>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.plot_buckpy">plot_buckpy() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.plot_buckpy">plot_buckpy() (in module buckpy.buckpy_visualisation)</a>
 </li>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.plot_results">plot_results() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.plot_results">plot_results() (in module buckpy.buckpy_visualisation)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_buckpy">pp_buckpy() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_buckpy">pp_buckpy() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_char_fric">pp_char_fric() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_char_fric">pp_char_fric() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_char_vas">pp_char_vas() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_char_vas">pp_char_vas() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_buckles_per_section">pp_comb_buckles_per_section() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_buckles_per_section">pp_comb_buckles_per_section() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_buckles_per_set">pp_comb_buckles_per_set() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_buckles_per_set">pp_comb_buckles_per_set() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_comb_prob">pp_comb_prob() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_prob">pp_comb_prob() (in module buckpy.buckpy_postprocessing)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_eaf">pp_eaf() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_eaf">pp_eaf() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_elem">pp_elem() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_elem">pp_elem() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_no_buckles">pp_no_buckles() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_no_buckles">pp_no_buckles() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_outputs">pp_outputs() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_outputs">pp_outputs() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_plots">pp_plots() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_plots">pp_plots() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_raw">pp_raw() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_raw">pp_raw() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_rename_columns">pp_rename_columns() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_rename_columns">pp_rename_columns() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_save">pp_save() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_save">pp_save() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_postprocessing.html#buckpy_postprocessing.pp_sets">pp_sets() (in module buckpy_postprocessing)</a>
+      <li><a href="buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_sets">pp_sets() (in module buckpy.buckpy_postprocessing)</a>
 </li>
-      <li><a href="buckpy_solver.html#buckpy_solver.preprocess_case">preprocess_case() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.preprocess_case">preprocess_case() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -574,13 +562,13 @@ document.write(`
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.read_input">read_input() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.read_input">read_input() (in module buckpy.buckpy_visualisation)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_visualisation.html#buckpy_visualisation.read_output">read_output() (in module buckpy_visualisation)</a>
+      <li><a href="buckpy_visualisation.html#buckpy.buckpy_visualisation.read_output">read_output() (in module buckpy.buckpy_visualisation)</a>
 </li>
-      <li><a href="buckpy_solver.html#buckpy_solver.run_monte_carlo">run_monte_carlo() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.run_monte_carlo">run_monte_carlo() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -588,13 +576,13 @@ document.write(`
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_solver.html#buckpy_solver.sample_randomness_case">sample_randomness_case() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.sample_randomness_case">sample_randomness_case() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="buckpy_gui.html#buckpy_gui.GUI.setup_treeview">setup_treeview() (buckpy_gui.GUI method)</a>
+      <li><a href="buckpy_gui.html#buckpy.buckpy_gui.GUI.setup_treeview">setup_treeview() (buckpy.buckpy_gui.GUI method)</a>
 </li>
-      <li><a href="buckpy_solver.html#buckpy_solver.solve_case">solve_case() (in module buckpy_solver)</a>
+      <li><a href="buckpy_solver.html#buckpy.buckpy_solver.solve_case">solve_case() (in module buckpy.buckpy_solver)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -607,7 +595,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
 </div>
@@ -616,8 +604,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -630,8 +616,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -651,7 +637,7 @@ document.write(`
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>
@@ -664,7 +650,8 @@ document.write(`
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

@@ -1,0 +1,1604 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>buckpy.buckpy_postprocessing &#8212; BuckPy 0.1.1 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/buckpy/buckpy_postprocessing';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.1 documentation - Home"/>
+    <img src="../../_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.1 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../technical_references.html">
+    Technical References
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../updates.html">
+    Updates
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">buckpy.buckpy_postprocessing</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for buckpy.buckpy_postprocessing</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">This module contains the post-processing functions of BuckPy.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas.io.formats.excel</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.gridspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">GridSpec</span>
+
+<div class="viewcode-block" id="pp_comb_prob">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_prob">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_comb_prob</span><span class="p">(</span><span class="n">df_in</span><span class="p">,</span> <span class="n">df_buckle</span><span class="p">,</span> <span class="n">col_no</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Count the number of set combinations based on given set number</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_in : pandas DataFrame</span>
+<span class="sd">        DataFrame containing the set number of combination with buckles along the pipeline.</span>
+<span class="sd">    df_buckle : pandas DataFrame</span>
+<span class="sd">        DataFrame containing the count and probability of set number of combination with buckles.</span>
+<span class="sd">    col_no : String</span>
+<span class="sd">        Column name of the set number</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_out : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of set combination</span>
+<span class="sd">        with buckles along the pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pp_count_comb</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+        <span class="c1"># Add 1 to the value each time there is a buckle at the current set</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">col</span><span class="p">])]</span> <span class="o">+=</span> <span class="mf">1.0</span>
+
+    <span class="c1"># Row number is the total simulation number and column number is the total set number</span>
+    <span class="n">n_col</span> <span class="o">=</span> <span class="n">df_in</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">size</span>
+    <span class="n">df_out</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n_sim</span><span class="p">)),</span>
+                                <span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">n_col</span> <span class="o">+</span> <span class="mf">1.0</span><span class="p">)))</span>
+
+    <span class="c1"># Add 1 to the value in df_out each time there is a buckle</span>
+    <span class="n">df_buckle</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">pp_count_comb</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">df_out</span><span class="p">,</span> <span class="n">col_no</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Delete the all 0 rows and the first column, and add prefix to column names</span>
+    <span class="n">df_out</span> <span class="o">=</span> <span class="n">df_out</span><span class="p">[(</span><span class="n">df_out</span><span class="o">.</span><span class="n">T</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="s1">&#39;Set_&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Count the number of unique set combinations</span>
+    <span class="n">col_list</span> <span class="o">=</span> <span class="n">df_out</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">df_out</span> <span class="o">=</span> <span class="n">df_out</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col_list</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Number of Simulations&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Calculate probability and sort values in descending order based on count and reset index</span>
+    <span class="n">df_out</span><span class="p">[</span><span class="s1">&#39;Probability of Combination&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_out</span><span class="p">[</span><span class="s1">&#39;Number of Simulations&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_sim</span>
+    <span class="n">df_out</span> <span class="o">=</span> <span class="n">df_out</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Number of Simulations&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_out</span></div>
+
+
+<div class="viewcode-block" id="pp_rename_columns">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_rename_columns">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_rename_columns</span><span class="p">(</span><span class="n">df_in</span><span class="p">,</span> <span class="n">df_out</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Rename columns in the post-processing DataFrame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_in : pandas DataFrame</span>
+<span class="sd">        DataFrame containing the set number of combination with buckles along the pipeline.</span>
+<span class="sd">    df_out : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of set combination</span>
+<span class="sd">        with buckles along the pipeline.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_out : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of set combination</span>
+<span class="sd">        with buckles along the pipeline.</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Use the Python built-in ``set`` for unique labels, e.g., ``set(labels)``.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Change column names from &#39;Set_1&#39; to predefined names</span>
+    <span class="n">new_col_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df_in</span><span class="p">[</span><span class="s1">&#39;col_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">df_out</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">new_col_list</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Number of Simulations&#39;</span><span class="p">,</span> <span class="s1">&#39;Probability of Combination&#39;</span><span class="p">]],</span>
+                 <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+    <span class="c1"># Create new column name list sorted by KP values and reorder columns</span>
+    <span class="n">df_out</span><span class="p">[</span><span class="s1">&#39;Combination Id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_out</span><span class="o">.</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">col_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df_in</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;col_name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="s1">&#39;Combination Id&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of Simulations&#39;</span><span class="p">,</span> <span class="s1">&#39;Probability of Combination&#39;</span><span class="p">],</span>
+                  <span class="n">col_list</span><span class="p">],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="n">df_out</span> <span class="o">=</span> <span class="n">df_out</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span>
+
+    <span class="c1"># Create a double header</span>
+    <span class="n">header_first_line</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Number of Buckles&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">header_turples</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">header_first_line</span><span class="p">,</span> <span class="n">cols</span><span class="p">))</span>
+    <span class="n">double_header</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">header_turples</span><span class="p">)</span>
+    <span class="n">df_out</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">double_header</span>
+
+    <span class="k">return</span> <span class="n">df_out</span></div>
+
+
+<div class="viewcode-block" id="pp_comb_buckles_per_set">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_buckles_per_set">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_comb_buckles_per_set</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Count the number of set combinations and sort based on the most frequent set combinations </span>
+<span class="sd">    based on post-processing set.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    df_pp_set : pandas DataFrame</span>
+<span class="sd">        DataFrame containing the definition of the post-processed sets.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_set_comb : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of set combination</span>
+<span class="sd">        with buckles along the pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Create index columns for the original index and the sorted pp set value index</span>
+    <span class="n">df_pp_set</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df_pp_set</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;level_0&#39;</span><span class="p">:</span> <span class="s1">&#39;index_sorted&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Select the number of simulation and post-precessing set number with a buckle</span>
+    <span class="n">df_set_buckle_no</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Count the number of set combinations based on given set number</span>
+    <span class="n">df_set_comb</span> <span class="o">=</span> <span class="n">pp_comb_prob</span><span class="p">(</span><span class="n">df_pp_set</span><span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">],</span> <span class="n">df_set_buckle_no</span><span class="p">,</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+
+    <span class="c1"># Insert the extra column of duplicated set number into df_set_comb</span>
+    <span class="n">df_duplicated</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="p">[</span><span class="n">df_pp_set</span><span class="o">.</span><span class="n">duplicated</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">])]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_duplicated</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">df_set_comb</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span>
+        <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;index_sorted&#39;</span><span class="p">]),</span> <span class="sa">f</span><span class="s2">&quot;Duplicate_</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">df_set_comb</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;index_sorted&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Create new column name using KP from and KP to</span>
+    <span class="n">df_pp_set</span><span class="p">[[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="p">[[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">df_pp_set</span><span class="p">[</span><span class="s1">&#39;col_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;KP &#39;</span> <span class="o">+</span> <span class="n">df_pp_set</span><span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="n">df_pp_set</span><span class="p">[</span><span class="s1">&#39;KP_to&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Rename column names from &#39;Set_&#39; to certain column names</span>
+    <span class="n">df_set_comb</span> <span class="o">=</span> <span class="n">pp_rename_columns</span><span class="p">(</span><span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_set_comb</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_set_comb</span></div>
+
+
+<div class="viewcode-block" id="pp_comb_buckles_per_section">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_comb_buckles_per_section">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_comb_buckles_per_section</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Count the number of set combinations and sort based on the most frequent set combinations</span>
+<span class="sd">    based on section number in the route data.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    df_scen : DataFrame</span>
+<span class="sd">        Dataframe containing the design data along the pipeline route (mesh) that remains</span>
+<span class="sd">        constant among deterministic and Monte-Carlo simulations.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_set_comb : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of set combination</span>
+<span class="sd">        with buckles along the pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">pp_section_no</span><span class="p">(</span><span class="n">kp</span><span class="p">,</span> <span class="n">kp_list</span><span class="p">):</span>
+        <span class="c1"># Add the current KP to the kp list and sort it</span>
+        <span class="n">kp_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kp_list</span><span class="p">,</span> <span class="n">kp</span><span class="p">)</span>
+        <span class="n">kp_list</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+        <span class="c1"># Find the index of the current KP</span>
+        <span class="n">section_no</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">kp_list</span> <span class="o">==</span> <span class="n">kp</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">section_no</span>
+
+    <span class="c1"># Select the number of simulation and post-precessing KP number with a buckle</span>
+    <span class="n">df_buckle_kp</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;KP&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;KP&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Use KP range to group KP into sections and rename columns</span>
+    <span class="n">df_section</span> <span class="o">=</span> <span class="n">df_scen</span><span class="p">[[</span><span class="s1">&#39;KP From&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID From&#39;</span><span class="p">,</span> <span class="s1">&#39;Point ID To&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;KP From&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_section</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">,</span> <span class="s1">&#39;point_id_from&#39;</span><span class="p">,</span> <span class="s1">&#39;point_id_to&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Find the unique KP value and create section number column in df_buckle_kp</span>
+    <span class="n">df_kp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;KP&#39;</span><span class="p">:</span> <span class="n">df_buckle_kp</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()})</span>
+    <span class="n">df_kp</span><span class="p">[</span><span class="s1">&#39;Section No&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_kp</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">pp_section_no</span><span class="p">(</span>
+        <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_section</span><span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Merge the Section Number column to df_buckle_kp</span>
+    <span class="n">df_buckle_kp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_buckle_kp</span><span class="p">,</span> <span class="n">df_kp</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Count the number of set combinations based on given set number</span>
+    <span class="n">df_set_comb</span> <span class="o">=</span> <span class="n">pp_comb_prob</span><span class="p">(</span><span class="n">df_section</span><span class="p">[</span><span class="s1">&#39;KP_from&#39;</span><span class="p">],</span> <span class="n">df_buckle_kp</span><span class="p">,</span> <span class="s1">&#39;Section No&#39;</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+
+    <span class="c1"># Create new column name using Point ID</span>
+    <span class="n">df_section</span> <span class="o">=</span> <span class="n">df_section</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df_section</span><span class="p">[</span><span class="s1">&#39;col_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_section</span><span class="p">[</span><span class="s1">&#39;point_id_from&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; to &#39;</span> <span class="o">+</span> <span class="n">df_section</span><span class="p">[</span><span class="s1">&#39;point_id_to&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Rename column names from &#39;Set_&#39; to certain column names</span>
+    <span class="n">df_set_comb</span> <span class="o">=</span> <span class="n">pp_rename_columns</span><span class="p">(</span><span class="n">df_section</span><span class="p">,</span> <span class="n">df_set_comb</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_set_comb</span></div>
+
+
+<div class="viewcode-block" id="pp_char_vas">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_char_vas">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_char_vas</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">df_set</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determine the characteristic VAS.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    df_buckling : pandas DataFrame</span>
+<span class="sd">        DataFrame containing buckling data.</span>
+<span class="sd">    df_set : pandas DataFrame</span>
+<span class="sd">        DataFrame containing sets along the pipeline route.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_set : pandas DataFrame</span>
+<span class="sd">        Updated DataFrame containing characteristic VAS information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;pp_set&#39;</span><span class="p">)</span>
+    <span class="n">df_merged</span> <span class="o">=</span> <span class="n">df_merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">])</span>
+    <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Dataframe grouping the VAS in ascending order at each set along the pipeline route</span>
+    <span class="n">df_char_vas</span> <span class="o">=</span> <span class="n">df_merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_buckling&#39;</span><span class="p">],</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">VAS_occurrence</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">no_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Add the probability associated to the characteristic VAS</span>
+    <span class="n">df_set_temp</span> <span class="o">=</span> <span class="n">df_set</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">keep</span> <span class="o">=</span> <span class="s1">&#39;first&#39;</span><span class="p">)</span>
+    <span class="n">df_char_vas</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set_temp</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">]],</span>
+                                    <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Cumulative distributions of the VAS (conditional and unconditional)</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_prob_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_occurrence&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">]</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_cumsum_prob_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_prob_cond&#39;</span><span class="p">]]</span> \
+        <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="c1"># Lines below associate VAS=0 to cases not buckling</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_cumsum_prob_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">])</span> \
+        <span class="o">+</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_cumsum_prob_cond&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Complementary distributions of the VAS (conditional and unconditional)</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_cumsum_prob_cond&#39;</span><span class="p">]</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;VAS_cumsum_prob_uncond&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Difference bewteen the complementary distributions and target probabilities of excedance</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;delta_prob_exceedance_cond&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="p">(</span><span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_cond&#39;</span><span class="p">]</span> <span class="o">-</span> \
+         <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+    <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;delta_prob_exceedance_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="p">(</span><span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_uncond&#39;</span><span class="p">]</span> <span class="o">-</span> \
+         <span class="n">df_char_vas</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+
+    <span class="c1"># NumPy array with the rows containing the characteristic VAS of each pp_set</span>
+    <span class="n">vas_cond_indices</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)[</span><span class="s1">&#39;delta_prob_exceedance_cond&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">vas_uncond_indices</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)[</span><span class="s1">&#39;delta_prob_exceedance_uncond&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="c1"># Find conditional VAS by pp_set</span>
+    <span class="n">df_vas_cond</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vas_cond_indices</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">]]</span>
+    <span class="n">df_vas_cond</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">:</span> <span class="s1">&#39;VAS_charac_conditional&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Find unconditional VAS by pp_set</span>
+    <span class="n">df_vas_uncond</span> <span class="o">=</span> <span class="n">df_char_vas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">vas_uncond_indices</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">]]</span>
+    <span class="n">df_vas_uncond</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">:</span> <span class="s1">&#39;VAS_charac_unconditional&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Assign conditional and unconditional VAS by pp_set</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_vas_cond</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_vas_uncond</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">],</span>
+               <span class="s1">&#39;VAS_charac_unconditional&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">return</span> <span class="n">df_set</span></div>
+
+
+<div class="viewcode-block" id="pp_char_fric">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_char_fric">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_char_fric</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">df_set</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Determine the characteristic lateral breakout friction.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    df_buckling : pandas DataFrame</span>
+<span class="sd">        DataFrame containing buckling data.</span>
+<span class="sd">    df_set : pandas DataFrame</span>
+<span class="sd">        DataFrame containing sets along the pipeline route.</span>
+<span class="sd">    prob_exceed_char_fric : float</span>
+<span class="sd">        Probability of exceeding characteristic lateral breakout friction.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_set : pandas DataFrame</span>
+<span class="sd">        Updated DataFrame containing characteristic lateral breakout friction information.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Dataframe containing the list of frictions in ascending order at each set</span>
+    <span class="n">df_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;pp_set&#39;</span><span class="p">)</span>
+    <span class="n">df_merged</span> <span class="o">=</span> <span class="n">df_merged</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Dataframe grouping the frictions in ascending ordet at each set along the pipeline route</span>
+    <span class="n">df_char_fric</span> <span class="o">=</span> <span class="n">df_merged</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_buckling&#39;</span><span class="p">],</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">mulat_occurrence</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">no_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Cumulative distributions of the friction (conditional and unconditional)</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_prob_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_occurrence&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">]</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_cumsum_prob_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_prob_cond&#39;</span><span class="p">]]</span> \
+        <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="c1"># Lines below associate friction=0 to cases not buckling</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_cumsum_prob_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">])</span> \
+        <span class="o">+</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_cumsum_prob_cond&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Complementary distributions of the friction (conditional and unconditional)</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_cumsum_prob_cond&#39;</span><span class="p">]</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;mulat_cumsum_prob_uncond&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Difference between the complementary distributions and target probabilities of excedance</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;delta_prob_exceedance_cond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_cond&#39;</span><span class="p">]</span>
+                                                 <span class="o">-</span> <span class="n">prob_exceed_char_fric</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+    <span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;delta_prob_exceedance_uncond&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_char_fric</span><span class="p">[</span><span class="s1">&#39;prob_exceedance_uncond&#39;</span><span class="p">]</span>
+                                                   <span class="o">-</span> <span class="n">prob_exceed_char_fric</span><span class="p">)</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+
+    <span class="c1"># NumPy array with the rows containing the characteristic friction of each pp_set</span>
+    <span class="n">indices_mulat_cond</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)[</span><span class="s1">&#39;delta_prob_exceedance_cond&#39;</span><span class="p">]</span> \
+        <span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+    <span class="n">indices_mulat_uncond</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">)[</span><span class="s1">&#39;delta_prob_exceedance_uncond&#39;</span><span class="p">]</span> \
+        <span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="c1"># Find conditional friction by pp_set</span>
+    <span class="n">df_fric_cond</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indices_mulat_cond</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_buckling&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">]]</span>
+    <span class="n">df_fric_cond</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">:</span> <span class="s1">&#39;mulat_charac_conditional&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Find unconditional friction by pp_set</span>
+    <span class="n">df_fric_uncond</span> <span class="o">=</span> <span class="n">df_char_fric</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indices_mulat_uncond</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;prob_buckling&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">]]</span>
+    <span class="n">df_fric_uncond</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">:</span> <span class="s1">&#39;mulat_charac_unconditional&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Assign conditional and unconditional friction by pp_set</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_fric_cond</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_fric_uncond</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span>
+               <span class="s1">&#39;mulat_charac_unconditional&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="k">return</span> <span class="n">df_set</span></div>
+
+
+<div class="viewcode-block" id="pp_elem">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_elem">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_elem</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform post-processing of the probability of buckling, VAS and lateral breakout</span>
+<span class="sd">    friction at each element along the pipeline route.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing the results of the analyses.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Total number of simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_elem : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed probabilities, VAS and lateral breakout friction</span>
+<span class="sd">        for each pipeline element.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Probability of buckling at each element along the pipeline route</span>
+    <span class="n">df_buckling</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;isim&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">no_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;nunique&#39;</span><span class="p">))</span>
+    <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_sim</span>
+    <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_not_buckling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span>
+
+    <span class="c1"># VAS at each element along the pipeline route</span>
+    <span class="n">df_vas</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">VAS_mean</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">VAS_std</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">),</span>
+        <span class="n">VAS_min</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span> <span class="n">VAS_max</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Lateral breakout friction at each element along the pipeline route</span>
+    <span class="n">df_friction</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">mulat_mean</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">mulat_std</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">),</span>
+        <span class="n">mulat_min</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span> <span class="n">mulat_max</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Merge df_buckling and df_vas on &#39;KP&#39;</span>
+    <span class="n">df_elem</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_buckling</span><span class="p">,</span> <span class="n">df_vas</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;KP&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Merge merged_df and df_friction on &#39;KP&#39;</span>
+    <span class="n">df_elem</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_elem</span><span class="p">,</span> <span class="n">df_friction</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;KP&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Change labels for print-out</span>
+    <span class="n">df_elem</span> <span class="o">=</span> <span class="n">df_elem</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;KP&#39;</span><span class="p">:</span> <span class="s1">&#39;Centroid of the Element (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;no_buckles&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of Simulations with a Buckle&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prob_buckling&#39;</span><span class="p">:</span> <span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prob_not_buckling&#39;</span><span class="p">:</span> <span class="s1">&#39;Probability of not Buckling&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;Mean of the VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_std&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard Deviation of the VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_min&#39;</span><span class="p">:</span> <span class="s1">&#39;Minimum VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_max&#39;</span><span class="p">:</span> <span class="s1">&#39;Maximum VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;Mean of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_std&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard Deviation of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_min&#39;</span><span class="p">:</span> <span class="s1">&#39;Minimum Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_max&#39;</span><span class="p">:</span> <span class="s1">&#39;Maximum Lateral Breakout Friction&#39;</span><span class="p">})</span>
+
+    <span class="n">df_elem</span> <span class="o">=</span> <span class="n">df_elem</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_elem</span></div>
+
+
+<div class="viewcode-block" id="pp_no_buckles">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_no_buckles">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_no_buckles</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform post-processing of the number of buckles along the pipeline.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Total number of simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_no_buckles : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of buckles</span>
+<span class="sd">        along the pipeline.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Number of buckles per simulation</span>
+    <span class="n">df_grouped</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;KP&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">no_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Number of simulations as a function of the number of buckles along the pipeline</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">df_grouped</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">],</span> <span class="n">aggfunc</span> <span class="o">=</span> <span class="s1">&#39;size&#39;</span><span class="p">)</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;n_buckle&#39;</span><span class="p">:</span> <span class="s1">&#39;Total Number of Buckles&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;Occurrence&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Accounting for cases without buckle in cumsum</span>
+    <span class="n">new_row</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Occurrence&#39;</span><span class="p">:</span> <span class="n">n_sim</span> <span class="o">-</span> <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Occurrence&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()}</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_no_buckles</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">new_row</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;no_buckles&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Distribution of the expected number of buckles along the pipeline</span>
+    <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Probability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Occurrence&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_sim</span>
+    <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Cumulative Probability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Probability&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+    <span class="c1"># Change labels for print-out</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">df_no_buckles</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;no_buckles&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of Buckles&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Occurrence&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of Simulations&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Probability&#39;</span><span class="p">:</span> <span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cumulative Probability&#39;</span><span class="p">:</span> <span class="s1">&#39;Cumulative Probability of Buckling&#39;</span><span class="p">})</span>
+
+    <span class="k">return</span> <span class="n">df_no_buckles</span></div>
+
+
+<div class="viewcode-block" id="pp_sets">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_sets">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_sets</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform post-processing of the probability of buckling, VAS and lateral breakout</span>
+<span class="sd">    friction at each post-processing set along the pipeline route.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline element analysis results.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Total number of simulations.</span>
+<span class="sd">    prob_exceed_char_fric : float</span>
+<span class="sd">        Probability of exceedance of the characteristic lateral breakout friction.</span>
+<span class="sd">    df_pp_set : DataFrame</span>
+<span class="sd">        Definition of element sets for post-processing outputs.</span>
+<span class="sd">    df_scen : DataFrame</span>
+<span class="sd">        Dataframe containing the design data along the pipeline</span>
+<span class="sd">        route (mesh) that remains constant among deterministic and</span>
+<span class="sd">        Monte-Carlo simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_set : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about pipeline sets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Probability of buckling at each set along the pipeline route</span>
+    <span class="n">df_pp_set</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">,</span> <span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">]]</span>
+
+    <span class="c1"># Probability of buckling at each set along the pipeline route</span>
+    <span class="n">df_buckling</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">,</span> <span class="s1">&#39;KP_to&#39;</span><span class="p">,</span> <span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+        <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+            <span class="n">no_simulations_with_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;nunique&#39;</span><span class="p">),</span> <span class="n">no_buckles</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">))</span>
+    <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;no_simulations_with_buckles&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">n_sim</span>
+    <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_not_buckling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_buckling</span><span class="p">[</span><span class="s1">&#39;prob_buckling&#39;</span><span class="p">]</span>
+
+    <span class="c1"># VAS at each set along the pipeline route</span>
+    <span class="n">df_vas</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;VAS_op&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">VAS_mean</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">VAS_std</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">),</span>
+        <span class="n">VAS_min</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span> <span class="n">VAS_max</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;VAS_op&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Lateral breakout friction at each set along the pipeline route</span>
+    <span class="n">df_friction</span> <span class="o">=</span> <span class="n">df_pp</span><span class="p">[[</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="s1">&#39;mulat_op&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">as_index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+        <span class="n">mulat_mean</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">mulat_std</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">),</span>
+        <span class="n">mulat_min</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">),</span> <span class="n">mulat_max</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;mulat_op&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Merge df_buckling and df_vas on &#39;pp_set&#39;</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Merge df_buckling and df_vas on &#39;pp_set&#39;</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_vas</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_mean&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_mean&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_std&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_min&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_min&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;VAS_max&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="c1"># Determine characteristic VAS</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pp_char_vas</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">df_set</span><span class="p">)</span>
+
+    <span class="c1"># Merge merged_df and df_friction on &#39;pp_set&#39; and determine characteristic friction</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_set</span><span class="p">,</span> <span class="n">df_friction</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s1">&#39;pp_set&#39;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Determine characteristic lateral breakout friction</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">pp_char_fric</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_buckling</span><span class="p">,</span> <span class="n">df_set</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">)</span>
+
+    <span class="c1"># Change labels for print-out</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">df_set</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;pp_set&#39;</span><span class="p">:</span> <span class="s1">&#39;Set Label&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;KP_from&#39;</span><span class="p">:</span> <span class="s1">&#39;KP From (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;KP_to&#39;</span><span class="p">:</span> <span class="s1">&#39;KP To (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;no_simulations_with_buckles&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of Simulations with Buckles per Set&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;no_buckles&#39;</span><span class="p">:</span> <span class="s1">&#39;Number of Buckles per Set&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prob_buckling&#39;</span><span class="p">:</span> <span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prob_not_buckling&#39;</span><span class="p">:</span> <span class="s1">&#39;Probability of not Buckling&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;Mean of the VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_std&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard Deviation of the VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_min&#39;</span><span class="p">:</span> <span class="s1">&#39;Minimum VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_max&#39;</span><span class="p">:</span> <span class="s1">&#39;Maximum VAS (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_charac_conditional&#39;</span><span class="p">:</span> <span class="s1">&#39;Characteristic VAS, Conditional (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_charac_unconditional&#39;</span><span class="p">:</span> <span class="s1">&#39;Characteristic VAS, Unconditional (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_mean&#39;</span><span class="p">:</span> <span class="s1">&#39;Mean of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_std&#39;</span><span class="p">:</span> <span class="s1">&#39;Standard Deviation of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_min&#39;</span><span class="p">:</span> <span class="s1">&#39;Minimum Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_max&#39;</span><span class="p">:</span> <span class="s1">&#39;Maximum Lateral Breakout Friction&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_charac_unconditional&#39;</span><span class="p">:</span> <span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">})</span>
+
+    <span class="c1"># Drop column for print-out</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">df_set</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;mulat_charac_conditional&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Sort by KP From</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">df_set</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;KP From (m)&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Fill characteristic frictions at planned buckles with zero</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Characteristic Lateral Breakout Friction Probability&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">prob_exceed_char_fric</span>
+    <span class="n">df_set</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span>
+               <span class="s1">&#39;Characteristic Lateral Breakout Friction Probability&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># Define HE of the geotechnical friction</span>
+    <span class="n">df_scen</span><span class="p">[</span><span class="s1">&#39;Lateral Breakout Friction, HE, Geotech&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">df_scen</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span>
+                                          <span class="n">x</span><span class="p">[</span><span class="s1">&#39;mul OP CDF Array&#39;</span><span class="p">],</span>
+                                          <span class="n">x</span><span class="p">[</span><span class="s1">&#39;mul OP Array&#39;</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Lateral Breakout Friction, HE, Geotech&#39;</span><span class="p">]</span> <span class="o">=</span> \
+        <span class="n">df_set</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s1">&#39;KP From (m)&#39;</span><span class="p">],</span>
+                                         <span class="n">df_scen</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span>
+                                         <span class="n">df_scen</span><span class="p">[</span><span class="s1">&#39;Lateral Breakout Friction, HE, Geotech&#39;</span><span class="p">]),</span>
+                                         <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Convert route type strings to descriptive representation</span>
+    <span class="n">df_scen_temp</span> <span class="o">=</span> <span class="n">df_scen</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+    <span class="n">df_scen_temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Straight&#39;</span>
+    <span class="n">df_scen_temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Bend&#39;</span>
+    <span class="n">df_scen_temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sleeper&#39;</span>
+    <span class="n">df_scen_temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;Route Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;RCM&#39;</span>
+
+    <span class="c1"># Assign route type to df_set</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_set</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">df_set</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_scen_temp</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+            <span class="p">(</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP From (m)&#39;</span><span class="p">])</span> <span class="o">&amp;</span>
+            <span class="p">(</span><span class="n">df_scen_temp</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP To (m)&#39;</span><span class="p">]),</span>
+            <span class="s1">&#39;Route&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">df_set</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Sleeper&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Route&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;RCM&#39;</span><span class="p">),</span>
+               <span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+    <span class="c1"># Re-arrange columns</span>
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">df_set</span><span class="p">[[</span><span class="s1">&#39;Set Label&#39;</span><span class="p">,</span> <span class="s1">&#39;KP From (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;KP To (m)&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Number of Simulations with Buckles per Set&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Number of Buckles per Set&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Probability of not Buckling&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Mean of the VAS (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;Standard Deviation of the VAS (m)&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Minimum VAS (m)&#39;</span><span class="p">,</span> <span class="s1">&#39;Maximum VAS (m)&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Characteristic VAS Probability&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Characteristic VAS, Conditional (m)&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Characteristic VAS, Unconditional (m)&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Mean of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Standard Deviation of the Lateral Breakout Friction&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Minimum Lateral Breakout Friction&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Maximum Lateral Breakout Friction&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Characteristic Lateral Breakout Friction Probability&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Lateral Breakout Friction, HE, Geotech&#39;</span><span class="p">]]</span>
+
+    <span class="n">df_set</span> <span class="o">=</span> <span class="n">df_set</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Probability of not Buckling&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">-</span> <span class="n">df_set</span><span class="p">[</span><span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df_set</span></div>
+
+
+<div class="viewcode-block" id="pp_eaf">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_eaf">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_eaf</span><span class="p">(</span><span class="n">df_pp_plot</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts units and renames columns for pipeline EAF plot DataFrame.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df_pp_plot : pandas DataFrame</span>
+<span class="sd">        DataFrame containing pipeline plot data.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_pp_plot: pandas DataFrame</span>
+<span class="sd">        DataFrame with converted units and renamed columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Convert the units of &#39;df_pp_plot&#39; (N to kN)</span>
+    <span class="n">df_pp_plot</span><span class="p">[[</span><span class="s1">&#39;CBF_ht&#39;</span><span class="p">,</span> <span class="s1">&#39;CBF_op&#39;</span><span class="p">,</span> <span class="s1">&#39;EAF_inst&#39;</span><span class="p">,</span> <span class="s1">&#39;EAF_ht&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;EAF_p_op&#39;</span><span class="p">,</span> <span class="s1">&#39;EAF_op&#39;</span><span class="p">,</span> <span class="s1">&#39;EAF_op_unbuck&#39;</span><span class="p">]]</span> <span class="o">/=</span> <span class="mf">1000.0</span>
+
+    <span class="c1"># Change labels for print-out</span>
+    <span class="n">df_pp_plot</span> <span class="o">=</span> <span class="n">df_pp_plot</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;KP&#39;</span><span class="p">:</span> <span class="s1">&#39;KP (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CBF_ht&#39;</span><span class="p">:</span> <span class="s1">&#39;CBF Hydrotest (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CBF_op&#39;</span><span class="p">:</span> <span class="s1">&#39;CBF Operation (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;EAF_inst&#39;</span><span class="p">:</span> <span class="s1">&#39;EAF Installation [RLT] (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;EAF_ht&#39;</span><span class="p">:</span> <span class="s1">&#39;EAF Hydrotest (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;EAF_p_op&#39;</span><span class="p">:</span> <span class="s1">&#39;EAF Operation [Pressure Only] (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;EAF_op&#39;</span><span class="p">:</span> <span class="s1">&#39;EAF Operation (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;EAF_op_unbuck&#39;</span><span class="p">:</span> <span class="s1">&#39;EAF Operation [without Buckling] (kN)&#39;</span>
+        <span class="p">})</span>
+
+    <span class="c1"># Drop column for print-out</span>
+    <span class="n">df_pp_plot</span> <span class="o">=</span> <span class="n">df_pp_plot</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;beta2&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_pp_plot</span></div>
+
+
+<div class="viewcode-block" id="pp_raw">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_raw">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_raw</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Converts units and renames columns of the DataFrame containing the raw data</span>
+<span class="sd">    from the BuckPy simulations.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    df : pandas DataFrame</span>
+<span class="sd">        DataFrame containing raw data from the BuckPy simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df : pandas DataFrame</span>
+<span class="sd">        DataFrame with converted units and renamed columns.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Change labels for print-out</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;isim&#39;</span><span class="p">:</span> <span class="s1">&#39;Simulation Number&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;KP&#39;</span><span class="p">:</span> <span class="s1">&#39;KP (m)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;route_type&#39;</span><span class="p">:</span> <span class="s1">&#39;Section Type&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;muax&#39;</span><span class="p">:</span> <span class="s1">&#39;Axial Residual Friction Factor, Operation&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;mulat_op&#39;</span><span class="p">:</span> <span class="s1">&#39;Lateral Breakout Friction Factor, Operation&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;HOOS&#39;</span><span class="p">:</span> <span class="s1">&#39;HOOS Factor&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;CBF_op&#39;</span><span class="p">:</span> <span class="s1">&#39;CBF Operation (kN)&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;VAS_op&#39;</span><span class="p">:</span> <span class="s1">&#39;VAS Operation (m)&#39;</span>
+        <span class="p">})</span>
+
+    <span class="c1"># Convert units of the CBF (N to kN)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;CBF Operation (kN)&#39;</span><span class="p">]</span> <span class="o">/=</span> <span class="mf">1000.0</span>
+
+    <span class="c1"># Rename section types</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Straight&#39;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Bend&#39;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Sleeper&#39;</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Section Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;RCM&#39;</span>
+
+    <span class="c1"># Select the first 10000 rows to optimise the size of the Excel file</span>
+    <span class="c1">#TODO: why? if Excel is limited, let&#39;s export it to something else as it could be useful to have all case for separate post-processing</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">10000</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">df</span></div>
+
+
+<div class="viewcode-block" id="pp_save">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_save">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_save</span><span class="p">(</span><span class="n">output_combination</span><span class="p">,</span> <span class="n">output_file_name</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Saves DataFrames to an Excel file with specified formatting.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_combination : Boolean</span>
+<span class="sd">        Switch to write the most frequent combination set of buckles in the result file.</span>
+<span class="sd">    output_file_name : str</span>
+<span class="sd">        Name of the output Excel file.</span>
+<span class="sd">    df_elem : pandas DataFrame</span>
+<span class="sd">        DataFrame containing element data.</span>
+<span class="sd">    df_sets : pandas DataFrame</span>
+<span class="sd">        DataFrame containing set data.</span>
+<span class="sd">    df_no_buckles : pandas DataFrame</span>
+<span class="sd">        DataFrame containing data related to the number of buckles.</span>
+<span class="sd">    df_pp_plot : pandas DataFrame</span>
+<span class="sd">        DataFrame containing force profile data.</span>
+<span class="sd">    df_pp_buckle_prop : pandas DataFrame</span>
+<span class="sd">        DataFrame containing raw data related to buckling properties.</span>
+<span class="sd">    df_comb_per_set : pandas DataFrame</span>
+<span class="sd">        DataFrame containing raw data related to KP set combinations based on post-processing set.</span>
+<span class="sd">    df_comb_per_section : pandas DataFrame</span>
+<span class="sd">        DataFrame containing raw data related to KP set combinations based on route point id.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="n">df_elem</span><span class="p">,</span> <span class="n">df_sets</span><span class="p">,</span> <span class="n">df_no_buckles</span><span class="p">,</span> <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span><span class="p">,</span>\
+            <span class="n">df_comb_per_set</span><span class="p">,</span> <span class="n">df_comb_per_section</span> <span class="o">=</span> <span class="n">args</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">df_elem</span><span class="p">,</span> <span class="n">df_sets</span><span class="p">,</span> <span class="n">df_no_buckles</span><span class="p">,</span> <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span> <span class="o">=</span> <span class="n">args</span>
+
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">)</span>
+    <span class="n">pandas</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">formats</span><span class="o">.</span><span class="n">excel</span><span class="o">.</span><span class="n">ExcelFormatter</span><span class="o">.</span><span class="n">header_style</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Convert DataFrames to Excel objects</span>
+    <span class="n">df_elem</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Elements&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_sets</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Sets&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                     <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_no_buckles</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;No Buckles&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                           <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_pp_plot</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Force Profiles&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">df_pp_buckle_prop</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Raw Data&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                               <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="n">df_comb_per_set</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Comb Buckles per Set&#39;</span><span class="p">,</span>
+                                 <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">df_comb_per_section</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span> <span class="o">=</span> <span class="s1">&#39;Comb Buckles per Section&#39;</span><span class="p">,</span>
+                                     <span class="n">startrow</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Get the workbook and worksheet objects.</span>
+    <span class="n">workbook</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">book</span>
+    <span class="n">worksheet1</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Elements&#39;</span><span class="p">]</span>
+    <span class="n">worksheet2</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Sets&#39;</span><span class="p">]</span>
+    <span class="n">worksheet3</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;No Buckles&#39;</span><span class="p">]</span>
+    <span class="n">worksheet4</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Force Profiles&#39;</span><span class="p">]</span>
+    <span class="n">worksheet5</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Raw Data&#39;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="n">worksheet6</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Comb Buckles per Set&#39;</span><span class="p">]</span>
+        <span class="n">worksheet7</span> <span class="o">=</span> <span class="n">writer</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="s1">&#39;Comb Buckles per Section&#39;</span><span class="p">]</span>
+
+    <span class="c1"># Add generic cell formats to Excel file</span>
+    <span class="n">formatc1</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;num_format&#39;</span><span class="p">:</span> <span class="s1">&#39;#,##0&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;valign&#39;</span><span class="p">:</span> <span class="s1">&#39;vcenter&#39;</span><span class="p">,</span> <span class="s1">&#39;text_wrap&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">formatc2</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;num_format&#39;</span><span class="p">:</span> <span class="s1">&#39;#,##0.0&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;valign&#39;</span><span class="p">:</span> <span class="s1">&#39;vcenter&#39;</span><span class="p">,</span> <span class="s1">&#39;text_wrap&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">formatc3</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;num_format&#39;</span><span class="p">:</span> <span class="s1">&#39;0.000&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;valign&#39;</span><span class="p">:</span> <span class="s1">&#39;vcenter&#39;</span><span class="p">,</span> <span class="s1">&#39;text_wrap&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+    <span class="n">formath1</span> <span class="o">=</span> <span class="n">workbook</span><span class="o">.</span><span class="n">add_format</span><span class="p">({</span><span class="s1">&#39;num_format&#39;</span><span class="p">:</span> <span class="s1">&#39;#,###&#39;</span><span class="p">,</span> <span class="s1">&#39;bold&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;border&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                                    <span class="s1">&#39;bg_color&#39;</span><span class="p">:</span> <span class="s1">&#39;#C0C0C0&#39;</span><span class="p">,</span> <span class="s1">&#39;align&#39;</span><span class="p">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;valign&#39;</span><span class="p">:</span> <span class="s1">&#39;vcenter&#39;</span><span class="p">,</span> <span class="s1">&#39;text_wrap&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+
+    <span class="c1"># Set the column width and format of the Excel worksheets</span>
+    <span class="n">worksheet1</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:B&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+    <span class="n">worksheet1</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;C:D&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+    <span class="n">worksheet1</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;E:H&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc2</span><span class="p">)</span>
+    <span class="n">worksheet1</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;I:L&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:E&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;F:G&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;H:K&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc2</span><span class="p">)</span>
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;L:L&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;M:N&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc2</span><span class="p">)</span>
+    <span class="n">worksheet2</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;O:U&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+
+    <span class="n">worksheet3</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:B&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+    <span class="n">worksheet3</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;C:D&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+
+    <span class="n">worksheet4</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:A&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+    <span class="n">worksheet4</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;B:H&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc2</span><span class="p">)</span>
+
+    <span class="n">worksheet5</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:C&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+    <span class="n">worksheet5</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;D:F&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+    <span class="n">worksheet5</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;G:H&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc2</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="n">worksheet6</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:C&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+        <span class="n">worksheet6</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;D:D&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+        <span class="n">worksheet6</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;E:AZ&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+
+        <span class="n">worksheet7</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;A:C&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+        <span class="n">worksheet7</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;D:D&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc3</span><span class="p">)</span>
+        <span class="n">worksheet7</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s1">&#39;E:AZ&#39;</span><span class="p">,</span> <span class="mf">12.5</span><span class="p">,</span> <span class="n">formatc1</span><span class="p">)</span>
+
+    <span class="c1"># Write the column hearders with the defined format</span>
+    <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_elem</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">worksheet1</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">formath1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_sets</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">worksheet2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">formath1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_no_buckles</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">worksheet3</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">formath1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_pp_plot</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">worksheet4</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">formath1</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_pp_buckle_prop</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+        <span class="n">worksheet5</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">formath1</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_comb_per_set</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+            <span class="n">worksheet6</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+            <span class="n">worksheet6</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+            <span class="c1"># Merge header cells for the 3 columns in the first and second row</span>
+            <span class="k">if</span> <span class="n">col_num</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">worksheet6</span><span class="o">.</span><span class="n">merge_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+        <span class="c1"># Merge header cells for the &#39;Number of Buckles&#39; columns in the first row</span>
+        <span class="n">worksheet6</span><span class="o">.</span><span class="n">merge_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_comb_per_set</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">),</span>
+                               <span class="n">df_comb_per_set</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">levels</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">col_num</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df_comb_per_section</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">):</span>
+            <span class="n">worksheet7</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+            <span class="n">worksheet7</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+            <span class="c1"># Merge header cells for the 3 columns in the first and second row</span>
+            <span class="k">if</span> <span class="n">col_num</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">:</span>
+                <span class="n">worksheet7</span><span class="o">.</span><span class="n">merge_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">col_num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+        <span class="c1"># Merge header cells for the &#39;Number of Buckles&#39; columns in the first row</span>
+        <span class="n">worksheet7</span><span class="o">.</span><span class="n">merge_range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_comb_per_section</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">),</span>
+                               <span class="n">df_comb_per_section</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">levels</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">formath1</span><span class="p">)</span>
+
+    <span class="c1"># Close the Excel writer and output the Excel file</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="pp_outputs">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_outputs">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_outputs</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">output_combination</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span><span class="p">,</span>
+               <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Perform post-processing of analysis outputs.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    output_file_name : str</span>
+<span class="sd">        Name of the output Excel file</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of simulations.</span>
+<span class="sd">    output_combination : Boolean</span>
+<span class="sd">        Switch to write the most frequent combination set of buckles in the result file.</span>
+<span class="sd">    df_pp_buckle_prop : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed buckling properties.</span>
+<span class="sd">    df_pp_set : DataFrame</span>
+<span class="sd">        Definition of element sets for post-processing outputs.</span>
+<span class="sd">    df_pp_plot : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed plot data.</span>
+<span class="sd">    prob_exceed_char_fric : float</span>
+<span class="sd">        Probability of exceedance associated with the characteristic lateral breakout friction.</span>
+<span class="sd">    df_pp_set : DataFrame</span>
+<span class="sd">        Definition of element sets for post-processing outputs.</span>
+<span class="sd">    df_scen : DataFrame</span>
+<span class="sd">        Dataframe containing the design data along the pipeline</span>
+<span class="sd">        route (mesh) that remains constant among deterministic and</span>
+<span class="sd">        Monte-Carlo simulations.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    df_no_buckles : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics about the number of buckles</span>
+<span class="sd">        along the pipeline.</span>
+<span class="sd">    df_sets : pandas DataFrame</span>
+<span class="sd">        DataFrame containing post-processed statistics grouped by pipeline sets.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Dataframe containing the raw data</span>
+    <span class="n">df_pp_buckle_prop</span> <span class="o">=</span> <span class="n">df_pp_buckle_prop</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;isim&#39;</span><span class="p">])</span>
+    <span class="n">df_pp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge_asof</span><span class="p">(</span><span class="n">left</span> <span class="o">=</span> <span class="n">df_pp_buckle_prop</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">df_pp_set</span><span class="p">,</span>
+                          <span class="n">left_on</span> <span class="o">=</span> <span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="n">right_on</span> <span class="o">=</span> <span class="s1">&#39;KP_from&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Probability of buckling, VAS and lateral breakout friction sorted by element</span>
+    <span class="n">df_elem</span> <span class="o">=</span> <span class="n">pp_elem</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+
+    <span class="c1"># Distribution of the expected number of buckles along the pipeline</span>
+    <span class="n">df_no_buckles</span> <span class="o">=</span> <span class="n">pp_no_buckles</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+
+    <span class="c1"># Probability of buckling, VAS and lateral breakout friction sorted by post-processing set</span>
+    <span class="n">df_sets</span> <span class="o">=</span> <span class="n">pp_sets</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">)</span>
+
+    <span class="c1"># Post-processing of &#39;df_pp_plot&#39; for print-out</span>
+    <span class="n">df_pp_plot</span> <span class="o">=</span> <span class="n">pp_eaf</span><span class="p">(</span><span class="n">df_pp_plot</span><span class="p">)</span>
+
+    <span class="c1"># Post-processing of &#39;df_pp_buckle_prop&#39; for print-out</span>
+    <span class="n">df_pp_buckle_prop</span> <span class="o">=</span> <span class="n">pp_raw</span><span class="p">(</span><span class="n">df_pp_buckle_prop</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">output_combination</span><span class="p">:</span>
+        <span class="c1"># Calculate the most frequent combination of KP set with buckles</span>
+        <span class="n">df_comb_per_set</span> <span class="o">=</span> <span class="n">pp_comb_buckles_per_set</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+        <span class="n">df_comb_per_section</span> <span class="o">=</span> <span class="n">pp_comb_buckles_per_section</span><span class="p">(</span><span class="n">df_pp</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span>
+
+        <span class="c1"># Save key outputs to Excel file</span>
+        <span class="n">pp_save</span><span class="p">(</span><span class="n">output_combination</span><span class="p">,</span> <span class="n">output_file_name</span><span class="p">,</span> <span class="n">df_elem</span><span class="p">,</span> <span class="n">df_sets</span><span class="p">,</span> <span class="n">df_no_buckles</span><span class="p">,</span>
+                <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span><span class="p">,</span> <span class="n">df_comb_per_set</span><span class="p">,</span> <span class="n">df_comb_per_section</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Save key outputs to Excel file</span>
+        <span class="n">pp_save</span><span class="p">(</span><span class="n">output_combination</span><span class="p">,</span> <span class="n">output_file_name</span><span class="p">,</span> <span class="n">df_elem</span><span class="p">,</span> <span class="n">df_sets</span><span class="p">,</span> <span class="n">df_no_buckles</span><span class="p">,</span>
+                <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df_no_buckles</span><span class="p">,</span> <span class="n">df_sets</span></div>
+
+
+<div class="viewcode-block" id="pp_plots">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_plots">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_plots</span><span class="p">(</span><span class="n">plot_file_name</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">df_plot</span><span class="p">,</span> <span class="n">df_vap_plot</span><span class="p">,</span> <span class="n">df_no_buckles</span><span class="p">,</span> <span class="n">df_sets</span><span class="p">,</span>
+             <span class="n">prob_exceed_char_fric</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot deterministic and probabilistic results</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    plot_file_name : str</span>
+<span class="sd">        Name of the \*.png file</span>
+<span class="sd">    df_scen : DataFrame</span>
+<span class="sd">        Dataframe containing the design data along the pipeline</span>
+<span class="sd">        route (mesh) that remains constant among deterministic and</span>
+<span class="sd">        Monte-Carlo simulations.</span>
+<span class="sd">    df_plot : DataFrame</span>
+<span class="sd">        Definition on assessed mesh of CBF and EAF in different conditions.</span>
+<span class="sd">        for case to plot </span>
+<span class="sd">    df_vap_plot : DataFrame</span>
+<span class="sd">        Definition of virtual anchor points for case to plot.</span>
+<span class="sd">        Columns: [&#39;ielt VAP&#39;, &#39;KP VAP&#39;, &#39;ESF VAP&#39;].</span>
+<span class="sd">    df_no_buckles : DataFrame</span>
+<span class="sd">        Probability of number of buckles over pipeline.</span>
+<span class="sd">    df_sets : DataFrame</span>
+<span class="sd">        Probability of buckling and characteristic VAS and friction factors by set.</span>
+<span class="sd">    prob_exceed_char_fric : float</span>
+<span class="sd">        Probability of exceedance for characteristic friction factors.</span>
+<span class="sd">    plot_file_name : str</span>
+<span class="sd">        File name where plots are to be saved.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Convert the units of &#39;df_plot&#39;, &#39;df_vap_plot&#39; &amp; &#39;df_scen&#39; (m to km and N to kN)</span>
+    <span class="n">df_plot</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">]]</span> <span class="o">/=</span> <span class="mf">1000.0</span>
+    <span class="n">df_vap_plot</span><span class="p">[[</span><span class="s1">&#39;KP VAP&#39;</span><span class="p">,</span> <span class="s1">&#39;ESF VAP&#39;</span><span class="p">]]</span> <span class="o">/=</span> <span class="mf">1000.0</span>
+    <span class="n">df_scen</span><span class="p">[[</span><span class="s1">&#39;KP&#39;</span><span class="p">,</span> <span class="s1">&#39;FRF OP Pressure&#39;</span><span class="p">,</span> <span class="s1">&#39;FRF OP Temperature&#39;</span><span class="p">]]</span> <span class="o">/=</span> <span class="mf">1000.0</span>
+
+    <span class="c1"># Create arrays to plot buckling probability, characteristic VAS and characteristic friction</span>
+    <span class="n">np_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">df_sets</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;KP From (m)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">])</span>
+    <span class="n">np_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">np_vas_cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">np_vas_uncond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+    <span class="n">np_mul_buckle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_sets</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">np_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_kp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP From (m)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">,</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP To (m)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">))</span>
+        <span class="n">np_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_prob</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="mf">100.0</span> <span class="o">*</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">],</span>
+            <span class="mf">100.0</span> <span class="o">*</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">]))</span>
+        <span class="n">np_vas_cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_vas_cond</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS, Conditional (m)&#39;</span><span class="p">],</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS, Conditional (m)&#39;</span><span class="p">]))</span>
+        <span class="n">np_vas_uncond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_vas_uncond</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS, Unconditional (m)&#39;</span><span class="p">],</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic VAS, Unconditional (m)&#39;</span><span class="p">]))</span>
+        <span class="n">np_mul_buckle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_mul_buckle</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">],</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Characteristic Lateral Breakout Friction, Buckles&#39;</span><span class="p">]))</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="n">df_sets</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">np_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_kp</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP To (m)&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="mf">1000.0</span><span class="p">)</span>
+            <span class="n">np_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_prob</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">np_vas_cond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_vas_cond</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">np_vas_uncond</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_vas_uncond</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+            <span class="n">np_mul_buckle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_mul_buckle</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+
+    <span class="c1"># Create an array to plot the HE of the geotechnical lateral breakdown friction</span>
+    <span class="n">np_mul_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">np_mul_geotech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df_scen</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="c1"># df_scen has at least 2 points, no need to double the points in append functions</span>
+        <span class="n">np_mul_kp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_mul_kp</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">])</span>
+        <span class="n">mul_geotech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span>
+                                <span class="n">row</span><span class="p">[</span><span class="s1">&#39;mul OP CDF Array&#39;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;mul OP Array&#39;</span><span class="p">])</span>
+        <span class="n">np_mul_geotech</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np_mul_geotech</span><span class="p">,</span> <span class="n">mul_geotech</span><span class="p">)</span>
+
+    <span class="c1"># Generate matplolib figure</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">dpi_size</span> <span class="o">=</span> <span class="mi">110</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">set_size_inches</span><span class="p">(</span><span class="mf">19.2</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">dpi_size</span><span class="p">,</span> <span class="mf">10.8</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">dpi_size</span><span class="p">)</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">GridSpec</span><span class="p">(</span><span class="n">nrows</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># Plot effective axial force profiles from selected case</span>
+    <span class="n">a1</span><span class="o">=</span><span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_inst&#39;</span><span class="p">],</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;EAF Installation&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_ht&#39;</span><span class="p">],</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;EAF Hydrotest&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_p_op&#39;</span><span class="p">],</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;EAF Operation (Pressure Only)&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C3&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_op&#39;</span><span class="p">],</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;EAF Operation&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C4&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_op_unbuck&#39;</span><span class="p">],</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;EAF Operation (without Buckling)&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot intermediate force profile during temperature application</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">):</span>
+        <span class="c1"># Shouldnt overwrite existing df_plot[&#39;EAF_inst&#39;], separate dataframe used instead</span>
+        <span class="n">eaf_interim</span> <span class="o">=</span> <span class="n">df_scen</span><span class="p">[</span><span class="s1">&#39;FRF OP Pressure&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">/</span> <span class="mi">20</span><span class="p">)</span> <span class="o">*</span> <span class="n">df_scen</span><span class="p">[</span><span class="s1">&#39;FRF OP Temperature&#39;</span><span class="p">]</span>
+        <span class="n">eaf_interim</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">eaf_interim</span> <span class="o">&lt;</span> <span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;EAF_op_unbuck&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span> <span class="n">eaf_interim</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
+        <span class="n">a1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_plot</span><span class="p">[</span><span class="s1">&#39;KP&#39;</span><span class="p">],</span> <span class="n">eaf_interim</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C4&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+
+    <span class="c1">#TODO: Indeed, however different sections (routes, straight, sleepers...) can have different ones</span>
+    <span class="c1"># and it&#39;s interresting to see if area buckle &quot;earlier&quot; than other</span>
+    <span class="c1">#? Block commented as all buckling forces per section are constant in the deterministic case</span>
+    <span class="c1"># Plot buckling susceptibility areas and actual buckle locations</span>
+    <span class="c1"># a1.scatter(df_plot.loc[</span>
+    <span class="c1">#    df_plot[&#39;CBF_op&#39;] &lt; df_plot[&#39;EAF_op_unbuck&#39;], &#39;KP&#39;],</span>
+    <span class="c1">#            df_plot.loc[</span>
+    <span class="c1">#    df_plot[&#39;CBF_op&#39;] &lt; df_plot[&#39;EAF_op_unbuck&#39;], &#39;CBF_op&#39;],</span>
+    <span class="c1">#            label = &#39;CBF operation&#39;, marker = &#39;.&#39;, color = &#39;C4&#39;)</span>
+
+    <span class="c1"># Plot VAP</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_vap_plot</span><span class="p">[</span><span class="s1">&#39;KP VAP&#39;</span><span class="p">],</span> <span class="n">df_vap_plot</span><span class="p">[</span><span class="s1">&#39;ESF VAP&#39;</span><span class="p">],</span>
+               <span class="n">marker</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">edgecolors</span> <span class="o">=</span> <span class="s1">&#39;C3&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;VAP&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;KP [km]&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Effective Force [kN]&#39;</span><span class="p">)</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">a1</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="c1"># Plot distribution of number of buckles</span>
+    <span class="n">a2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">a2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Number of Buckles&#39;</span><span class="p">],</span>
+            <span class="mf">100.0</span> <span class="o">*</span> <span class="n">df_no_buckles</span><span class="p">[</span><span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+    <span class="n">a2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Number of Buckles&#39;</span><span class="p">)</span>
+    <span class="n">a2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Probability [%]&#39;</span><span class="p">)</span>
+    <span class="n">a2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="c1"># Plot lateral friction factor versus location</span>
+    <span class="n">a3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np_kp</span><span class="p">,</span> <span class="n">np_mul_buckle</span><span class="p">,</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;P</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">prob_exceed_char_fric</span><span class="p">)</span><span class="si">}</span><span class="s1"> Buckle Friction&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C1&#39;</span><span class="p">)</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np_mul_kp</span><span class="p">,</span> <span class="n">np_mul_geotech</span><span class="p">,</span>
+            <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;P</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">prob_exceed_char_fric</span><span class="p">)</span><span class="si">}</span><span class="s1"> Geotech Friction&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;KP [km]&#39;</span><span class="p">)</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Lateral Breakout Friction Factor (Operation)&#39;</span><span class="p">)</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">a3</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="c1"># Plot probability of buckling and characteristic VAS</span>
+    <span class="n">a4</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">a4_twin</span> <span class="o">=</span> <span class="n">a4</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+    <span class="c1"># a4.plot(np_kp, np_vas_cond, label = &#39;Conditional VAS&#39;,</span>
+    <span class="c1">#         color = &#39;C1&#39;)</span>
+    <span class="n">a4</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np_kp</span><span class="p">,</span> <span class="n">np_vas_uncond</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Unconditional VAS&#39;</span><span class="p">,</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C2&#39;</span><span class="p">)</span>
+    <span class="n">a4_twin</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np_kp</span><span class="p">,</span> <span class="n">np_prob</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Probability of Buckling&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span>
+                 <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;C3&#39;</span><span class="p">)</span>
+    <span class="n">a4</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;KP [km]&#39;</span><span class="p">)</span>
+    <span class="n">a4</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Characteristic VAS [m]&#39;</span><span class="p">)</span>
+    <span class="n">a4_twin</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Buckling Probability [%]&#39;</span><span class="p">)</span>
+    <span class="n">line4</span><span class="p">,</span> <span class="n">label4</span> <span class="o">=</span> <span class="n">a4</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+    <span class="n">line4_twin</span><span class="p">,</span> <span class="n">label4_twin</span> <span class="o">=</span> <span class="n">a4_twin</span><span class="o">.</span><span class="n">get_legend_handles_labels</span><span class="p">()</span>
+    <span class="n">a4</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">line4</span> <span class="o">+</span> <span class="n">line4_twin</span><span class="p">,</span> <span class="n">label4</span> <span class="o">+</span> <span class="n">label4_twin</span><span class="p">)</span>
+    <span class="n">a4</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+    <span class="n">fig_manager</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">get_current_fig_manager</span><span class="p">()</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fig_manager</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">state</span><span class="p">(</span><span class="s1">&#39;zoomed&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">fig_manager</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">showMaximized</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+        <span class="k">pass</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">bottom</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">,</span> <span class="n">top</span> <span class="o">=</span> <span class="mf">0.925</span><span class="p">,</span> <span class="n">wspace</span> <span class="o">=</span> <span class="mf">0.225</span><span class="p">,</span> <span class="n">hspace</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">plot_file_name</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="n">dpi_size</span><span class="p">)</span>
+    <span class="c1"># plt.show()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="pp_buckpy">
+<a class="viewcode-back" href="../../buckpy_postprocessing.html#buckpy.buckpy_postprocessing.pp_buckpy">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">pp_buckpy</span><span class="p">(</span><span class="n">work_dir</span><span class="p">,</span> <span class="n">input_file_name</span><span class="p">,</span> <span class="n">pipeline_id</span><span class="p">,</span> <span class="n">scenario_no</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span>
+              <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_vap_plot</span><span class="p">,</span> <span class="n">df_pp_buckle_prop</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span>
+              <span class="n">n_sim</span><span class="p">,</span> <span class="n">output_combination</span><span class="p">,</span> <span class="n">bl_verbose</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Post-processing of probabilistic buckling results.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    work_dir : str</span>
+<span class="sd">        The working directory where the analysis files are located.</span>
+<span class="sd">    input_file_name : str</span>
+<span class="sd">        The name of the input file.</span>
+<span class="sd">    pipeline_id : str</span>
+<span class="sd">        Identifier of the pipeline.</span>
+<span class="sd">    scenario_no : int</span>
+<span class="sd">        The scenario number.</span>
+<span class="sd">    prob_exceed_char_fric : float</span>
+<span class="sd">        Probability of exceedance for the calculation of the characteristic friction factor.</span>
+<span class="sd">    df_pp_plot : DataFrame</span>
+<span class="sd">        Definition on assessed mesh of CBF and EAF in different conditions for case to plot.</span>
+<span class="sd">    df_vap_plot : DataFrame</span>
+<span class="sd">        Definition of virtual anchor points for case to plot.</span>
+<span class="sd">    df_pp_buckle_prop : DataFrame</span>
+<span class="sd">        Results for all buckles triggered.</span>
+<span class="sd">    df_scen : DataFrame</span>
+<span class="sd">        Dataframe containing the design data along the pipeline route (mesh) that remains</span>
+<span class="sd">        constant among deterministic and Monte-Carlo simulations.</span>
+<span class="sd">    df_pp_set : DataFrame</span>
+<span class="sd">        Definition of element sets for post-processing outputs.</span>
+<span class="sd">    n_sim : int</span>
+<span class="sd">        Number of Monte-Carlo simulations to be run.</span>
+<span class="sd">    output_combination : Boolean</span>
+<span class="sd">        Switch to write the most frequent combination set of buckles in the result file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Starting time of the post-processing module</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+
+    <span class="c1"># Print in the terminal that the post-processing of the results has started</span>
+    <span class="k">if</span> <span class="n">bl_verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. Post-process results&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Calculate probabilistic outputs and save outputs to Excel file</span>
+    <span class="n">output_file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">input_file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">pipeline_id</span><span class="si">}</span><span class="s2">_scen</span><span class="si">{</span><span class="n">scenario_no</span><span class="si">}</span><span class="s2">_outputs.xlsx&quot;</span>
+    <span class="n">df_prob_n_buckle</span><span class="p">,</span> <span class="n">df_prob_set</span> <span class="o">=</span> <span class="n">pp_outputs</span><span class="p">(</span><span class="n">output_file_name</span><span class="p">,</span> <span class="n">n_sim</span><span class="p">,</span> <span class="n">output_combination</span><span class="p">,</span>
+        <span class="n">df_pp_buckle_prop</span><span class="p">,</span> <span class="n">df_pp_set</span><span class="p">,</span> <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">prob_exceed_char_fric</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">)</span>
+
+    <span class="c1"># Print in the terminal the time taken to post-process results</span>
+    <span class="k">if</span> <span class="n">bl_verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;   Time taken to post-process results: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start_time</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Plot post-processed results and save figure to file</span>
+    <span class="n">plot_file_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">work_dir</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">input_file_name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">pipeline_id</span><span class="si">}</span><span class="s2">_scen</span><span class="si">{</span><span class="n">scenario_no</span><span class="si">}</span><span class="s2">_plots-1.png&quot;</span>
+    <span class="n">pp_plots</span><span class="p">(</span><span class="n">plot_file_name</span><span class="p">,</span> <span class="n">df_scen</span><span class="p">,</span> <span class="n">df_pp_plot</span><span class="p">,</span> <span class="n">df_vap_plot</span><span class="p">,</span> <span class="n">df_prob_n_buckle</span><span class="p">,</span> <span class="n">df_prob_set</span><span class="p">,</span>
+             <span class="n">prob_exceed_char_fric</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, Ismael Ripoll, Carlos Sicilia &amp; Emilien Bonnet.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -8,35 +8,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Getting Started &#8212; BuckPy 0.0.1 documentation</title>
+    <title>Getting Started &#8212; BuckPy 0.1.1 documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script src="_static/documentation_options.js?v=d45e8c67"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/documentation_options.js?v=a58bc63e"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started';</script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -45,6 +48,7 @@
     <link rel="prev" title="BuckPy (Probabilistic Lateral Buckling Algorithm)" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -52,31 +56,16 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="search.html"
       method="get">
@@ -84,7 +73,6 @@
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search the docs ..."
          aria-label="Search the docs ..."
          autocomplete="off"
@@ -92,20 +80,27 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <label class="sidebar-toggle primary-toggle" for="__primary">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
-  </label>
+  </button>
   
   
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
 
+  
+    
   
 
 <a class="navbar-brand logo" href="index.html">
@@ -119,8 +114,8 @@
       
     
     
-    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.0.1 documentation - Home"/>
-    <script>document.write(`<img src="_static/logo_dark.png" class="logo__image only-dark" alt="BuckPy 0.0.1 documentation - Home"/>`);</script>
+    <img src="_static/logo_bright.png" class="logo__image only-light" alt="BuckPy 0.1.1 documentation - Home"/>
+    <img src="_static/logo_dark.png" class="logo__image only-dark pst-js-only" alt="BuckPy 0.1.1 documentation - Home"/>
   
   
 </a></div>
@@ -132,36 +127,36 @@
     <div class="me-auto navbar-header-items__center">
       
         <div class="navbar-item">
-<nav class="navbar-nav">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
       
@@ -173,29 +168,21 @@
         <div class="navbar-item navbar-persistent--container">
           
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
         </div>
       
       
         <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
       
     </div>
     
@@ -204,22 +191,18 @@ document.write(`
   
     <div class="navbar-persistent--mobile">
 
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script>
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
-    </label>
+    </button>
   
 </div>
 
@@ -231,7 +214,8 @@ document.write(`
       
       
       
-      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -240,39 +224,42 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item">
-<nav class="navbar-nav">
+          
+          
+            <div class="navbar-item">
+<nav>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
-                        Getting Started
-                      </a>
-                    </li>
-                
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Getting Started
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="technical_references.html">
-                        Technical References
-                      </a>
-                    </li>
-                
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="modules.html">
-                        API Reference
-                      </a>
-                    </li>
-                
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="technical_references.html">
+    Technical References
+  </a>
+</li>
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="updates.html">
-                        Updates
-                      </a>
-                    </li>
-                
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="updates.html">
+    Updates
+  </a>
+</li>
+
   </ul>
 </nav></div>
+          
         
       </div>
     
@@ -282,15 +269,11 @@ document.write(`
         
           <div class="navbar-item">
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
-  </button>
-`);
-</script></div>
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
         
       </div>
     
@@ -298,29 +281,32 @@ document.write(`
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
         <div class="header-article-item">
 
-
-
-<nav aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb" class="d-print-none">
   <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
@@ -328,7 +314,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Getting Started</li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting Started</span></li>
   </ul>
 </nav>
 </div>
@@ -348,13 +334,36 @@ document.write(`
   <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
 <p>The following sections provide the information required to run BuckPy.</p>
-<section id="how-to-run-buckpy">
-<h2>How to Run BuckPy?<a class="headerlink" href="#how-to-run-buckpy" title="Link to this heading">#</a></h2>
+<section id="running-buckpy-as-a-user">
+<h2>Running BuckPy as a User<a class="headerlink" href="#running-buckpy-as-a-user" title="Link to this heading">#</a></h2>
 <ol class="arabic">
-<li><p>Clone the <a class="reference external" href="https://github.com/Xodus-Group/plba">BuckPy repository</a> to your computer.
-The structure of the cloned BuckPy repository will be:</p>
+<li><p>Create a working directory for the BuckPy simulation.</p></li>
+<li><p>Navigate to the examples folder in the <a class="reference external" href="https://github.com/Xodus-Group/BuckPy">BuckPy repository</a>.
+Copy one of the example input data excel files into the working directory.
+All output files and figures generated during the simulation will be saved in this directory.</p></li>
+<li><p>From a windows terminal opened in the working directory, create and activate a virtual environment,
+install BuckPy, and launch the application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m venv .venv
+$ .\.venv\Scripts\activate
+$ pip install buckpy
+$ buckpy
+</pre></div>
+</div>
+<p>It is important to install BuckPy <strong>inside</strong> the virtual environment.
+Installing it globally may interfere with other Python scripts or libraries already present on your system.</p>
+</li>
+<li><p>The BuckPy graphical user interface (GUI) will open.
+From here, you can select the input Excel file and configure the simulation parameters.
+For details about the <em>Data to be Modified in the `GUI` of ``buckpy.py``</em>.</p></li>
+</ol>
+</section>
+<section id="how-to-clone-buckpy-to-become-a-maintainer">
+<h2>How to Clone BuckPy to become a Maintainer<a class="headerlink" href="#how-to-clone-buckpy-to-become-a-maintainer" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Clone the <a class="reference external" href="https://github.com/Xodus-Group/BuckPy">BuckPy repository</a> to your computer.
+The structure of the cloned repository is as follows:</p>
 <blockquote>
-<div><p><strong>1.1. docs</strong>: This folder contains the Sphinx documentation and Buckfast files writer.</p>
+<div><p><strong>1.1. docs</strong>: This folder contains the Sphinx documentation and scripts used to generate Buckfast input and output files from the BuckPy input file.</p>
 <ul class="simple">
 <li><p>The main menu of the Sphinx documentation can be access by openinng the following
 file in the folder <cite>.//docs//_build//html</cite>:</p>
@@ -362,7 +371,7 @@ file in the folder <cite>.//docs//_build//html</cite>:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">index.html</span></code></p></li>
 </ul>
 </li>
-<li><p>The two scripts to write Buckfast input and output files are in the folder
+<li><p>The two Python scripts used to write Buckfast input and output files are located in:
 <cite>.//docs//_static//buckfast file writers</cite>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">buckfast_input_file_writer.py</span></code></p></li>
@@ -370,15 +379,19 @@ file in the folder <cite>.//docs//_build//html</cite>:</p>
 </ul>
 </li>
 </ul>
-<p><strong>1.2. source</strong>: This folder contains the main file and modules required to run BuckPy,
-and a copy of the input data Excel template file:</p>
+<p><strong>1.2. buckpy</strong>: This folder contains the main application file and core modules:</p>
 <ul class="simple">
+<li><p>Initialisation package script</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__.py</span></code></p></li>
+</ul>
+</li>
 <li><p>Main script</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">buckpy.py</span></code></p></li>
 </ul>
 </li>
-<li><p>Script modules</p>
+<li><p>Supporting modules</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">buckpy_gui.py</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">buckpy_preprocessing.py</span></code></p></li>
@@ -388,7 +401,10 @@ and a copy of the input data Excel template file:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">buckpy_visualisation.py</span></code></p></li>
 </ul>
 </li>
-<li><p>Input data Excel template file</p>
+</ul>
+<p><strong>1.3. examples</strong>: This folder contains sample input files and templates for running BuckPy simulations.</p>
+<ul class="simple">
+<li><p>Input data Excel templates</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">inputDataTemplateA.xlsx</span></code>: Pipeline with rogue buckles only.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">inputDataTemplateB.xlsx</span></code>: Pipeline with simple sleepers.</p></li>
@@ -396,34 +412,11 @@ and a copy of the input data Excel template file:</p>
 </ul>
 </li>
 </ul>
-<p><strong>1.3. LICENSE</strong>: This file contains a copy of the ‘GNU General Public License v3.0’
-under which BuckPy has been realeased.</p>
-<p><strong>1.4. README</strong>: This file contains the README file of the repository.</p>
+<p><strong>1.4. LICENSE</strong>: Contains the <em>GNU General Public License v3.0</em> under which BuckPy has been released.</p>
+<p><strong>1.5. README</strong>: The main repository description and usage overview.</p>
 </div></blockquote>
 </li>
-<li><p>Copy the input data excel template file to the working directory. In this directory,
-the output files will be saved once the BuckPy simulation finishes.</p></li>
-<li><p>In a windows terminal from the directory in which <code class="docutils literal notranslate"><span class="pre">buckpy.py</span></code> is saved, run the command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python buckpy.py
-</pre></div>
-</div>
-</li>
-<li><p>The following two images have been taken from <code class="docutils literal notranslate"><span class="pre">buckpy.py</span></code> to illustrate the messages displayed
-to indicate the progress of the simulation:</p></li>
 </ol>
-<blockquote>
-<div><ul class="simple">
-<li><p>The first image has been obtained with a laptop with 8 working cores
-(Monte-Carlo loop execution time 679.8s for one million simulations of a 25km long pipeline).</p></li>
-<li><p>The second image has been obtained with a laptop with 16 working cores
-(Monte-Carlo loop execution time 275.2s for one million simulations of a 25km long pipeline).</p></li>
-</ul>
-<img alt="_images/buckpy_run_print_laptop.png" class="align-center" src="_images/buckpy_run_print_laptop.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/buckpy_run_print_desktop.png" class="align-center" src="_images/buckpy_run_print_desktop.png" />
-</div></blockquote>
 </section>
 <section id="how-to-modify-the-design-data">
 <h2>How to Modify the Design Data?<a class="headerlink" href="#how-to-modify-the-design-data" title="Link to this heading">#</a></h2>
@@ -858,7 +851,7 @@ In particular, the difference between buckle and geotechnical frictions can be s
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<img alt="_static/buckfast/inputDataBuckfast_A_scen1_plots.png" class="align-center" src="_static/buckfast/inputDataBuckfast_A_scen1_plots.png" />
+<img alt="_images/buckpy_A_scen1_plots.png" class="align-center" src="_images/buckpy_A_scen1_plots.png" />
 </li>
 </ul>
 </div></blockquote>
@@ -1091,7 +1084,7 @@ under various conditions.</p>
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1119,7 +1112,8 @@ under various conditions.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1130,7 +1124,8 @@ under various conditions.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-run-buckpy">How to Run BuckPy?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-buckpy-as-a-user">Running BuckPy as a User</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-clone-buckpy-to-become-a-maintainer">How to Clone BuckPy to become a Maintainer</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-design-data">How to Modify the Design Data?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-gui-of-buckpy-py">Data to be Modified in the <cite>GUI</cite> of <code class="docutils literal notranslate"><span class="pre">buckpy.py</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-inputfiletemplate-xlsx">Data to be Modified in <code class="docutils literal notranslate"><span class="pre">inputFileTemplate.xlsx</span></code></a></li>
@@ -1153,13 +1148,13 @@ under various conditions.</p>
   </nav></div>
 
   <div class="sidebar-secondary-item">
-
-  <div class="tocsection sourcelink">
-    <a href="_sources/getting_started.rst.txt">
-      <i class="fa-solid fa-file-lines"></i> Show Source
-    </a>
-  </div>
-</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/getting_started.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
 
 </div></div>
               
@@ -1174,8 +1169,8 @@ under various conditions.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1195,7 +1190,7 @@ under various conditions.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
     <br/>
   </p>
 </div>
@@ -1208,7 +1203,8 @@ under various conditions.</p>
       
         <div class="footer-item">
 <p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
 </p></div>
       
     </div>

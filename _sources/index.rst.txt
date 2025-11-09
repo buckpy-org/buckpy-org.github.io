@@ -14,7 +14,7 @@ Project Philosophy
  **BuckPy** is an open-source algorithm that has been developed to facilitate the implementation
  of the probabilistic lateral buckling methodology presented in the paper published by Ismael Ripoll,
  Carlos Sicilia and Emilien Bonnet at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).
- :download:`SPT 2023: Lateral Buckling Design using the Friction Distributions at the Expected Buckles <doc/SPT 2023 - Paper - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
+ :download:`SPT 2023: Lateral Buckling Design using the Friction Distributions at the Expected Buckles <_static/SPT 2023 - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
  
  Xodus and TTE OneTech have decided jointly to make `BuckPy <https://github.com/Xodus-Group/plba>`_ available
  with the intend of allowing the pipeline community to review, expand and use it under a
