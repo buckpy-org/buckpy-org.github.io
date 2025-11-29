@@ -1,31 +1,96 @@
-.. BuckPy documentation master file
-
-#################################################
-BuckPy (Probabilistic Lateral Buckling Algorithm)
-#################################################
+######
+BuckPy
+######
 
 ******************
 Project Philosophy
 ****************** 
   **BuckPy** is an open-source algorithm that has been developed to facilitate the implementation
   of the probabilistic lateral buckling methodology presented in
-  :download:`SPT 2023: Lateral Buckling Design using the Friction Distributions at the Expected Buckles <_static/SPT 2023 - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
-  published by Ismael Ripoll, Carlos Sicilia and Emilien Bonnet at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).
-  
-  
-  
+  :download:`Lateral Buckling Design using the Friction Distributions at the Expected Buckles <_static/SPT 2023 - Lateral Buckling Design using the Friction Distributions at the Expected Buckles.pdf>`
+  published by Ismael R., Carlos S. and Emilien B. at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).
+    
   The code is available in `GitHub <https://github.com/Xodus-Group/BuckPy>`_
   with the intend of allowing the pipeline community to review, expand, and use it under a
   `GNU General Public License v3.0 <https://github.com/Xodus-Group/BuckPy/blob/main/LICENSE>`_.
 
-********************
-Project Team Members
-********************
-  The team members responsible for the management of this open-source project are:
+*****************
+Origins of BuckPy
+*****************
+  **BuckPy** began as a **personal challenge** undertaken by Ismael R., Carlos S. and Emilien B. to streamline and
+  optimise lateral buckling assessments. What started as an internal technical exercise quickly demonstrated
+  broader potential.
+
+  Over time, the initiative grew beyond its initial scope and evolved into a fully open-source software tool
+  designed to support the **wider subsea pipeline community**. Today, BuckPy continues to develop through
+  collaborative contributions, shared experience and a commitment to open engineering practices.
+
+*********************************************
+Timeline (From Personal to Community Project)
+*********************************************
+  The journey of **BuckPy** from a personal project to an open-source community initiative can be summarised in the following timeline:
+
+  - **March 2022**: The first working version of BuckPy was created in Ismael R., Carlos S. and Emilien B.'s personal time and committed to a private Git repository, laying the foundation for future development.
+  - **May 2022**:
+
+    - The team, with their employers (Xodus and Total), saw the benefits of an open-source release to promote innovation in probabilistic lateral buckling analysis (PBLA), a field with little development over the past decade.
+    - They aimed to empower specialists to undertake paid projects and create a foundation to optimise lateral buckling design and reduce costs.
+    - The software remained open-source, allowing the community to scrutinise, endorse its use, and contribute, fostering transparency and avoiding the “black box” hurdle.
+
+  - **September 2022**: Total and Xodus began discussions on a memorandum of understanding to support open-source distribution and project integration.
+  - **August 2023**: The MoU was signed, formalising GPL open-source distribution over a three-year period, with Ismael R. and Carlos S. responsible for the process.
+  - **September 2023**: BuckPy was hosted on GitHub under a GPL licence as a private repository with access granted by invitation.
+  - **September 2024**: The software was formally launched in a Teams meeting hosted by Carlos S. with around 40 participants.
+  - **September 2025**: The first user meeting was held in person at Xodus’ London office, with approximately 15 attendees.
+
+**********
+Governance
+**********
+  BuckPy is managed under an open-source model and distributed under the GPL license, ensuring that the software remains freely available and can be used, modified, and shared by the community.
+  The team members serving on the steering committee and responsible for managing this open-source project are:
+
+  Oversight and strategic direction are provided by the following steering committee, who are responsible for setting development priorities, reviewing major technical decisions, and maintaining quality standards.
 
   - Ismael Ripoll <https://github.com/ismael-ripoll>
-  - Carlos Sicilia Gaillard <https://github.com/cSiciliaG>
+  - Carlos Sicilia <https://github.com/cSiciliaG>
   - Emilien Bonnet <https://github.com/EmilienBonnet>
+
+  The wider project community currently includes 36 active participants (as per September 2025 count). These contributors engage in development, testing, documentation, and provide feedback, enabling collaborative progress while fostering transparency and continuous improvement.
+
+****************************
+Steering Committee Functions
+****************************
+  The steering committee provides overall guidance and governance for the BuckPy project. Its key functions are:
+
+  - Setting the project vision and development priorities.
+  - Reviewing and approving major technical decisions.
+  - Ensuring consistency, quality, and transparency across the project.
+  - Supporting contributors and encouraging community participation.
+  - Overseeing release planning and coordination.
+
+*************************************
+Project Health (as of September 2025)
+*************************************
+
+  Usage Statistics
+
+  - GitHub commit history:
+
+    - Total commits: 188 ✅
+    - Main branch (after review cycles): 62 ✅
+
+  - Commits by quarter:
+
+    - 2025: 30 [24 in Q1, 5 in Q2 & 1 in Q3]. ✅ 
+    - 2024: 150 [49 in Q1, 0 in Q2, 3 in Q3 & 98 in Q4]. ✅ 
+    - 2023: 8 [3 in Q2 (Including Initial) & 5 in Q3]. ✅ 
+
+  - Pull requests: 19 closed, 1 open ✅
+  - Issues: 16 open, 7 closed ✅
+  - Discussions: 11 open, 1 closed ✅
+  - Stars (general interest measure): 3 ❌
+  - Watchers (subscribed to repo updates): 4 ❌
+  - Clones/Zips (usage measure): 12 ✅
 
 ********************************
 How to Contribute to the Project
@@ -50,10 +115,11 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   getting_started
-   technical_references
-   modules
-   updates
+   Getting Started <getting_started>
+   Technical References <technical_references>
+   Benchmarking <benchmarking>
+   API References <api_references>
+   Updates <updates>
 
 ##################
 Indices and Tables

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>BuckPy (Probabilistic Lateral Buckling Algorithm) &#8212; BuckPy 0.1.3 documentation</title>
+    <title>BuckPy &#8212; BuckPy 0.1.3 documentation</title>
   
   
   
@@ -144,8 +144,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
   </a>
 </li>
 
@@ -182,6 +189,42 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -246,8 +289,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
   </a>
 </li>
 
@@ -275,6 +325,42 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -308,28 +394,103 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="buckpy-probabilistic-lateral-buckling-algorithm">
-<h1>BuckPy (Probabilistic Lateral Buckling Algorithm)<a class="headerlink" href="#buckpy-probabilistic-lateral-buckling-algorithm" title="Link to this heading">#</a></h1>
+  <section id="buckpy">
+<h1>BuckPy<a class="headerlink" href="#buckpy" title="Link to this heading">#</a></h1>
 <section id="project-philosophy">
 <h2>Project Philosophy<a class="headerlink" href="#project-philosophy" title="Link to this heading">#</a></h2>
 <blockquote>
 <div><p><strong>BuckPy</strong> is an open-source algorithm that has been developed to facilitate the implementation
 of the probabilistic lateral buckling methodology presented in
-<a class="reference download internal" download="" href="_downloads/2f35a05225ca1dc16cb897325985b503/SPT%202023%20-%20Lateral%20Buckling%20Design%20using%20the%20Friction%20Distributions%20at%20the%20Expected%20Buckles.pdf"><code class="xref download docutils literal notranslate"><span class="pre">SPT</span> <span class="pre">2023:</span> <span class="pre">Lateral</span> <span class="pre">Buckling</span> <span class="pre">Design</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">Friction</span> <span class="pre">Distributions</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">Expected</span> <span class="pre">Buckles</span></code></a>
-published by Ismael Ripoll, Carlos Sicilia and Emilien Bonnet at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).</p>
+<a class="reference download internal" download="" href="_downloads/2f35a05225ca1dc16cb897325985b503/SPT%202023%20-%20Lateral%20Buckling%20Design%20using%20the%20Friction%20Distributions%20at%20the%20Expected%20Buckles.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Lateral</span> <span class="pre">Buckling</span> <span class="pre">Design</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">Friction</span> <span class="pre">Distributions</span> <span class="pre">at</span> <span class="pre">the</span> <span class="pre">Expected</span> <span class="pre">Buckles</span></code></a>
+published by Ismael R., Carlos S. and Emilien B. at the 2023 Subsea Pipeline Technology Congress in London (SPT 2023).</p>
 <p>The code is available in <a class="reference external" href="https://github.com/Xodus-Group/BuckPy">GitHub</a>
 with the intend of allowing the pipeline community to review, expand, and use it under a
 <a class="reference external" href="https://github.com/Xodus-Group/BuckPy/blob/main/LICENSE">GNU General Public License v3.0</a>.</p>
 </div></blockquote>
 </section>
-<section id="project-team-members">
-<h2>Project Team Members<a class="headerlink" href="#project-team-members" title="Link to this heading">#</a></h2>
+<section id="origins-of-buckpy">
+<h2>Origins of BuckPy<a class="headerlink" href="#origins-of-buckpy" title="Link to this heading">#</a></h2>
 <blockquote>
-<div><p>The team members responsible for the management of this open-source project are:</p>
+<div><p><strong>BuckPy</strong> began as a <strong>personal challenge</strong> undertaken by Ismael R., Carlos S. and Emilien B. to streamline and
+optimise lateral buckling assessments. What started as an internal technical exercise quickly demonstrated
+broader potential.</p>
+<p>Over time, the initiative grew beyond its initial scope and evolved into a fully open-source software tool
+designed to support the <strong>wider subsea pipeline community</strong>. Today, BuckPy continues to develop through
+collaborative contributions, shared experience and a commitment to open engineering practices.</p>
+</div></blockquote>
+</section>
+<section id="timeline-from-personal-to-community-project">
+<h2>Timeline (From Personal to Community Project)<a class="headerlink" href="#timeline-from-personal-to-community-project" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The journey of <strong>BuckPy</strong> from a personal project to an open-source community initiative can be summarised in the following timeline:</p>
+<ul class="simple">
+<li><p><strong>March 2022</strong>: The first working version of BuckPy was created in Ismael R., Carlos S. and Emilien B.’s personal time and committed to a private Git repository, laying the foundation for future development.</p></li>
+<li><p><strong>May 2022</strong>:</p>
+<ul>
+<li><p>The team, with their employers (Xodus and Total), saw the benefits of an open-source release to promote innovation in probabilistic lateral buckling analysis (PBLA), a field with little development over the past decade.</p></li>
+<li><p>They aimed to empower specialists to undertake paid projects and create a foundation to optimise lateral buckling design and reduce costs.</p></li>
+<li><p>The software remained open-source, allowing the community to scrutinise, endorse its use, and contribute, fostering transparency and avoiding the “black box” hurdle.</p></li>
+</ul>
+</li>
+<li><p><strong>September 2022</strong>: Total and Xodus began discussions on a memorandum of understanding to support open-source distribution and project integration.</p></li>
+<li><p><strong>August 2023</strong>: The MoU was signed, formalising GPL open-source distribution over a three-year period, with Ismael R. and Carlos S. responsible for the process.</p></li>
+<li><p><strong>September 2023</strong>: BuckPy was hosted on GitHub under a GPL licence as a private repository with access granted by invitation.</p></li>
+<li><p><strong>September 2024</strong>: The software was formally launched in a Teams meeting hosted by Carlos S. with around 40 participants.</p></li>
+<li><p><strong>September 2025</strong>: The first user meeting was held in person at Xodus’ London office, with approximately 15 attendees.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="governance">
+<h2>Governance<a class="headerlink" href="#governance" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>BuckPy is managed under an open-source model and distributed under the GPL license, ensuring that the software remains freely available and can be used, modified, and shared by the community.
+The team members serving on the steering committee and responsible for managing this open-source project are:</p>
+<p>Oversight and strategic direction are provided by the following steering committee, who are responsible for setting development priorities, reviewing major technical decisions, and maintaining quality standards.</p>
 <ul class="simple">
 <li><p>Ismael Ripoll &lt;<a class="github reference external" href="https://github.com/ismael-ripoll">ismael-ripoll</a>&gt;</p></li>
-<li><p>Carlos Sicilia Gaillard &lt;<a class="github reference external" href="https://github.com/cSiciliaG">cSiciliaG</a>&gt;</p></li>
+<li><p>Carlos Sicilia &lt;<a class="github reference external" href="https://github.com/cSiciliaG">cSiciliaG</a>&gt;</p></li>
 <li><p>Emilien Bonnet &lt;<a class="github reference external" href="https://github.com/EmilienBonnet">EmilienBonnet</a>&gt;</p></li>
+</ul>
+<p>The wider project community currently includes 36 active participants (as per September 2025 count). These contributors engage in development, testing, documentation, and provide feedback, enabling collaborative progress while fostering transparency and continuous improvement.</p>
+</div></blockquote>
+</section>
+<section id="steering-committee-functions">
+<h2>Steering Committee Functions<a class="headerlink" href="#steering-committee-functions" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>The steering committee provides overall guidance and governance for the BuckPy project. Its key functions are:</p>
+<ul class="simple">
+<li><p>Setting the project vision and development priorities.</p></li>
+<li><p>Reviewing and approving major technical decisions.</p></li>
+<li><p>Ensuring consistency, quality, and transparency across the project.</p></li>
+<li><p>Supporting contributors and encouraging community participation.</p></li>
+<li><p>Overseeing release planning and coordination.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="project-health-as-of-september-2025">
+<h2>Project Health (as of September 2025)<a class="headerlink" href="#project-health-as-of-september-2025" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>Usage Statistics</p>
+<ul class="simple">
+<li><p>GitHub commit history:</p>
+<ul>
+<li><p>Total commits: 188 ✅</p></li>
+<li><p>Main branch (after review cycles): 62 ✅</p></li>
+</ul>
+</li>
+<li><p>Commits by quarter:</p>
+<ul>
+<li><p>2025: 30 [24 in Q1, 5 in Q2 &amp; 1 in Q3]. ✅</p></li>
+<li><p>2024: 150 [49 in Q1, 0 in Q2, 3 in Q3 &amp; 98 in Q4]. ✅</p></li>
+<li><p>2023: 8 [3 in Q2 (Including Initial) &amp; 5 in Q3]. ✅</p></li>
+</ul>
+</li>
+<li><p>Pull requests: 19 closed, 1 open ✅</p></li>
+<li><p>Issues: 16 open, 7 closed ✅</p></li>
+<li><p>Discussions: 11 open, 1 closed ✅</p></li>
+<li><p>Stars (general interest measure): 3 ❌</p></li>
+<li><p>Watchers (subscribed to repo updates): 4 ❌</p></li>
+<li><p>Clones/Zips (usage measure): 12 ✅</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -364,9 +525,6 @@ with the intend of allowing the pipeline community to review, expand, and use it
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#how-to-modify-the-design-data">How to Modify the Design Data?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#which-output-data-is-generated-by-buckpy">Which Output Data is Generated by BuckPy?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="getting_started.html#how-to-clone-buckpy-to-become-a-maintainer">How to Clone BuckPy to become a Maintainer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#buckfast-benchmarking">Buckfast Benchmarking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#buckfast-file-writers">Buckfast File Writers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting_started.html#saipem-pro-buck-benchmarking">Saipem Pro-Buck Benchmarking</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="technical_references.html">Technical References</a><ul>
@@ -375,7 +533,13 @@ with the intend of allowing the pipeline community to review, expand, and use it
 <li class="toctree-l2"><a class="reference internal" href="technical_references.html#spt-2025-analysis-of-horizontal-oos-survey-data-for-use-in-probabilistic-lateral-buckling-design">SPT 2025: Analysis of Horizontal OOS Survey Data for use in Probabilistic Lateral Buckling Design</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">API Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="benchmarking.html">Benchmarking</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="benchmarking.html#buckfast-benchmarking">Buckfast Benchmarking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarking.html#buckfast-file-writers">Buckfast File Writers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmarking.html#saipem-pro-buck-benchmarking">Saipem Pro-Buck Benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api_references.html">API References</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="buckpy.html">1. Main Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buckpy_gui.html">2. GUI Module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="buckpy_variables.html">3. Variables Module</a></li>
@@ -386,10 +550,9 @@ with the intend of allowing the pipeline community to review, expand, and use it
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="updates.html">Updates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="updates.html#january-2025">January 2025</a></li>
-<li class="toctree-l2"><a class="reference internal" href="updates.html#december-2024">December 2024</a></li>
-<li class="toctree-l2"><a class="reference internal" href="updates.html#november-2024">November 2024</a></li>
-<li class="toctree-l2"><a class="reference internal" href="updates.html#october-2024">October 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#h2-2025-julydecember">H2 2025 (July–December)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#h1-2025-januaryjune">H1 2025 (January–June)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updates.html#h2-2024-julydecember">H2 2024 (July–December)</a></li>
 </ul>
 </li>
 </ul>
@@ -442,9 +605,13 @@ with the intend of allowing the pipeline community to review, expand, and use it
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BuckPy (Probabilistic Lateral Buckling Algorithm)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">BuckPy</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-philosophy">Project Philosophy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-team-members">Project Team Members</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#origins-of-buckpy">Origins of BuckPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timeline-from-personal-to-community-project">Timeline (From Personal to Community Project)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#governance">Governance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#steering-committee-functions">Steering Committee Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-health-as-of-september-2025">Project Health (as of September 2025)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-contribute-to-the-project">How to Contribute to the Project</a></li>
 </ul>
 </li>

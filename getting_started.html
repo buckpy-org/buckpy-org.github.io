@@ -45,7 +45,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Technical References" href="technical_references.html" />
-    <link rel="prev" title="BuckPy (Probabilistic Lateral Buckling Algorithm)" href="index.html" />
+    <link rel="prev" title="BuckPy" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -145,8 +145,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
   </a>
 </li>
 
@@ -183,6 +190,42 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+      
+        <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
       
     </div>
     
@@ -245,8 +288,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api_references.html">
+    API References
   </a>
 </li>
 
@@ -274,6 +324,42 @@
   <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
+        
+          <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-3"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-3"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-3"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-3">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
         
       </div>
     
@@ -333,7 +419,6 @@
                   
   <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
-<p>The following sections provide the information required to use BuckPy.</p>
 <section id="launching-buckpy-using-the-pip-install-package">
 <h2>Launching BuckPy using the pip install Package<a class="headerlink" href="#launching-buckpy-using-the-pip-install-package" title="Link to this heading">#</a></h2>
 <blockquote>
@@ -780,7 +865,7 @@ combinations based on set number of sections in the route data that has triggere
 </div></blockquote>
 </section>
 <section id="output-figures">
-<h3>Output Figures:<a class="headerlink" href="#output-figures" title="Link to this heading">#</a></h3>
+<h3>Output Figures<a class="headerlink" href="#output-figures" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>The name of the two output figures will follow the convention:</p>
 <ul>
@@ -798,6 +883,9 @@ combinations based on set number of sections in the route data that has triggere
 <li><p><strong>Lower Centre</strong>: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.</p></li>
 <li><p><strong>Lower Right</strong>: This subplot contains the probabilities of buckling and characteristic VAS.</p></li>
 </ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <img alt="_images/inputDataTemplate_A_scen1_plots-1.png" class="align-center" src="_images/inputDataTemplate_A_scen1_plots-1.png" />
 <div class="line-block">
 <div class="line"><br /></div>
@@ -812,7 +900,14 @@ combinations based on set number of sections in the route data that has triggere
 <li><p><strong>Lower Centre</strong>: This subplot contains the probabilities of buckling per kilometre.</p></li>
 <li><p><strong>Lower Right</strong>: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.</p></li>
 </ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
 <img alt="_images/inputDataTemplate_A_scen1_plots-2.png" class="align-center" src="_images/inputDataTemplate_A_scen1_plots-2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
 </div></blockquote>
 </section>
 </section>
@@ -879,253 +974,6 @@ combinations based on set number of sections in the route data that has triggere
 </ol>
 </div></blockquote>
 </section>
-<section id="buckfast-benchmarking">
-<h2>Buckfast Benchmarking<a class="headerlink" href="#buckfast-benchmarking" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Results from BuckPy have been benchmarked against results from Buckfast for example A of
-the Buckfast manual and good agreement has been obtained.
-The comparison is presented in the following subplots:</p>
-<ul>
-<li><p><strong>Row 1</strong>: This subplot compares the probabilities of buckling.</p></li>
-<li><p><strong>Row 2</strong>: This subplot compares the characteristic VAS.</p></li>
-<li><p><strong>Row 3</strong>: This subplot compares the effective axial force profiles determined using
-the mean axial friction factor and the mean critical buckling force.</p></li>
-<li><p><strong>Row 4</strong>: This subplot compares the number of buckles.</p></li>
-<li><p><strong>Row 5</strong>: This subplot presents the output from BuckPy.
-In particular, the difference between buckle and geotechnical frictions can be seen.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/zplot_A_scen1_prob_buckling.png" class="align-center" src="_images/zplot_A_scen1_prob_buckling.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/zplot_A_scen1_vas.png" class="align-center" src="_images/zplot_A_scen1_vas.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/zplot_A_scen1_force_profiles_buckled.png" class="align-center" src="_images/zplot_A_scen1_force_profiles_buckled.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/zplot_A_scen1_no_buckles.png" class="align-center" src="_images/zplot_A_scen1_no_buckles.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/buckpy_A_scen1_plots.png" class="align-center" src="_images/buckpy_A_scen1_plots.png" />
-</li>
-</ul>
-</div></blockquote>
-</section>
-<section id="buckfast-file-writers">
-<h2>Buckfast File Writers<a class="headerlink" href="#buckfast-file-writers" title="Link to this heading">#</a></h2>
-<section id="input-file-writer">
-<h3>Input File Writer<a class="headerlink" href="#input-file-writer" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">buckfast_input_file_writer.py</span></code> reads the BuckPy input file <code class="docutils literal notranslate"><span class="pre">buckpy.xlsx</span></code> and writes the Buckfast input file in the same format as the Buckfast manual.</p>
-<p>There is an option <code class="docutils literal notranslate"><span class="pre">DEFAULT_OUTPUT</span></code> to use the default values or self-defined values when writing the <code class="docutils literal notranslate"><span class="pre">*OUTPUT</span></code> section.</p>
-<p>The benchmark comparison using Buckfast example A is in the folder <code class="docutils literal notranslate"><span class="pre">.//docs//_static//buckfast</span></code></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">buckfast_A_example.csv</span></code> is the example A from the Buckfast manual.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">buckfast_A_scen1.csv</span></code> is the Buckfast input file generated from the Buckpy input file <code class="docutils literal notranslate"><span class="pre">buckpy.xlsx</span></code>.</p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="output-file-writer-buckfast-result-file">
-<h3>Output File Writer - Buckfast Result File<a class="headerlink" href="#output-file-writer-buckfast-result-file" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">buckfast_output_file_compiler.py</span></code> reads the Buckfast result files and writes the results
-in a single Excel file. It can also compare the results of Buckfast and BuckPy either for each
-scenario or for all scenarios.</p>
-<p>Finally, it can write a summary table Excel file for the selected scenarios. The Buckfast output file has the following tabs:</p>
-<ol class="arabic">
-<li><p><strong>Elements</strong>: This tab contains the probability of buckling and characteristic VAS outputs.
-This information is taken from the <code class="docutils literal notranslate"><span class="pre">.out2</span></code> file.</p>
-<ul class="simple">
-<li><p><cite>Centroid of the Element (m)</cite>: The KP value of the element centroid in the unit of m.</p></li>
-<li><p><cite>Number of Simulations with a Buckle</cite>: The number of simulations with a buckle.</p></li>
-<li><p><cite>Probability of Buckling</cite>: The probability of buckling in the simulation.</p></li>
-<li><p><cite>Probability of not Buckling</cite>: The probability of not buckling in the simulation.</p></li>
-<li><p><cite>Mean of the VAS (m)</cite>: The mean of the VAS in the unit of m.</p></li>
-<li><p><cite>Standard Deviation of the VAS (m)</cite>: The standard deviation of the VAS in the unit of m.</p></li>
-<li><p><cite>Minimum VAS (m)</cite>: The minimum of the VAS in the unit of m.</p></li>
-<li><p><cite>Maximum VAS (m)</cite>: The Maximum of the VAS in the unit of m.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/output_compiler-elements.png" class="align-center" src="_images/output_compiler-elements.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</li>
-<li><p><strong>Sets</strong>: This tab contains the probability of buckling and characteristic VAS outputs.
-This information is taken from the <code class="docutils literal notranslate"><span class="pre">.out2</span></code> file.</p>
-<ul class="simple">
-<li><p><cite>Set Label</cite>: The identifier of the post-processing set.</p></li>
-<li><p><cite>Number of Simulations with Buckles per Set</cite>: The number of simulations with buckles in each set.</p></li>
-<li><p><cite>Probability of Buckling</cite>: The probability of buckling in the set.</p></li>
-<li><p><cite>Probability of not Buckling</cite>: The probability of not buckling in the set.</p></li>
-<li><p><cite>Mean of the VAS (m)</cite>: The mean of the VAS in the unit of m.</p></li>
-<li><p><cite>Standard Deviation of the VAS (m)</cite>: The standard deviation of the VAS in the unit of m.</p></li>
-<li><p><cite>Minimum VAS (m)</cite>: The minimum of the VAS in the unit of m.</p></li>
-<li><p><cite>Maximum VAS (m)</cite>: The Maximum of the VAS in the unit of m.</p></li>
-<li><p><cite>VAS, Conditional, Rogue (m)</cite>: The conditional characteristic VAS of rogue buckles in the unit of m.</p></li>
-<li><p><cite>Characteristic VAS, Unconditional, Rogue (m)</cite>: The unconditional characteristic VAS of rogue buckles in the unit of m.</p></li>
-<li><p><cite>VAS, Conditional, Planned (m)</cite>: The conditional characteristic VAS of planned buckles in the unit of m.</p></li>
-<li><p><cite>Characteristic VAS, Unconditional, Planned (m)</cite>: The unconditional characteristic VAS of planned buckles in the unit of m.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/output_compiler-sets.png" class="align-center" src="_images/output_compiler-sets.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</li>
-<li><p><strong>No Buckles</strong>: This tab contains the probability distribution of the total number of buckles
-along the pipeline route. This information is taken from the <code class="docutils literal notranslate"><span class="pre">.out2</span></code> file.</p>
-<ul class="simple">
-<li><p><cite>Number of Buckles</cite>: The number of buckles.</p></li>
-<li><p><cite>Number of Simulations</cite>: The number of simulations with buckles.</p></li>
-<li><p><cite>Probability of Buckling</cite>: The probabilities of buckling.</p></li>
-<li><p><cite>Cumulative Probability of Buckling</cite>: The cumulative probabilities of buckling.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/output_compiler-no_buckles.png" class="align-center" src="_images/output_compiler-no_buckles.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</li>
-<li><p><strong>Force Profiles</strong>: This tab contains the effective axial force profiles. This information is taken from the <code class="docutils literal notranslate"><span class="pre">.out1</span></code> file.</p>
-<ul class="simple">
-<li><p><cite>KP (m)</cite>: The KP value of the element centroid in the unit of m.</p></li>
-<li><p><cite>CBF Hydrotest (kN)</cite>: The concentrated buckling force during hydrotest in the unit of kN.</p></li>
-<li><p><cite>CBF Operation (kN)</cite>: The concentrated buckling force during operation in the unit of kN.</p></li>
-<li><p><cite>EAF Installation [RLT] (kN)</cite>: The effective axial force during installation in the unit of kN.</p></li>
-<li><p><cite>EAF Hydrotest (kN)</cite>: The effective axial force during hydrotest in the unit of kN.</p></li>
-<li><p><cite>EAF Operation (kN)</cite>: The effective axial force during operation in the unit of kN.</p></li>
-<li><p><cite>EAF Operation [without Buckling] (kN)</cite>: The effective axial force during operation
-without buckling in the unit of kN.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/output_compiler-force.png" class="align-center" src="_images/output_compiler-force.png" />
-</li>
-</ol>
-</div></blockquote>
-</section>
-<section id="output-file-writer-summary-table-file">
-<h3>Output File Writer - Summary Table File<a class="headerlink" href="#output-file-writer-summary-table-file" title="Link to this heading">#</a></h3>
-<blockquote>
-<div><p>The Buckfast output file has the following tabs:</p>
-<ol class="arabic">
-<li><p><strong>Buckling</strong>: This tab contains the probability of buckling and number of buckles results of Buckfast and BuckPy.</p>
-<ul class="simple">
-<li><p><cite>Pipeline</cite>: Pipeline of the input file analysed.</p></li>
-<li><p><cite>Scenario</cite>: Scenario or sensitivity of the input file analysed.</p></li>
-<li><p><cite>Scenario Description</cite>: The description of each simulation scenario.</p></li>
-<li><p><cite>Buckfast - Probability of Buckling</cite>: The probability of buckling in the Buckfast result.</p></li>
-<li><p><cite>Buckfast - Number of Buckles - Min</cite>: The minimum number of buckles in the Buckfast result.</p></li>
-<li><p><cite>Buckfast - Number of Buckles - Mode</cite>: The most likely number of buckles in the Buckfast result.</p></li>
-<li><p><cite>Buckfast - Number of Buckles - Max</cite>: The maximum number of buckles in the Buckfast result.</p></li>
-<li><p><cite>BuckPy - Probability of Buckling</cite>: The probability of buckling in the BuckPy result.</p></li>
-<li><p><cite>BuckPy - Number of Buckles - Min</cite>: The minimum number of buckles in the BuckPy result.</p></li>
-<li><p><cite>BuckPy - Number of Buckles - Mode</cite>: The most likely number of buckles in the BuckPy result.</p></li>
-<li><p><cite>BuckPy - Number of Buckles - Max</cite>: The maximum number of buckles in the BuckPy result.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/summary_table-Buckling.png" class="align-center" src="_images/summary_table-Buckling.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</li>
-<li><p><strong>Characteristic</strong>: This tab contains the probability of buckling and characteristic VAS
-results of Buckfast and BuckPy. It also contains the characteristic peak lateral friction, and
-maximum characteristic VAS and friction results of BuckPy.</p>
-<ul class="simple">
-<li><p><cite>Pipeline</cite>: Pipeline of the input file analysed.</p></li>
-<li><p><cite>Scenario</cite>: Scenario or sensitivity of the input file analysed.</p></li>
-<li><p><cite>Scenario Description</cite>: The description of each simulation scenario.</p></li>
-<li><p><cite>Element Set - Identifier</cite>: The identifier of the post-processing element set.</p></li>
-<li><p><cite>Element Set - KP From (m)</cite>: The KP of the start of the pipeline section in the unit of m.</p></li>
-<li><p><cite>Element Set - KP To (m)</cite>: The KP of the end of the pipeline section in the unit of m.</p></li>
-<li><p><cite>Buckfast - Probability of Buckling</cite>: The probability of buckling in the Buckfast result.</p></li>
-<li><p><cite>Buckfast - Characteristic VAS (m)</cite>: The unconditional characteristic VAS of rogue buckles in the unit of m.</p></li>
-<li><p><cite>BuckPy - Probability of Buckling</cite>: The probability of buckling in the BuckPy result.</p></li>
-<li><p><cite>BuckPy - Characteristic VAS (m)</cite>: The unconditional characteristic VAS in the unit of m.</p></li>
-<li><p><cite>BuckPy - Characteristic Peak Lateral Friction</cite>: The unconditional characteristic lateral breakout friction factor.</p></li>
-<li><p><cite>Buckfast - Max Char. VAS (m)</cite>: The maximum characteristic VAS of each scenario in the Buckfast result.</p></li>
-<li><p><cite>BuckPy - Max Char. VAS (m)</cite>: The maximum characteristic VAS of each scenario in the BuckPy result.</p></li>
-<li><p><cite>BuckPy - Max Char. Friction</cite>: The maximum characteristic friction of each scenario in the BuckPy result.</p></li>
-</ul>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<img alt="_images/summary_table-Characteristic.png" class="align-center" src="_images/summary_table-Characteristic.png" />
-</li>
-</ol>
-</div></blockquote>
-</section>
-</section>
-<section id="saipem-pro-buck-benchmarking">
-<h2>Saipem Pro-Buck Benchmarking<a class="headerlink" href="#saipem-pro-buck-benchmarking" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>The benchmark between BuckPy and Saipem Pro-Buck can be found in the disccusion with Alberto Battistini
-<code class="docutils literal notranslate"><span class="pre">BuckPy</span> <span class="pre">and</span> <span class="pre">Saipem</span> <span class="pre">ProBuck</span> <span class="pre">Benchmark</span> <span class="pre">#35</span></code>.</p>
-<p>The Pro-Buck program is a MATLAB-based tool designed to analyze the likelihood of buckling in pipelines
-subjected to axial loads induced by pressure and temperature.
-Pro-Buck calculates critical buckling loads (CBL) and provides valuable insights into the critical points
-where buckling might occur due to excessive compression or other related forces.
-The algorithm performs Monte Carlo simulations to capture VAS and frictional forces of buckles.
-The program generates detailed results, including CBL, virtual axial spacing (VAS), and pipeline expansion,
-which can be visualized using MATLAB’s graphing tools.</p>
-<p>The latest revision of Pro-Buck introduces an approach that makes minimal changes to
-the DNV-RP-F110 recommendations. It uses a Monte Carlo algorithm to determine soil friction distributions
-at expected buckling locations. This methodology addresses limitations in the DNV-RP-F110 approach
-by separately sampling lateral friction and Out-of-Straightness (OOS) factors,
-leading to significant cost savings and improved design reliability.</p>
-<p>Pro-Buck is a powerful tool for predicting buckling risks and ensuring the structural integrity of pipelines
-under various conditions.</p>
-<p>General information about the pipeline for Benchmarking:</p>
-<ul class="simple">
-<li><p>155 approx km Pipeline with straight sections and route bends</p></li>
-<li><p>7 pipe set</p></li>
-<li><p>9 Friction set</p></li>
-</ul>
-<p>The two codes yield identical results in the following three figures:</p>
-<ul class="simple">
-<li><p>Probability of buckling versus KP</p></li>
-</ul>
-<img alt="_images/ProBuck-Prob_Buckling.png" class="align-center" src="_images/ProBuck-Prob_Buckling.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ul class="simple">
-<li><p>Number of Buckles</p></li>
-</ul>
-<img alt="_images/ProBuck-No_Buckles.png" class="align-center" src="_images/ProBuck-No_Buckles.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<ul class="simple">
-<li><p>Conditional Friction Factor versus KP</p></li>
-</ul>
-<img alt="_images/ProBuck-Friction.png" class="align-center" src="_images/ProBuck-Friction.png" />
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-</div></blockquote>
-</section>
 </section>
 
 
@@ -1144,7 +992,7 @@ under various conditions.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">BuckPy (Probabilistic Lateral Buckling Algorithm)</p>
+        <p class="prev-next-title">BuckPy</p>
       </div>
     </a>
     <a class="right-next"
@@ -1178,25 +1026,17 @@ under various conditions.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-buckpy-using-the-pip-install-package">Launching BuckPy using the pip install Package</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#launching-buckpy-using-the-source-code">Launching BuckPy using the Source Code</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-start-a-simulation">How to Start a Simulation?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-design-data">How to Modify the Design Data?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-modify-the-design-data">How to Modify the Design Data?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-gui">Data to be Modified in the GUI</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-to-be-modified-in-the-inputfiletemplate-xlsx">Data to be Modified in the <code class="docutils literal notranslate"><span class="pre">inputFileTemplate.xlsx</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-output-data-is-generated-by-buckpy">Which Output Data is Generated by BuckPy?</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-output-data-is-generated-by-buckpy">Which Output Data is Generated by BuckPy?</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-excel-file">Output Excel file</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-figures">Output Figures:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-figures">Output Figures</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-clone-buckpy-to-become-a-maintainer">How to Clone BuckPy to become a Maintainer</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckfast-benchmarking">Buckfast Benchmarking</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buckfast-file-writers">Buckfast File Writers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-file-writer">Input File Writer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-file-writer-buckfast-result-file">Output File Writer - Buckfast Result File</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#output-file-writer-summary-table-file">Output File Writer - Summary Table File</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saipem-pro-buck-benchmarking">Saipem Pro-Buck Benchmarking</a></li>
 </ul>
   </nav></div>
 

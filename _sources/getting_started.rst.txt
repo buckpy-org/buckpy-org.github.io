@@ -1,7 +1,6 @@
 ###############
 Getting Started
 ###############
-The following sections provide the information required to use BuckPy.
 
 **********************************************
 Launching BuckPy using the pip install Package
@@ -124,11 +123,15 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `Friction Sampling`: The method for sampling the lateral breakout friction factor (i.e. 0 'per Element' or 1 'per OOS Reference Length').
      - `Char. Friction Prob.`: The probability of exceedance among the lateral breakout friction factors.
      - `Scenario Description`: The description of each simulation scenario.
+
      |
+
      .. image:: _static/excel_file_input_scenario.png
        :align: center
+
      |
      |
+
   #. **Route**: Different route layout sets are defined in this tab. Multiple sections can be defined 
      (Spool, Straight, Bend, Sleeper or RCM) per route layout. Different pipe properties, 
      friction factors, HOOS factors and residual buckle force and length can be defined for each section. 
@@ -156,11 +159,15 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `Reaction Installation`: The reaction force during installation in the unit of N. The sign convention is that all forces are compression positive and tension negative.
      - `Reaction Hydrotest`: The reaction force during hydrotest in the unit of N.
      - `Reaction Operation`: The reaction force during operation in the unit of N.
+     
      |
+
      .. image:: _static/excel_file_input_route.png
        :align: center
+
      |
      |
+
   #. **Pipe**: Different pipe properties are defined in this tab. Pipe properties are grouped 
      by pipelines and pipe sets (multiple pipe sets can be defined per pipeline).
  
@@ -176,11 +183,15 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `sw Hydrotest`: The submerged weight during hydrotest in the unit of N/m.
      - `sw Operation`: The submerged weight during operation in the unit of N/m.
      - `Pipe Description`: The description of the pipeline material properties.
+
      |
+
      .. image:: _static/excel_file_input_pipe.png
        :align: center
+
      |
      |
+
   #. **Soils**: The LE(P95), BE(P50), and HE(P5) of the axial residual and lateral breakout friction factors are defined in this tab.
      Different lateral breakout friction factors can be specified for hydrotest and operating conditions.
      For each friction factor, the bounds used to determine the lognormal fit are defined (LE_BE, BE_HE or LE_BE_HE).
@@ -202,11 +213,15 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `Lateral Operation HE`: HE of the lateral operation friction factor (P5).
      - `Lateral Operation Fit Bounds`: The bounds used to determine the lognormal fit for the lateral operation friction factor (LE_BE, BE_HE or LE_BE_HE).
      - `Soil Description`: The description of the soil friction properties.
+
      |
+
      .. image:: _static/excel_file_input_soil.png
        :align: center
+
      |
      |
+
   #. **Operating**: Installation, hydrotest and operating pressures and temperatures and RLT are 
      specified in this tab. This tab in turn is used to define the KPs (or elements) in which 
      the pressure, temperature and RLT will be interpolated. 
@@ -222,11 +237,15 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `Temperature Hydrotest`: The temperature during hydrotest in the unit of Celsius Degree.
      - `Temperature Operation`: The temperature during operation in the unit of Celsius Degree.
      - `RLT`: The Residual Lay Tension in the unit of N (Negative Value).
+
      |
+
      .. image:: _static/excel_file_input_operating.png
        :align: center 
+
      |
      |
+
   #. **Post-Processing**: This tab defines the sets that will be used by BuckPy to define 
      the characteristic VAS and friction along the pipeline route. Post-processing sets can be 
      grouped by pipeline and layout sets (route sets). 
@@ -238,7 +257,9 @@ Data to be Modified in the ``inputFileTemplate.xlsx``
      - `KP To`: The KP of the end of the pipeline section in the unit of m.
      - `Characteristic VAS Probability`: The probability of exceeding characteristic VAS.
      - `Post-Processing Description`: The description of the post-processing sets.
+
      |
+
      .. image:: _static/excel_file_input_postprocessing.png
        :align: center
 
@@ -269,11 +290,15 @@ Output Excel file
     - `Standard Deviation of the Lateral Breakout Friction`: The standard deviation of the lateral breakout friction factor.
     - `Minimum Lateral Breakout Friction`: The minimum of the lateral breakout friction factor.
     - `Maximum Lateral Breakout Friction`: The maximum of the lateral breakout friction factor. 
+
     |
+
     .. image:: _static/excel_file_output_elements.png
       :align: center 
+
     |
     |
+
  #. **Sets**: This tab contains the probability of buckling, and stochastic VAS and lateral 
     friction factor outputs. It also contains the Characteristic VAS and Friction of the Buckles. 
     This information is grouped by based on the **Post-Processing Set** of the **Post-Processing** tab 
@@ -300,11 +325,15 @@ Output Excel file
     - `Characteristic Lateral Breakout Friction Probability`: The probabilities of the characteristic lateral breakout friction factor.
     - `Characteristic Lateral Breakout Friction, Buckles`: The unconditional characteristic lateral breakout friction factor.
     - `Lateral Breakout Friction, HE, Geotech`: The high estimate of the geotechnical lateral breakout friction factor.
+
     |
+
     .. image:: _static/excel_file_output_sets.png
       :align: center 
+
     |
     |
+
  #. **No Buckles**: This tab contains the probability distribution of the total number of buckles 
     along the pipeline route. 
 
@@ -312,11 +341,15 @@ Output Excel file
     - `Number of Simulations`: The number of simulations with buckles.
     - `Probability of Buckling`: The probabilities of buckling.
     - `Cumulative Probability of Buckling`: The cumulative probabilities of buckling.
+
     |
+
     .. image:: _static/excel_file_output_buckles.png
       :align: center 
+
     |
     |
+
  #. **Force Profiles**: This tab contains the effective axial force profiles.
 
     - `KP (m)`: The KP value of the element centroid in the unit of m.
@@ -327,11 +360,15 @@ Output Excel file
     - `EAF Operation [Pressure Only] (kN)`: The effective axial force during operation with only pressure applied in the unit of kN.
     - `EAF Operation (kN)`: The effective axial force during operation in the unit of kN.
     - `EAF Operation [without Buckling] (kN)`: The effective axial force during operation without buckling in the unit of kN.
+
     |
+
     .. image:: _static/excel_file_output_forceprofiles.png
       :align: center 
+
     |
     |
+
  #. **Raw Data**: This tab contains stochastic VAS and lateral friction factor outputs from 
     each simulation that has triggered buckles.
 
@@ -343,11 +380,15 @@ Output Excel file
     - `HOOS Factor`: The HOOS friction factor.
     - `CBF Operation (kN)`: The CBF during operation in the unit of kN.
     - `VAS Operation (m)`: The VAS during operation in the unit of m.
+
     |
+
     .. image:: _static/excel_file_output_rawdata.png
       :align: center 
+
     |
     |
+
  #. **Comb Buckles per Set**: This tab contains the probability of the most frequent combinations 
     based on post-processing set that has triggered buckles.
 
@@ -355,11 +396,15 @@ Output Excel file
     - `Number of Simulations`: The number of simulations for each buckling combination.
     - `Probability of Combination`: The probabilities of each buckling combination.
     - `Number of Buckles`: The number of buckles for each buckling combination.
+
     |
+
     .. image:: _static/excel_file_output_combset.png
       :align: center 
+
     |
     |
+
  #. **Comb Buckles per Section**: This tab contains the probability of the most frequent 
     combinations based on set number of sections in the route data that has triggered buckles.
  
@@ -367,13 +412,17 @@ Output Excel file
     - `Number of Simulations`: The number of simulations for each buckling combination.
     - `Probability of Combination`: The probabilities of each buckling combination.
     - `Number of Buckles`: The number of buckles for each buckling combination.
+
     |
+
     .. image:: _static/excel_file_output_combsection.png
       :align: center
+      
     |
     |
-Output Figures:
-===============
+
+Output Figures
+==============
  The name of the two output figures will follow the convention:
 
  - {INPUT_FILE_NAME}_{PIPELINE_ID}_scen{SCENARIO_ID}_plots-1.xlsx.
@@ -390,10 +439,15 @@ Output Figures:
  - **Lower Left**: This subplot contains the probability distribution of the total number of buckles along the pipeline route.
  - **Lower Centre**: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.
  - **Lower Right**: This subplot contains the probabilities of buckling and characteristic VAS.
+
+ |
+
  .. image:: _static/inputDataTemplate_A_scen1_plots-1.png
    :align: center
+
  |
  |
+
  The second output figure contains the following six subplots:
 
  - **Upper Left**: This subplot contains the unbuckled effective axial force profile with the mean axial friction.
@@ -402,8 +456,14 @@ Output Figures:
  - **Lower Left**: This subplot contains the buckled effective axial force profile with the mean axial friction and buckling force.
  - **Lower Centre**: This subplot contains the probabilities of buckling per kilometre.
  - **Lower Right**: This subplot contains the P5 lateral breakout friction factors of the geotechnical design data distribution and the distribution of the lateral breakout friction factors of the actual buckles that have triggered.
+
+ |
+
  .. image:: _static/inputDataTemplate_A_scen1_plots-2.png
    :align: center
+
+ |
+ |
 
 ******************************************
 How to Clone BuckPy to become a Maintainer
@@ -421,6 +481,7 @@ How to Clone BuckPy to become a Maintainer
   - Follow the steps in the section: Running BuckPy using the Source Code to set up the virtual environment and run BuckPy.
 
   |
+
   The repository structure is as follows:
 
   #. **buckpy**: This folder contains the main application file and core modules:
@@ -462,221 +523,3 @@ How to Clone BuckPy to become a Maintainer
   #. **REQUIREMENTS.txt**: Contains the list of Python libraries and their versions required to run BuckPy.
 
   #. **setup.py**: The setup script used to package BuckPy for distribution via pip.
-
-*********************
-Buckfast Benchmarking
-*********************
-  Results from BuckPy have been benchmarked against results from Buckfast for example A of
-  the Buckfast manual and good agreement has been obtained.
-  The comparison is presented in the following subplots:
-
-  - **Row 1**: This subplot compares the probabilities of buckling.
-  - **Row 2**: This subplot compares the characteristic VAS.
-  - **Row 3**: This subplot compares the effective axial force profiles determined using 
-    the mean axial friction factor and the mean critical buckling force.
-  - **Row 4**: This subplot compares the number of buckles.
-  - **Row 5**: This subplot presents the output from BuckPy.
-    In particular, the difference between buckle and geotechnical frictions can be seen.
-
-    |
-
-    .. image:: _static/buckfast/zplot_A_scen1_prob_buckling.png
-      :align: center
-
-    |
-
-    .. image:: _static/buckfast/zplot_A_scen1_vas.png
-      :align: center
-
-    |
-
-    .. image:: _static/buckfast/zplot_A_scen1_force_profiles_buckled.png
-      :align: center
-
-    |
-
-    .. image:: _static/buckfast/zplot_A_scen1_no_buckles.png
-      :align: center
-
-    |
-
-    .. image:: _static/buckfast/buckpy_A_scen1_plots.png
-      :align: center
-
-*********************
-Buckfast File Writers
-*********************
-
-Input File Writer
-=================
-  ``buckfast_input_file_writer.py`` reads the BuckPy input file ``buckpy.xlsx`` and writes the Buckfast input file in the same format as the Buckfast manual.
- 
-  There is an option ``DEFAULT_OUTPUT`` to use the default values or self-defined values when writing the ``*OUTPUT`` section.
-
-  The benchmark comparison using Buckfast example A is in the folder ``.//docs//_static//buckfast``
-
-  - ``buckfast_A_example.csv`` is the example A from the Buckfast manual.
-  - ``buckfast_A_scen1.csv`` is the Buckfast input file generated from the Buckpy input file ``buckpy.xlsx``.
-
-Output File Writer - Buckfast Result File
-=========================================
-  ``buckfast_output_file_compiler.py`` reads the Buckfast result files and writes the results
-  in a single Excel file. It can also compare the results of Buckfast and BuckPy either for each
-  scenario or for all scenarios.
- 
-  Finally, it can write a summary table Excel file for the selected scenarios. The Buckfast output file has the following tabs:
-
-  #. **Elements**: This tab contains the probability of buckling and characteristic VAS outputs. 
-     This information is taken from the ``.out2`` file.
- 
-     - `Centroid of the Element (m)`: The KP value of the element centroid in the unit of m.
-     - `Number of Simulations with a Buckle`: The number of simulations with a buckle.
-     - `Probability of Buckling`: The probability of buckling in the simulation.
-     - `Probability of not Buckling`: The probability of not buckling in the simulation.
-     - `Mean of the VAS (m)`: The mean of the VAS in the unit of m.
-     - `Standard Deviation of the VAS (m)`: The standard deviation of the VAS in the unit of m.
-     - `Minimum VAS (m)`: The minimum of the VAS in the unit of m.
-     - `Maximum VAS (m)`: The Maximum of the VAS in the unit of m.
-     |
-     .. image:: _static/output_compiler-elements.png
-       :align: center
-     |
-     |
-  #. **Sets**: This tab contains the probability of buckling and characteristic VAS outputs.
-     This information is taken from the ``.out2`` file.
- 
-     - `Set Label`: The identifier of the post-processing set. 
-     - `Number of Simulations with Buckles per Set`: The number of simulations with buckles in each set.
-     - `Probability of Buckling`: The probability of buckling in the set.
-     - `Probability of not Buckling`: The probability of not buckling in the set.
-     - `Mean of the VAS (m)`: The mean of the VAS in the unit of m.
-     - `Standard Deviation of the VAS (m)`: The standard deviation of the VAS in the unit of m.
-     - `Minimum VAS (m)`: The minimum of the VAS in the unit of m.
-     - `Maximum VAS (m)`: The Maximum of the VAS in the unit of m.
-     - `VAS, Conditional, Rogue (m)`: The conditional characteristic VAS of rogue buckles in the unit of m.
-     - `Characteristic VAS, Unconditional, Rogue (m)`: The unconditional characteristic VAS of rogue buckles in the unit of m.
-     - `VAS, Conditional, Planned (m)`: The conditional characteristic VAS of planned buckles in the unit of m.
-     - `Characteristic VAS, Unconditional, Planned (m)`: The unconditional characteristic VAS of planned buckles in the unit of m.
-     |
-     .. image:: _static/output_compiler-sets.png
-       :align: center
-     |
-     |
-  #. **No Buckles**: This tab contains the probability distribution of the total number of buckles 
-     along the pipeline route. This information is taken from the ``.out2`` file.
- 
-     - `Number of Buckles`: The number of buckles.
-     - `Number of Simulations`: The number of simulations with buckles.
-     - `Probability of Buckling`: The probabilities of buckling.
-     - `Cumulative Probability of Buckling`: The cumulative probabilities of buckling. 
-     |
-     .. image:: _static/output_compiler-no_buckles.png
-       :align: center
-     |
-     |
-  #. **Force Profiles**: This tab contains the effective axial force profiles. This information is taken from the ``.out1`` file.
- 
-     - `KP (m)`: The KP value of the element centroid in the unit of m.
-     - `CBF Hydrotest (kN)`: The concentrated buckling force during hydrotest in the unit of kN.
-     - `CBF Operation (kN)`: The concentrated buckling force during operation in the unit of kN.
-     - `EAF Installation [RLT] (kN)`: The effective axial force during installation in the unit of kN.
-     - `EAF Hydrotest (kN)`: The effective axial force during hydrotest in the unit of kN.
-     - `EAF Operation (kN)`: The effective axial force during operation in the unit of kN.
-     - `EAF Operation [without Buckling] (kN)`: The effective axial force during operation 
-       without buckling in the unit of kN. 
-     |
-     .. image:: _static/output_compiler-force.png
-       :align: center
-
-Output File Writer - Summary Table File
-=======================================
- The Buckfast output file has the following tabs:
-
- #. **Buckling**: This tab contains the probability of buckling and number of buckles results of Buckfast and BuckPy. 
-
-    - `Pipeline`: Pipeline of the input file analysed.
-    - `Scenario`: Scenario or sensitivity of the input file analysed.
-    - `Scenario Description`: The description of each simulation scenario.
-    - `Buckfast - Probability of Buckling`: The probability of buckling in the Buckfast result.
-    - `Buckfast - Number of Buckles - Min`: The minimum number of buckles in the Buckfast result.
-    - `Buckfast - Number of Buckles - Mode`: The most likely number of buckles in the Buckfast result.
-    - `Buckfast - Number of Buckles - Max`: The maximum number of buckles in the Buckfast result.
-    - `BuckPy - Probability of Buckling`: The probability of buckling in the BuckPy result.
-    - `BuckPy - Number of Buckles - Min`: The minimum number of buckles in the BuckPy result.
-    - `BuckPy - Number of Buckles - Mode`: The most likely number of buckles in the BuckPy result.
-    - `BuckPy - Number of Buckles - Max`: The maximum number of buckles in the BuckPy result.
-    |
-    .. image:: _static/summary_table-Buckling.png
-      :align: center
-    |
-    |
- #. **Characteristic**: This tab contains the probability of buckling and characteristic VAS 
-    results of Buckfast and BuckPy. It also contains the characteristic peak lateral friction, and
-    maximum characteristic VAS and friction results of BuckPy.
-
-    - `Pipeline`: Pipeline of the input file analysed.
-    - `Scenario`: Scenario or sensitivity of the input file analysed.
-    - `Scenario Description`: The description of each simulation scenario.
-    - `Element Set - Identifier`: The identifier of the post-processing element set.
-    - `Element Set - KP From (m)`: The KP of the start of the pipeline section in the unit of m.
-    - `Element Set - KP To (m)`: The KP of the end of the pipeline section in the unit of m.
-    - `Buckfast - Probability of Buckling`: The probability of buckling in the Buckfast result.
-    - `Buckfast - Characteristic VAS (m)`: The unconditional characteristic VAS of rogue buckles in the unit of m.
-    - `BuckPy - Probability of Buckling`: The probability of buckling in the BuckPy result.
-    - `BuckPy - Characteristic VAS (m)`: The unconditional characteristic VAS in the unit of m.
-    - `BuckPy - Characteristic Peak Lateral Friction`: The unconditional characteristic lateral breakout friction factor.
-    - `Buckfast - Max Char. VAS (m)`: The maximum characteristic VAS of each scenario in the Buckfast result.
-    - `BuckPy - Max Char. VAS (m)`: The maximum characteristic VAS of each scenario in the BuckPy result.
-    - `BuckPy - Max Char. Friction`: The maximum characteristic friction of each scenario in the BuckPy result.
-    |
-    .. image:: _static/summary_table-Characteristic.png
-      :align: center
-
-****************************
-Saipem Pro-Buck Benchmarking
-****************************
- The benchmark between BuckPy and Saipem Pro-Buck can be found in the disccusion with Alberto Battistini
- ``BuckPy and Saipem ProBuck Benchmark #35``.
-
- The Pro-Buck program is a MATLAB-based tool designed to analyze the likelihood of buckling in pipelines 
- subjected to axial loads induced by pressure and temperature. 
- Pro-Buck calculates critical buckling loads (CBL) and provides valuable insights into the critical points 
- where buckling might occur due to excessive compression or other related forces. 
- The algorithm performs Monte Carlo simulations to capture VAS and frictional forces of buckles. 
- The program generates detailed results, including CBL, virtual axial spacing (VAS), and pipeline expansion, 
- which can be visualized using MATLAB's graphing tools.
-
- The latest revision of Pro-Buck introduces an approach that makes minimal changes to 
- the DNV-RP-F110 recommendations. It uses a Monte Carlo algorithm to determine soil friction distributions 
- at expected buckling locations. This methodology addresses limitations in the DNV-RP-F110 approach 
- by separately sampling lateral friction and Out-of-Straightness (OOS) factors, 
- leading to significant cost savings and improved design reliability.
-
- Pro-Buck is a powerful tool for predicting buckling risks and ensuring the structural integrity of pipelines 
- under various conditions.
-
- General information about the pipeline for Benchmarking:
-
- - 155 approx km Pipeline with straight sections and route bends
- - 7 pipe set
- - 9 Friction set
-
- The two codes yield identical results in the following three figures:
-
- - Probability of buckling versus KP
-
- .. image:: _static/ProBuck-Prob_Buckling.png
-   :align: center
- |
-
- - Number of Buckles
-
- .. image:: _static/ProBuck-No_Buckles.png
-   :align: center
- |
-
- - Conditional Friction Factor versus KP
-
- .. image:: _static/ProBuck-Friction.png
-   :align: center
- |

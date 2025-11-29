@@ -1,0 +1,14 @@
+#############
+API Reference
+#############
+
+.. toctree::
+   :maxdepth: 4
+
+   buckpy
+   buckpy_gui
+   buckpy_variables
+   buckpy_preprocessing
+   buckpy_solver
+   buckpy_postprocessing
+   buckpy_visualisation
