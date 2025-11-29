@@ -1,1 +1,32 @@
-/* This file intentionally left blank. */
+:root {
+  --pst-header-height: 56px;
+}
+
+html {
+  scroll-padding-top: var(--pst-header-height);
+}
+
+.bd-header {
+  z-index: 1020;
+}
+
+.bd-sidebar {
+  padding-top: var(--pst-header-height);
+  z-index: 1010;
+}
+
+/* Offcanvas content container (theme-specific) */
+.bd-sidebar__content {
+  padding-top: 0;
+}
+
+/* Tighter spacing for nav list */
+.bd-sidebar .nav {
+  padding-top: 0.25rem;
+}
+
+/* Prevent stroke scaling in any inline SVG logo */
+svg text, svg path {
+  vector-effect: non-scaling-stroke;
+  paint-order: stroke fill;
+}
