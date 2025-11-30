@@ -1,32 +1,38 @@
+/* Adjust this to the extra space you want */
 :root {
-  --pst-header-height: 56px;
+  --collapsed-top-extra: 24px; /* extra vertical spacing when collapsed */
 }
 
-html {
-  scroll-padding-top: var(--pst-header-height);
+/* Below the lg breakpoint, the navbar collapses */
+@media (max-width: 991.98px) {
+  /* When the collapsed menu is open (.show), add spacing at the top */
+  .bd-header .navbar-collapse.show {
+    margin-top: var(--collapsed-top-extra);
+  }
+
+  /* If your theme uses offcanvas drawer for the nav, pad its top when visible */
+  .offcanvas,
+  .offcanvas-start,
+  .offcanvas-end {
+    padding-top: var(--collapsed-top-extra);
+    box-sizing: border-box;
+  }
+
+  /* Ensure dropdown menus have a bit of breathing room from the toggle */
+  .bd-header .dropdown-menu {
+    margin-top: var(--collapsed-top-extra);
+  }
 }
 
-.bd-header {
-  z-index: 1020;
-}
-
-.bd-sidebar {
-  padding-top: var(--pst-header-height);
-  z-index: 1010;
-}
-
-/* Offcanvas content container (theme-specific) */
-.bd-sidebar__content {
-  padding-top: 0;
-}
-
-/* Tighter spacing for nav list */
-.bd-sidebar .nav {
-  padding-top: 0.25rem;
-}
-
-/* Prevent stroke scaling in any inline SVG logo */
-svg text, svg path {
-  vector-effect: non-scaling-stroke;
-  paint-order: stroke fill;
+/* Optional: small phones with notch — add safe-area offset */
+@supports (padding-top: env(safe-area-inset-top)) {
+  @media (max-width: 575.98px) {
+    .bd-header .navbar-collapse.show,
+    .offcanvas,
+    .offcanvas-start,
+    .offcanvas-end {
+      padding-top: calc(var(--collapsed-top-extra) + env(safe-area-inset-top));
+      margin-top: 0; /* use padding rather than margin in very small viewports */
+    }
+  }
 }
