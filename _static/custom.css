@@ -1,12 +1,114 @@
-@media (max-width: 992px) {
-.bd-sidebar {
-padding-top: 72px !important;
-box-sizing: border-box;
-}
+/* BuckPy docs – responsive tweaks */
+:root {
+  --bp-header-height: 64px;
+  --bp-sidebar-width: 320px;
+  --bp-sidebar-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
 }
 
-.bd-toc,
-.bd-toc nav {
-margin-top: 48px !important;
-box-sizing: border-box;
+@media (max-width: 1366px) {
+  /* Keep header height consistent for overlays */
+  body {
+    --pst-header-height: var(--bp-header-height);
+  }
+
+  /********** 1. Make both toggles always available **********/
+  body .sidebar-toggle,
+  body header.bd-header .navbar-toggler {
+    display: inline-flex !important;
+    visibility: visible !important;
+  }
+
+  /********** 2. Hide desktop-only elements **********/
+  header.bd-header .navbar-header-items__center,
+  header.bd-header .navbar-header-items__end,
+  #pst-primary-sidebar,
+  #pst-secondary-sidebar {
+    display: none !important;
+  }
+
+  /********** 3. Primary sidebar modal (left) **********/
+  #pst-primary-sidebar-modal[open] {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    padding: 20px !important;
+    z-index: 2000 !important;
+  }
+
+  #pst-primary-sidebar-modal::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #pst-primary-sidebar-modal[open] .bd-sidebar-primary {
+    display: block !important;
+    position: fixed !important;
+    top: var(--bp-header-height);
+    bottom: 0;
+    left: 0 !important;
+    margin: 0 !important;
+    width: 320px !important;
+    max-width: 90vw !important;
+    padding: 20px !important;
+    overflow-y: auto !important;
+    background: var(--pst-color-surface, #fff) !important;
+    box-shadow: var(--bp-sidebar-shadow) !important;
+    transform: none !important;
+  }
+
+  /********** 4. Secondary sidebar modal (right) **********/
+  #pst-secondary-sidebar-modal[open] {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    padding: 20px !important;
+    z-index: 2000 !important;
+  }
+
+  #pst-secondary-sidebar-modal::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  #pst-secondary-sidebar-modal[open] .bd-sidebar-secondary,
+  #pst-secondary-sidebar-modal[open] .bd-toc {
+    display: block !important;
+    position: fixed !important;
+    top: var(--bp-header-height);
+    bottom: 0 !important;
+    left: auto !important;
+    right: 0;
+    margin: 0 !important;
+    width: 320px !important;
+    max-width: 90vw !important;
+    padding: 20px;
+    overflow-y: auto;
+    background: var(--pst-color-surface, #fff);
+    box-shadow: var(--bp-sidebar-shadow);
+    transform: none !important;
+  }
+
+  /********** 5. Navbar collapse **********/
+  header.bd-header .navbar-collapse:not(.show) {
+    display: none !important;
+  }
+
+  header.bd-header .navbar-collapse.show {
+    display: block !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--pst-color-surface, #fff);
+    z-index: 1500;
+    padding: 1rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  header.bd-header .navbar-collapse.show .navbar-nav {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
 }
