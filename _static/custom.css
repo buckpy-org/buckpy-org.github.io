@@ -1,38 +1,12 @@
-/* Adjust this to the extra space you want */
-:root {
-  --collapsed-top-extra: 24px; /* extra vertical spacing when collapsed */
+@media (max-width: 992px) {
+.bd-sidebar {
+padding-top: 64px !important;
+box-sizing: border-box;
+}
 }
 
-/* Below the lg breakpoint, the navbar collapses */
-@media (max-width: 991.98px) {
-  /* When the collapsed menu is open (.show), add spacing at the top */
-  .bd-header .navbar-collapse.show {
-    margin-top: var(--collapsed-top-extra);
-  }
-
-  /* If your theme uses offcanvas drawer for the nav, pad its top when visible */
-  .offcanvas,
-  .offcanvas-start,
-  .offcanvas-end {
-    padding-top: var(--collapsed-top-extra);
-    box-sizing: border-box;
-  }
-
-  /* Ensure dropdown menus have a bit of breathing room from the toggle */
-  .bd-header .dropdown-menu {
-    margin-top: var(--collapsed-top-extra);
-  }
-}
-
-/* Optional: small phones with notch — add safe-area offset */
-@supports (padding-top: env(safe-area-inset-top)) {
-  @media (max-width: 575.98px) {
-    .bd-header .navbar-collapse.show,
-    .offcanvas,
-    .offcanvas-start,
-    .offcanvas-end {
-      padding-top: calc(var(--collapsed-top-extra) + env(safe-area-inset-top));
-      margin-top: 0; /* use padding rather than margin in very small viewports */
-    }
-  }
+.bd-toc,
+.bd-toc nav {
+margin-top: 64px !important;
+box-sizing: border-box;
 }
