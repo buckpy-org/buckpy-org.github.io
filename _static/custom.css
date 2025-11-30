@@ -1,12 +1,12 @@
 @media (max-width: 992px) {
 .bd-sidebar {
-padding-top: 64px !important;
+padding-top: 72px !important;
 box-sizing: border-box;
 }
 }
 
 .bd-toc,
 .bd-toc nav {
-margin-top: 64px !important;
+margin-top: 48px !important;
 box-sizing: border-box;
 }
