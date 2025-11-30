@@ -49,8 +49,6 @@ Governance
   BuckPy is managed under an open-source model and distributed under the GPL license, ensuring that the software remains freely available and can be used, modified, and shared by the community.
   The team members serving on the steering committee and responsible for managing this open-source project are:
 
-  Oversight and strategic direction are provided by the following steering committee, who are responsible for setting development priorities, reviewing major technical decisions, and maintaining quality standards.
-
   - Ismael Ripoll <https://github.com/ismael-ripoll>
   - Carlos Sicilia <https://github.com/cSiciliaG>
   - Emilien Bonnet <https://github.com/EmilienBonnet>
@@ -107,7 +105,7 @@ How to Contribute to the Project
 
   Interested in trying out the code before contributing?
 
-  - Please refer to <https://pypi.org/project/buckpy/> and the `Getting Started <getting_started.html>`_ section of this documentation.
+  - Please refer to the `PyPi Python Package <https://pypi.org/project/buckpy/>`_ and the `Getting Started <getting_started.html>`_ section of this documentation.
 
 ########
 Contents
