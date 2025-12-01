@@ -30,6 +30,7 @@
 <link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=21bac92d" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -142,8 +143,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="../../benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_references.html">
+    API References
   </a>
 </li>
 
@@ -181,6 +189,22 @@
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
       
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
     </div>
     
   </div>
@@ -210,7 +234,7 @@
         
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -240,8 +264,15 @@
 
 
 <li class="nav-item ">
-  <a class="nav-link nav-internal" href="../../modules.html">
-    API Reference
+  <a class="nav-link nav-internal" href="../../benchmarking.html">
+    Benchmarking
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api_references.html">
+    API References
   </a>
 </li>
 
@@ -270,9 +301,44 @@
   <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
 </button></div>
         
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Xodus-Group/BuckPy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
       </div>
     
   </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+    </div>
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
@@ -337,30 +403,9 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">norm</span><span class="p">,</span> <span class="n">lognorm</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">.buckpy_variables</span><span class="w"> </span><span class="kn">import</span> <span class="n">KP_TO</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">This module provides classes and functions for lateral buckling calculations and friction factor</span>
-<span class="sd">distribution fitting for subsea pipelines.</span>
-
-<span class="sd">**Features:**</span>
-
-<span class="sd">- The `LBDistributions` class implements lognormal distribution fitting for geotechnical friction</span>
-<span class="sd">  factors, supporting low, best, and high estimates (LE, BE, HE) and multiple fit types.</span>
-<span class="sd">- Designed for use in pipeline lateral buckling reliability analysis and geotechnical parameter</span>
-<span class="sd">  estimation.</span>
-<span class="sd">- All calculations are vectorized using NumPy and leverage SciPy for statistical fitting.</span>
-
-<span class="sd">.. raw:: html</span>
-
-<span class="sd">   &lt;hr style=&quot;height:6px; background-color:#888; border:none; margin:1.5em 0;&quot; /&gt;</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">lognorm</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.buckpy_variables</span><span class="w"> </span><span class="kn">import</span> <span class="n">KP_TO</span>
 
 <div class="viewcode-block" id="LBDistributions">
 <a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions">[docs]</a>
@@ -390,10 +435,10 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Initialize with geotechnical friction factor estimates and fit type.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_fit_type</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_le</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_le</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_be</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_be</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_he</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_he</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">float</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">friction_factor_fit_type</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">friction_factor_fit_type</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="nb">object</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <div class="viewcode-block" id="LBDistributions.friction_distribution">
 <a class="viewcode-back" href="../../buckpy_preprocessing.html#buckpy.buckpy_preprocessing.LBDistributions.friction_distribution">[docs]</a>
@@ -477,6 +522,12 @@
                 <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
                     <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
                 <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_HE&#39;</span><span class="p">:</span>
+                <span class="n">le_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+                <span class="n">he_fit</span> <span class="o">=</span> <span class="n">lognorm</span><span class="p">(</span><span class="n">scale_param</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">location_param</span><span class="p">))</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.95</span><span class="p">)</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
             <span class="k">return</span> <span class="n">error</span>
@@ -545,6 +596,10 @@
             <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;BE_HE&#39;</span><span class="p">:</span>
                 <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
                     <span class="p">((</span><span class="n">be_fit</span> <span class="o">-</span> <span class="n">friction_factor_be</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">friction_factor_fit_type</span> <span class="o">==</span> <span class="s1">&#39;LE_HE&#39;</span><span class="p">:</span>
+                <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span>
+                    <span class="p">((</span><span class="n">le_fit</span> <span class="o">-</span> <span class="n">friction_factor_le</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">he_fit</span> <span class="o">-</span> <span class="n">friction_factor_he</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
                 <span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
